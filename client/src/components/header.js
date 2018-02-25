@@ -5,34 +5,42 @@ class Header extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            responsive: false
+        };
+
+        this.handleClick = this.handleMenuClick.bind(this);
     }
 
-    myFunction() {
-        var x = document.getElementById("topnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-            x.className = "topnav";
-        }
+    handleMenuClick() {
+
+        this.setState((prevState) => ({
+            responsive: !prevState.responsive
+        }));
+
     }
 
     render() {
+
+        const { responsive } = this.state;
+        const className = responsive ? 'responsive' : 'not-responsive';
+
         return  (
             <div className="header">
-                <div className="topnav" id="topnav">
-                    <a href="#Home" className="active">Home</a>
-                    <a href="#Cart">Cart</a>
-                    <a href="#Apparel">Apparel</a>
-                    <a href="#Decks">Decks</a>
-                    <a href="#Contact">Contact</a>
-                    <a href="javascript:void(0);" className="icon" onClick={this.myFunction}>+</a>
-                    </div>
-
                 <div className="logo-panel">
                     <div className="logo">
-                        Logo
+                        LOGO
                     </div>
                 </div>
+
+                {/* TODO: look into classnames package */}
+                <div className={'topnav ' + className} id="topnav">
+                    <a href="#Apparel">APPAREL</a>
+                    <a href="#Decks">DECKS</a>
+                    <a href="#Contact">CONTACT</a>
+                    {/* <a href="javascript:void(0);" className="icon" onClick={this.handleClick}>+</a> */}
+                    </div>
             </div>
         )
     }
