@@ -1,0 +1,35 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "autoprefixer": "^8.0.0",
+    "chokidar-cli": "^1.2.0",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-task:scss-compile": "node-sass-chokidar --source-map true src/assets/scss/ -o src/assets/css",
+    "build-task:autoprefixer": "postcss src/assets/css/*.css --use autoprefixer -d src/assets/css",
+    "sass:build": "npm-run-all -p build-task:*",
+    "sass:watch": "chokidar 'src/assets/scss/**/*.scss' -c 'npm run sass:build'",
+    "dev": "npm-run-all -p sass:*"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.10",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
+    "react-router-dom": "^4.2.2",
+    "sass-loader": "^6.0.6",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^2.0.8",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
