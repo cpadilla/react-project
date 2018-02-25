@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import Homepage from './components/homepage/homepage';
 import Header from './components/header/header';
-import './assets/scss/index.scss';
 
 
 class App extends Component {

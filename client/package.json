@@ -16,11 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build-task:scss-compile": "node-sass-chokidar --source-map true src/assets/scss/ -o src/assets/css",
-    "build-task:autoprefixer": "postcss src/assets/css/*.css --use autoprefixer -d src/assets/css",
-    "sass:build": "npm-run-all -p build-task:*",
-    "sass:watch": "chokidar 'src/assets/scss/**/*.scss' -c 'npm run sass:build'",
-    "dev": "npm-run-all -p sass:*"
+    "sass": "sass --watch src/styles/scss:src/styles/css"
   },
   "devDependencies": {
     "css-loader": "^0.28.10",

@@ -6,7 +6,7 @@ module.exports = {
     module: {
         rules: [{
             exlude: [/node_modules/],
-            include: path.resolve(__dirname, 'client/src/assets/scss'),
+            include: path.resolve(__dirname, 'client/src/styes/scss'),
             test: /\.scss$/,
             use: [{
                 loader: "style-loader" // create style nodes from JS strings
