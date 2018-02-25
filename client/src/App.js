@@ -4,8 +4,8 @@ import {
   Route,
   // Link
 } from 'react-router-dom';
-import Homepage from './components/homepage/homepage';
-import Header from './components/header/header';
+import Homepage from './components/homepage';
+import Header from './components/header';
 
 
 class App extends Component {
