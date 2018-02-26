@@ -3,27 +3,46 @@ Vars
 */
 .header {
   font-family: 'Open Sans', sans-serif;
-  height: 150px;
-  background-color: #11a030; }
+  background-color: #ffffff; }
   .header .logo-panel {
     text-align: center;
     position: relative;
-    line-height: 100px; }
+    height: 150px;
+    width: 100%; }
   .header .logo {
+    background: url("../../assets/morning-teleportation.jpg");
+    background-size: 100%;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
     display: inline-block;
-    height: 100px;
+    max-height: 170px;
+    max-width: 1200px;
+    height: 100%;
+    width: 100%;
     text-align: center;
     vertical-align: middle; }
   .header .topnav {
-    text-align: center; }
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: flex-end;
+    background-color: #ffffff;
+    justify-content: center;
+    height: 50px; }
+    .header .topnav .linkWrapper {
+      bottom: 0px;
+      left: 0px;
+      padding: 0px 30px; }
     .header .topnav a {
+      font-size: 20px;
+      color: #010000;
+      vertical-align: text-bottom;
       text-decoration: none;
-      padding: 0px 20px;
       -webkit-transition: 0.4s ease-in-out;
       -moz-transition: 0.4s ease-in-out;
       transition: 0.4s ease-in-out; }
       .header .topnav a:hover {
-        color: #ff1755;
+        color: #4cc9e7;
         -webkit-transition: 0.4s ease-in-out;
         -moz-transition: 0.4s ease-in-out;
         transition: 0.4s ease-in-out; }

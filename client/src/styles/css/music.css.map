@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;EAEE;ACCE,UAAI;EACA,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK",
+"sources": ["../scss/Colors.scss","../scss/music.scss"],
+"names": [],
+"file": "music.css"
+}

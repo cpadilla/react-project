@@ -5,6 +5,7 @@
   "dependencies": {
     "animate.css": "^3.6.1",
     "autoprefixer": "^8.0.0",
+    "axios": "^0.18.0",
     "chokidar-cli": "^1.2.0",
     "npm-run-all": "^4.1.2",
     "postcss-cli": "^5.0.0",

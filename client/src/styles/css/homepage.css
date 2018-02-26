@@ -1,0 +1,47 @@
+/*
+Vars
+*/
+.homepage {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  height: 1200px; }
+  .homepage .parallax {
+    background-image: url("../../assets/mt_sfs_large.jpg");
+    height: 200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .homepage .parallax2 {
+    background-image: url("../../assets/mt_ea_large.jpg");
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  .homepage .videoContainer {
+    background-color: #4cc9e7;
+    padding-bottom: 10px; }
+    .homepage .videoContainer span {
+      display: flex;
+      padding: 10px 10px;
+      vertical-align: middle; }
+    .homepage .videoContainer .iframeContainer {
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      background-color: #4cc9e7; }
+      .homepage .videoContainer .iframeContainer iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%; }
+  .homepage .newAlbumOut {
+    background-color: #d12e4b;
+    padding-bottom: 10px;
+    height: 300px; }
+
+/*# sourceMappingURL=homepage.css.map */

@@ -8,32 +8,55 @@
 
 .header {
     font-family: 'Open Sans', sans-serif;
-    height: 150px;
-    background-color: $green;
+    // height: 150px;
+    background-color: $white;
 
     .logo-panel {
         text-align: center;
         position: relative;
-        line-height: 100px;
+        height: 150px;
+        width: 100%;
+        // line-height: 100px;
     }
 
     .logo {
+        background: url('../../assets/morning-teleportation.jpg');
+        background-size: 100%;
+        background-position-y: 50%;
+        background-repeat: no-repeat;
         display: inline-block;
-        height: 100px;
+        max-height: 170px;
+        max-width: 1200px;
+        height: 100%;
+        width: 100%;
         text-align: center;
         vertical-align: middle;
     }
 
     .topnav {
+        display: flex;
+        position: relative;
         text-align: center;
+        align-items: flex-end;
+        background-color: $white;
+        justify-content: center;
+        height: 50px;
+
+        .linkWrapper {
+            bottom: 0px;
+            left: 0px;
+            padding: 0px 30px;
+        }
 
         a {
+            font-size: 20px;
+            color: $black;
+            vertical-align: text-bottom;
             text-decoration: none;
-            padding: 0px 20px;
             @include transition(.4s ease-in-out);
 
             &:hover {
-                color: $red;
+                color: $blue;
                 @include transition(.4s ease-in-out);
             }
         }
