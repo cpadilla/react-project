@@ -1,8 +1,15 @@
 @import 'Colors.scss';
 
 .music {
-    img {
-        height: 300px;
-        width: 300px;
+    display: flex;
+    justify-content: center;
+
+    .album {
+        padding: 10px 30px;
+
+        img {
+            height: 300px;
+            width: 300px;
+        }
     }
 }

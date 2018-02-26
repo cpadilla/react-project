@@ -37,7 +37,7 @@ class Music extends Component {
                     console.log(divStyle);
 
                     return (
-                        <div key={i}>
+                        <div className="album" key={i}>
                             <img src={require("../assets/" + album.img)} />
                             <div>
                                 {album.title}

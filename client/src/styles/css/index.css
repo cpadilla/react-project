@@ -102,8 +102,13 @@
   /*
   Vars
   */ }
-  .music .music img {
-    height: 300px;
-    width: 300px; }
+  .music .music {
+    display: flex;
+    justify-content: center; }
+    .music .music .album {
+      padding: 10px 30px; }
+      .music .music .album img {
+        height: 300px;
+        width: 300px; }
 
 /*# sourceMappingURL=index.css.map */

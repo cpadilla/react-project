@@ -1,8 +1,13 @@
 /*
 Vars
 */
-.music img {
-  height: 300px;
-  width: 300px; }
+.music {
+  display: flex;
+  justify-content: center; }
+  .music .album {
+    padding: 10px 30px; }
+    .music .album img {
+      height: 300px;
+      width: 300px; }
 
 /*# sourceMappingURL=music.css.map */
