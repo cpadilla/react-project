@@ -13,8 +13,14 @@ class Homepage extends Component {
                     </div>
                 </div>
                 <div className="parallax"></div>
+                <div className="bio">
+                    Morning Teleportation is a psychedelic rock band formed in 2005 when Bowling Green, Kentucky natives Travis Goodwin (keyboards), Tres Coker (drums), and Paul Wilkerson (bass) met up with Chicago transplant Tiger Merritt (vocals/guitar), who had just moved to their hometown for college.
+                    In the last few years they have played at Electric Forest Festival, Bonnaroo Music Festival, and Sasquatch! Music Festival and supporting the likes of The Flaming Lips, Cage The Elephant, Primus and Modest Mouse.
+                    <img alt="Morning Teleportation" src={require("../assets/band.jpg")} />
+                </div>
+                <div className="parallax2"></div>
                 <div className="newAlbumOut">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    Check out the latest album!
                 </div>
                 <div className="parallax2"></div>
             </div>

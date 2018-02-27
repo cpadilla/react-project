@@ -9,11 +9,13 @@ app.use(bodyParser.json())
 
 var music = [
     {
+        productId: 1,
         title: "Expanding Anyway",
         price: 25,
         img: 'expanding_anyway.jpg'
     },
     {
+        productId: 2,
         title: "Salivating For Symbiosis",
         price: 25,
         img: 'salivating_for_symbiosis.jpg'
@@ -22,16 +24,22 @@ var music = [
 
 var products = [
     {
+        productId: 3,
         title: "Expanding Anyway Shirt (Grey)",
-        price: 15
+        price: 15,
+        img: ''
     },
     {
+        productId: 4,
         title: "Expanding Anyway Shirt (Orange)",
-        price: 15
+        price: 15,
+        img: ''
     },
     {
+        productId: 5,
         title: "Expanding Anyway Biker Tank",
-        price: 15
+        price: 15,
+        img: ''
     }
 ]
 

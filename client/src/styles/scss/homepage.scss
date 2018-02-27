@@ -22,7 +22,7 @@
         // background image
         background-image: url('../../assets/mt_ea_large.jpg');
 
-        height: 400px;
+        height: 200px;
 
         background-attachment: fixed;
         background-position: center;
@@ -59,11 +59,23 @@
         }
     }
 
-    .newAlbumOut {
-        background-color: $hotPink;
-        padding-bottom: 10px;
+    .bio {
+        background-color: $peach;
+        padding: 30px 40px;
 
-        height: 300px;
+        img {
+            padding: 10px 0px;
+            width: 100%;
+        }
+    }
+
+    .newAlbumOut {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        background-color: $hotPink;
+        padding: 30px 40px;
+
     }
 
 }

@@ -68,7 +68,7 @@
       background-size: cover; }
     .homepage .homepage .parallax2 {
       background-image: url("../../assets/mt_ea_large.jpg");
-      height: 400px;
+      height: 200px;
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -93,10 +93,18 @@
           display: block;
           width: 100%;
           height: 100%; }
+    .homepage .homepage .bio {
+      background-color: #f28230;
+      padding: 30px 40px; }
+      .homepage .homepage .bio img {
+        padding: 10px 0px;
+        width: 100%; }
     .homepage .homepage .newAlbumOut {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
       background-color: #d12e4b;
-      padding-bottom: 10px;
-      height: 300px; }
+      padding: 30px 40px; }
 
 .music {
   /*

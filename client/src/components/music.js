@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom';
 import '../styles/css/music.css'
 
 class Music extends Component {
@@ -17,6 +22,7 @@ class Music extends Component {
     componentDidMount() {
         axios.get(this.url).then((res) => {
             this.setState({music: res.data});
+            console.log(this.state.music);
         }).catch(function(error) {
             console.log(error);
         })
@@ -38,7 +44,13 @@ class Music extends Component {
 
                     return (
                         <div className="album" key={i}>
-                            <img src={require("../assets/" + album.img)} />
+                            <a href={'/item/' + album.productId}> 
+                            {/* <Link to= */}
+                                <img alt={album.title} src={require("../assets/" + album.img)} />
+                            </a>
+                            <div>
+                                {album.productId}
+                            </div>
                             <div>
                                 {album.title}
                             </div>

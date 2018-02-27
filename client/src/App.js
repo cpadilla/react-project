@@ -10,19 +10,30 @@ import Music from './components/music'
 import Store from './components/store'
 import Tour from './components/tour'
 import Contact from './components/contact'
+import Item from './components/item'
 
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      itemId: 0
+    }
+  }
+
   render() {
     return (
       <Router>
         <div className="App">
           <Header />
           <Route exact path='/' component={Homepage}/>
-          <Route exact path='/music' component={Music}/>
+          <Route exact path='/music' component={Music} />
           <Route exact path='/store' component={Store}/>
           <Route exact path='/tour' component={Tour}/>
           <Route exact path='/contact' component={Contact}/>
+          <Route exact path='/item/:id' component={Item}/>
         </div>
       </Router>
     );
