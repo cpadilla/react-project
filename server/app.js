@@ -7,6 +7,14 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json())
 
+var latestAlbum = {
+    productId: 2,
+    title: "Salivating For Symbiosis",
+    price: 25,
+    img: 'salivating_for_symbiosis.jpg'
+}
+
+
 var music = [
     {
         productId: 1,
@@ -14,12 +22,7 @@ var music = [
         price: 25,
         img: 'expanding_anyway.jpg'
     },
-    {
-        productId: 2,
-        title: "Salivating For Symbiosis",
-        price: 25,
-        img: 'salivating_for_symbiosis.jpg'
-    }
+    latestAlbum
 ]
 
 var products = [
@@ -46,6 +49,11 @@ var products = [
 app.get('/api/music', function(req, res) {
     console.log("Getting music");
     res.json(music);
+});
+
+app.get('/api/latestAlbum', function(req, res) {
+    console.log("Getting latestAlbum");
+    res.json(latestAlbum);
 });
 
 app.get('/api/products', function(req, res) {

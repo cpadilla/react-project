@@ -1,8 +1,31 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import '../styles/css/homepage.css'
 
 class Homepage extends Component {
+
+    url = "http://localhost:7777/api/latestAlbum"
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            album: {}
+        }
+
+        axios.get(this.url).then((res) => {
+            this.setState({album: res.data});
+        }).catch(function(error) {
+            console.log(error);
+        })
+    }
+
+    componentDidMount() {
+    }
+
     render() {
+        var album = this.state.album;
+
         return (
             <div className="homepage">
                 <div className="parallax"></div>
@@ -16,13 +39,32 @@ class Homepage extends Component {
                 <div className="bio">
                     Morning Teleportation is a psychedelic rock band formed in 2005 when Bowling Green, Kentucky natives Travis Goodwin (keyboards), Tres Coker (drums), and Paul Wilkerson (bass) met up with Chicago transplant Tiger Merritt (vocals/guitar), who had just moved to their hometown for college.
                     In the last few years they have played at Electric Forest Festival, Bonnaroo Music Festival, and Sasquatch! Music Festival and supporting the likes of The Flaming Lips, Cage The Elephant, Primus and Modest Mouse.
-                    <img alt="Morning Teleportation" src={require("../assets/band.jpg")} />
+                    <div className="bioImage">
+                        <img alt="Morning Teleportation" src={require("../assets/band.jpg")} />
+                    </div>
                 </div>
                 <div className="parallax2"></div>
                 <div className="newAlbumOut">
                     Check out the latest album!
+                        <div className="latestAlbum">
+                            <a href={'/item/' + album.productId}> 
+                                {album.img && <img alt={album.title} src={require("../assets/" + album.img)} /> }
+                            </a>
+                            <div>
+                                {album.title}
+                            </div>
+                        </div>
                 </div>
-                <div className="parallax2"></div>
+                <div className="parallax3"></div>
+                <div className="tour">
+                    ON TOUR
+                        <div className="tourdates">
+                            <a href={'/item/' + album.productId}> 
+                                <img alt="Tour Dates" src={require("../assets/morning-teleportation-2010.jpg")} />
+                            </a>
+                        </div>
+                </div>
+                <div className="parallax3"></div>
             </div>
         )
     }

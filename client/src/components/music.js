@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
-} from 'react-router-dom';
 import '../styles/css/music.css'
 
 class Music extends Component {
@@ -45,7 +40,6 @@ class Music extends Component {
                     return (
                         <div className="album" key={i}>
                             <a href={'/item/' + album.productId}> 
-                            {/* <Link to= */}
                                 <img alt={album.title} src={require("../assets/" + album.img)} />
                             </a>
                             <div>
