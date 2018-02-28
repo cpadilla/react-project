@@ -1,11 +1,64 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-
+var mongoose = require('mongoose');
+// var mongo = require('mongodb').MongoClient;
 var app = express();
 
 app.use(cors());
 app.use(bodyParser.json())
+
+// var uri = "mongodb+srv://reader:wTqePYzFOo9JzKa7@cluster0-9npfp.mongodb.net/test";
+mongoose.connect('mongodb+srv://reader:wTqePYzFOo9JzKa7@cluster0-9npfp.mongodb.net/react-project?authSource=admin');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function() {
+    console.log("we're connected!");
+}).then((res) => {
+    console.log("start");
+    var productSchema = mongoose.Schema({
+        productId: Number,
+        img: String,
+        price: Number,
+        title: String,
+        type: String
+    });
+
+    var Product = mongoose.model('Product', productSchema);
+
+    // Return all products
+    Product.find(function(error,result) {
+        if (error) return console.error(error);
+        console.log(result);
+    });
+
+    const data = Product.find({ title: "Expanding Anyway"}).exec();
+
+    // Product.find({ title: "Expanding Anyway" }, function(error,result) {
+    //     if (error) return console.error(error);
+    //     console.log(result);
+    // });
+
+    // Product.find(function(err, products) {
+    //     if (err) return console.error(err);
+    //     console.log(products);
+    // }).then((res) => {
+    //     console.log("response: " + res);
+    // }).catch((res) => {
+    //     console.log("error: " + res);
+    // });
+
+    console.log("done");
+
+});
+
+// mongo.connect(uri, function(err, client) {
+//     const collection = client.db("test").collection("devices");
+//     console.log(collection);
+//     client.close();
+// })
+
 
 var latestAlbum = {
     productId: 2,
@@ -45,6 +98,11 @@ var products = [
         img: ''
     }
 ]
+
+app.get('/api/item/:itemId', function(req, res) {
+    console.log("Getting music");
+    res.json(music);
+});
 
 app.get('/api/music', function(req, res) {
     console.log("Getting music");

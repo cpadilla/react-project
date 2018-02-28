@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+// import Item from './item'
+import {
+    // BrowserRouter as Router,
+    // Route,
+    Link
+} from 'react-router-dom';
 import '../styles/css/music.css'
 
 class Music extends Component {
@@ -17,7 +23,6 @@ class Music extends Component {
     componentDidMount() {
         axios.get(this.url).then((res) => {
             this.setState({music: res.data});
-            console.log(this.state.music);
         }).catch(function(error) {
             console.log(error);
         })
@@ -29,19 +34,20 @@ class Music extends Component {
                 {this.state.music.map((album, i) => {
                     // console.log("album img: " + album.img);
 
-                    var divStyle =  {
-                        backgroundImage: 'url(../assets/' + album.img + ')',
-                        width: '300px',
-                        height: '300px'
-                    }
-
-                    console.log(divStyle);
+                    // var divStyle =  {
+                    //     backgroundImage: 'url(../assets/' + album.img + ')',
+                    //     width: '300px',
+                    //     height: '300px'
+                    // }
 
                     return (
                         <div className="album" key={i}>
-                            <a href={'/item/' + album.productId}> 
-                                <img alt={album.title} src={require("../assets/" + album.img)} />
-                            </a>
+                            {/* <a href={'/item/' + album.productId}>  */}
+                                <Link to={{ pathname: '/item/' + album.productId,
+                                            state: { item: album}}}>
+                                    <img alt={album.title} src={require("../assets/" + album.img)} />
+                                </Link>
+                            {/* </a> */}
                             <div>
                                 {album.productId}
                             </div>

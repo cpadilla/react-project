@@ -1,3 +1,17 @@
-
+/*
+Vars
+*/
+.item {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .item .card {
+    text-align: center;
+    padding-top: 50px; }
+    .item .card .imageContainer {
+      width: 300px;
+      height: 300px; }
+      .item .card .imageContainer img {
+        width: 100%; }
 
 /*# sourceMappingURL=item.css.map */

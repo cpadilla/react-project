@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import {
+    // BrowserRouter as Router,
+    // Route,
+    Link
+} from 'react-router-dom';
 import '../styles/css/homepage.css'
 
 class Homepage extends Component {
@@ -47,9 +52,10 @@ class Homepage extends Component {
                 <div className="newAlbumOut">
                     Check out the latest album!
                         <div className="latestAlbum">
-                            <a href={'/item/' + album.productId}> 
+                            <Link to={{ pathname: '/item/' + album.productId,
+                                        state: {item: album}}}>
                                 {album.img && <img alt={album.title} src={require("../assets/" + album.img)} /> }
-                            </a>
+                            </Link>
                             <div>
                                 {album.title}
                             </div>
