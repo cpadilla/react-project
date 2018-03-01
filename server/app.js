@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+Schema = mongoose.Schema;
 // var mongo = require('mongodb').MongoClient;
 var app = express();
 
@@ -9,7 +10,8 @@ app.use(cors());
 app.use(bodyParser.json())
 
 // var uri = "mongodb+srv://reader:wTqePYzFOo9JzKa7@cluster0-9npfp.mongodb.net/test";
-mongoose.connect('mongodb+srv://reader:wTqePYzFOo9JzKa7@cluster0-9npfp.mongodb.net/react-project?authSource=admin');
+// mongoose.connect('mongodb+srv://reader:wTqePYzFOo9JzKa7@cluster0-9npfp.mongodb.net/react-project?authSource=admin');
+mongoose.connect('mongodb://reader:wTqePYzFOo9JzKa7@cluster0-shard-00-00-9npfp.mongodb.net:27017,cluster0-shard-00-01-9npfp.mongodb.net:27017,cluster0-shard-00-02-9npfp.mongodb.net:27017/react-project?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
@@ -17,37 +19,21 @@ db.once('open', function() {
     console.log("we're connected!");
 }).then((res) => {
     console.log("start");
-    var productSchema = mongoose.Schema({
+    var productSchema = new Schema({
         productId: Number,
-        img: String,
+        tilte: String,
         price: Number,
-        title: String,
+        img: String,
         type: String
-    });
+    }, { collection: "items"});
 
     var Product = mongoose.model('Product', productSchema);
 
     // Return all products
-    Product.find(function(error,result) {
+    Product.find({}, function(error,result) {
         if (error) return console.error(error);
         console.log(result);
     });
-
-    const data = Product.find({ title: "Expanding Anyway"}).exec();
-
-    // Product.find({ title: "Expanding Anyway" }, function(error,result) {
-    //     if (error) return console.error(error);
-    //     console.log(result);
-    // });
-
-    // Product.find(function(err, products) {
-    //     if (err) return console.error(err);
-    //     console.log(products);
-    // }).then((res) => {
-    //     console.log("response: " + res);
-    // }).catch((res) => {
-    //     console.log("error: " + res);
-    // });
 
     console.log("done");
 
