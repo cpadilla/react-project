@@ -18,6 +18,7 @@
     font-family: 'Open Sans', sans-serif;
     // height: 150px;
     background-color: $white;
+    filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.3));
 
     .logo-panel {
         text-align: center;
@@ -80,6 +81,12 @@
                 filter: hue-rotate(180deg);
             }
 
+            .tab:hover > .linkWrapper > a {
+                color: $blue;
+                transform: scale(1.2);
+                @include transition(.4s ease-in-out);
+            }
+
             .tab {
                 width: 100%;
                 display: flex;
@@ -103,11 +110,11 @@
                         color: $black;
                         vertical-align: text-bottom;
                         text-decoration: none;
-                        @include transition(.4s ease-in-out);
+                        @include transition(all .4s ease-in-out);
 
                         &:hover {
-                            color: $blue;
-                            @include transition(.4s ease-in-out);
+                            // color: $blue;
+                            // @include transition(.4s ease-in-out);
                         }
                     }
                 }
@@ -143,32 +150,36 @@
                         // $large: 95px;
                     }
 
-                    .drip {
-                        .bar {
-                            background: url("../../assets/bar.png");
-                            width: 21px;
-                            height: 1px;
+                    a {
+                        display: flex;
 
-                            &.small {
-                                height: $small;
-                                transition: .5s ease-in-out;
-                            }
+                        .drip {
+                            .bar {
+                                background: url("../../assets/bar.png");
+                                width: 21px;
+                                height: 1px;
 
-                            &.medium {
-                                height: $medium;
-                                transition: .5s ease-in-out;
+                                &.small {
+                                    height: $small;
+                                    transition: .5s ease-in-out;
+                                }
+
+                                &.medium {
+                                    height: $medium;
+                                    transition: .5s ease-in-out;
+                                }
+                                &.large {
+                                    height: $large;
+                                    transition: .5s ease-in-out;
+                                }
                             }
-                            &.large {
-                                height: $large;
-                                transition: .5s ease-in-out;
+                            .drop {
+                                background: url("../../assets/drip.png");
+                                background-size: 100%;
+                                margin-top: -3px;
+                                height: 21px;
+                                width: 21px;
                             }
-                        }
-                        .drop {
-                            background: url("../../assets/drip.png");
-                            background-size: 100%;
-                            margin-top: -3px;
-                            height: 21px;
-                            width: 21px;
                         }
                     }
                 }

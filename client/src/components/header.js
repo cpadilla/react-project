@@ -14,7 +14,6 @@ class Header extends Component {
         this.handleClick = this.handleMenuClick.bind(this);
         this.handleHover = this.handleHover.bind(this);
         this.renderLinks = this.renderLinks.bind(this);
-        this.renderDrops = this.renderDrops.bind(this);
     }
 
     handleHover() {
@@ -31,30 +30,30 @@ class Header extends Component {
 
     }
 
-    renderDrops(link, i) {
+    renderLinks(link, i) {
         var one, two, three; var contact;
 
-        if (link.name == "HOME") {
+        if (link.name === "HOME") {
             one = "small";
             two = "large";
             three = "medium";
         }
-        if (link.name == "MUSIC") {
+        if (link.name === "MUSIC") {
             one = "large";
             two = "small";
             three = "medium";
         }
-        if (link.name == "STORE") {
+        if (link.name === "STORE") {
             one = "medium";
             two = "large";
             three = "small";
         }
-        if (link.name == "TOUR") {
+        if (link.name === "TOUR") {
             one = "medium";
             two = "small";
             three = "large";
         }
-        if (link.name == "CONTACT") {
+        if (link.name === "CONTACT") {
             one = "small";
             two = "large";
             three = "medium";
@@ -64,9 +63,8 @@ class Header extends Component {
                 </div>
         }
 
-        // var hoverClass = this ? (this.state.isHovered ? " animated slideDown" : " animated slideUp") : "";
-
         var drips = <div className={"drips"} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+                <a href={link.link}>
                 <div className="drip">
                     <div className={"bar " + one} />
                     <div className="drop" />
@@ -80,24 +78,14 @@ class Header extends Component {
                     <div className="drop" />
                 </div>
                 {contact}
+                </a>
             </div>;
 
-        // return <div>
-        //     {drips}
-        // </div>;
-        return <div className="tab">
-            <div className="linkWrapper" key={i}>
+        return <div className="tab" key={i}>
+            <div className="linkWrapper" >
                 <a href={link.link}>{link.name}</a>
             </div>
             {drips}
-        </div>;
-    }
-
-    renderLinks(link, i) {
-        return <div className="linkContainer">
-            <div className="linkWrapper" key={i}>
-                <a href={link.link}>{link.name}</a>
-            </div>
         </div>;
     }
 
@@ -131,7 +119,7 @@ class Header extends Component {
                             {/* {links.map(this.renderLinks)} */}
                         {/* </div>
                         <div className="dripRow"> */}
-                            {links.map(this.renderDrops)}
+                            {links.map(this.renderLinks)}
                         {/* </div> */}
                     </div>
                 </div>

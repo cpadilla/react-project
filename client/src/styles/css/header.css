@@ -4,7 +4,8 @@ Vars
 @import url(../css/animate.css);
 .header {
   font-family: 'Open Sans', sans-serif;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3)); }
   .header .logo-panel {
     text-align: center;
     position: relative;
@@ -45,6 +46,12 @@ Vars
         transition: 0.4s ease-in-out; }
       .header .topnav .tabs .tab:hover > .drips > .drip > .bar {
         filter: hue-rotate(180deg); }
+      .header .topnav .tabs .tab:hover > .linkWrapper > a {
+        color: #4cc9e7;
+        transform: scale(1.2);
+        -webkit-transition: 0.4s ease-in-out;
+        -moz-transition: 0.4s ease-in-out;
+        transition: 0.4s ease-in-out; }
       .header .topnav .tabs .tab {
         width: 100%;
         display: flex;
@@ -65,14 +72,9 @@ Vars
             color: #010000;
             vertical-align: text-bottom;
             text-decoration: none;
-            -webkit-transition: 0.4s ease-in-out;
-            -moz-transition: 0.4s ease-in-out;
-            transition: 0.4s ease-in-out; }
-            .header .topnav .tabs .tab .linkWrapper a:hover {
-              color: #4cc9e7;
-              -webkit-transition: 0.4s ease-in-out;
-              -moz-transition: 0.4s ease-in-out;
-              transition: 0.4s ease-in-out; }
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out; }
         .header .topnav .tabs .tab .drips {
           position: absolute;
           z-index: 0 !important;
@@ -87,25 +89,27 @@ Vars
           -webkit-transition: 0.4s ease-in-out;
           -moz-transition: 0.4s ease-in-out;
           transition: 0.4s ease-in-out; }
-          .header .topnav .tabs .tab .drips .drip .bar {
-            background: url("../../assets/bar.png");
-            width: 21px;
-            height: 1px; }
-            .header .topnav .tabs .tab .drips .drip .bar.small {
-              height: 35px;
-              transition: .5s ease-in-out; }
-            .header .topnav .tabs .tab .drips .drip .bar.medium {
-              height: 55px;
-              transition: .5s ease-in-out; }
-            .header .topnav .tabs .tab .drips .drip .bar.large {
-              height: 75px;
-              transition: .5s ease-in-out; }
-          .header .topnav .tabs .tab .drips .drip .drop {
-            background: url("../../assets/drip.png");
-            background-size: 100%;
-            margin-top: -3px;
-            height: 21px;
-            width: 21px; }
+          .header .topnav .tabs .tab .drips a {
+            display: flex; }
+            .header .topnav .tabs .tab .drips a .drip .bar {
+              background: url("../../assets/bar.png");
+              width: 21px;
+              height: 1px; }
+              .header .topnav .tabs .tab .drips a .drip .bar.small {
+                height: 35px;
+                transition: .5s ease-in-out; }
+              .header .topnav .tabs .tab .drips a .drip .bar.medium {
+                height: 55px;
+                transition: .5s ease-in-out; }
+              .header .topnav .tabs .tab .drips a .drip .bar.large {
+                height: 75px;
+                transition: .5s ease-in-out; }
+            .header .topnav .tabs .tab .drips a .drip .drop {
+              background: url("../../assets/drip.png");
+              background-size: 100%;
+              margin-top: -3px;
+              height: 21px;
+              width: 21px; }
   .header .active {
     background-color: #4CAF50;
     color: #ffffff; }
