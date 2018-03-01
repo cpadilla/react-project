@@ -98,7 +98,7 @@
                     position: relative;
                     display: flex;
                     height: 30px;
-                    bottom: 5px;
+                    bottom: 15px;
                     left: 0px;
                     padding: 0px 30px;
                     background: url("../../assets/white-pixel.png");
@@ -109,12 +109,20 @@
                         font-size: 20px;
                         color: $black;
                         vertical-align: text-bottom;
+                        align-content: flex-end;
                         text-decoration: none;
                         @include transition(all .4s ease-in-out);
+                        height: 40px;
+                        width: 100px;
 
                         &:hover {
                             // color: $blue;
                             // @include transition(.4s ease-in-out);
+                        }
+
+                        &.HOME {
+                            background: url("../../assets/home.png");
+                            background-size: 100%;
                         }
                     }
                 }

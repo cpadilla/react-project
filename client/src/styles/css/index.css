@@ -63,7 +63,7 @@
             position: relative;
             display: flex;
             height: 30px;
-            bottom: 5px;
+            bottom: 15px;
             left: 0px;
             padding: 0px 30px;
             background: url("../../assets/white-pixel.png");
@@ -72,10 +72,16 @@
               font-size: 20px;
               color: #010000;
               vertical-align: text-bottom;
+              align-content: flex-end;
               text-decoration: none;
               -webkit-transition: all 0.4s ease-in-out;
               -moz-transition: all 0.4s ease-in-out;
-              transition: all 0.4s ease-in-out; }
+              transition: all 0.4s ease-in-out;
+              height: 40px;
+              width: 100px; }
+              .header .header .topnav .tabs .tab .linkWrapper a.HOME {
+                background: url("../../assets/home.png");
+                background-size: 100%; }
           .header .header .topnav .tabs .tab .drips {
             position: absolute;
             z-index: 0 !important;
