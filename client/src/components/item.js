@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import '../styles/css/item.css'
 
 class Item extends Component {
@@ -15,6 +16,16 @@ class Item extends Component {
         // initalize state from props.location
         if (props.location.state == null) {
             // request item info from server
+
+            var url = "http://localhost:7777/api/item/" + this.state.id;
+            console.log(url)
+
+            axios.get(url).then((res) => {
+                console.log(res.data[0]);
+                this.setState({item: res.data[0]});
+            }).catch(function(error) {
+                console.log(error);
+            })
         } else {
             this.state['item'] = props.location.state.item;
         }

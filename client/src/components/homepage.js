@@ -19,7 +19,7 @@ class Homepage extends Component {
         }
 
         axios.get(this.url).then((res) => {
-            this.setState({album: res.data});
+            this.setState({album: res.data[0]});
         }).catch(function(error) {
             console.log(error);
         })

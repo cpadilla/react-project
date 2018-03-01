@@ -9,28 +9,30 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json())
 
-// var uri = "mongodb+srv://reader:wTqePYzFOo9JzKa7@cluster0-9npfp.mongodb.net/test";
-// mongoose.connect('mongodb+srv://reader:wTqePYzFOo9JzKa7@cluster0-9npfp.mongodb.net/react-project?authSource=admin');
 mongoose.connect('mongodb://reader:wTqePYzFOo9JzKa7@cluster0-shard-00-00-9npfp.mongodb.net:27017,cluster0-shard-00-01-9npfp.mongodb.net:27017,cluster0-shard-00-02-9npfp.mongodb.net:27017/react-project?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
 
 var db = mongoose.connection;
+
+var Product;
+
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function() {
     console.log("we're connected!");
 }).then((res) => {
     console.log("start");
-    var productSchema = new Schema({
+    var item = new Schema({
         productId: Number,
         tilte: String,
         price: Number,
         img: String,
-        type: String
-    }, { collection: "items"});
+        type: String,
+        tag: String
+    }, {collection: "items"});
 
-    var Product = mongoose.model('Product', productSchema);
+    Item = mongoose.model('item', item);
 
     // Return all products
-    Product.find({}, function(error,result) {
+    Item.find({}, function(error,result) {
         if (error) return console.error(error);
         console.log(result);
     });
@@ -86,18 +88,45 @@ var products = [
 ]
 
 app.get('/api/item/:itemId', function(req, res) {
-    console.log("Getting music");
-    res.json(music);
+    console.log("Getting item: " + req.params.itemId);
+    // res.json(music);
+
+    Item.find({productId: req.params.itemId}, function(error, result) {
+        if (error) {
+            console.log(error);
+            res.json();
+        }
+        console.log(result);
+        res.json(result);
+    });
 });
 
 app.get('/api/music', function(req, res) {
     console.log("Getting music");
-    res.json(music);
+    // res.json(music);
+
+    Item.find({type: "music"}, function(error, result) {
+        if (error) {
+            console.log(error);
+            res.json();
+        }
+        res.json(result);
+    });
+
 });
 
 app.get('/api/latestAlbum', function(req, res) {
     console.log("Getting latestAlbum");
-    res.json(latestAlbum);
+    // res.json(latestAlbum);
+
+    Item.find({tag: "latestAlbum"}, function(error, result) {
+        if (error) {
+            console.log(error);
+            res.json();
+        }
+        console.log(result)
+        res.json(result);
+    });
 });
 
 app.get('/api/products', function(req, res) {
