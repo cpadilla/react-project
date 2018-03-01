@@ -7,10 +7,20 @@ class Header extends Component {
         super(props);
 
         this.state = {
-            responsive: false
+            responsive: false,
+            isHovered: false
         };
 
         this.handleClick = this.handleMenuClick.bind(this);
+        this.handleHover = this.handleHover.bind(this);
+        this.renderLinks = this.renderLinks.bind(this);
+        this.renderDrops = this.renderDrops.bind(this);
+    }
+
+    handleHover() {
+        this.setState({
+            isHovered: !this.state.isHovered
+        })
     }
 
     handleMenuClick() {
@@ -19,6 +29,76 @@ class Header extends Component {
             responsive: !prevState.responsive
         }));
 
+    }
+
+    renderDrops(link, i) {
+        var one, two, three; var contact;
+
+        if (link.name == "HOME") {
+            one = "small";
+            two = "large";
+            three = "medium";
+        }
+        if (link.name == "MUSIC") {
+            one = "large";
+            two = "small";
+            three = "medium";
+        }
+        if (link.name == "STORE") {
+            one = "medium";
+            two = "large";
+            three = "small";
+        }
+        if (link.name == "TOUR") {
+            one = "medium";
+            two = "small";
+            three = "large";
+        }
+        if (link.name == "CONTACT") {
+            one = "small";
+            two = "large";
+            three = "medium";
+            contact = <div className="drip">
+                    <div className={"bar " + one} />
+                    <div className="drop" />
+                </div>
+        }
+
+        // var hoverClass = this ? (this.state.isHovered ? " animated slideDown" : " animated slideUp") : "";
+
+        var drips = <div className={"drips"} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
+                <div className="drip">
+                    <div className={"bar " + one} />
+                    <div className="drop" />
+                </div>
+                <div className="drip">
+                    <div className={"bar " + two} />
+                    <div className="drop" />
+                </div>
+                <div className="drip">
+                    <div className={"bar " + three} />
+                    <div className="drop" />
+                </div>
+                {contact}
+            </div>;
+
+        // return <div>
+        //     {drips}
+        // </div>;
+        return <div className="tab">
+            <div className="linkWrapper" key={i}>
+                <a href={link.link}>{link.name}</a>
+            </div>
+            {drips}
+        </div>;
+    }
+
+    renderLinks(link, i) {
+        return <div className="linkContainer">
+            <div className="linkWrapper" key={i}>
+                <a href={link.link}>{link.name}</a>
+            </div>
+        </div>;
     }
 
     render() {
@@ -46,18 +126,15 @@ class Header extends Component {
 
                 {/* TODO: look into classnames package */}
                 <div className={'topnav ' + className} id="topnav">
-                    {links.map(function(link,i) {
-                        return <div className="linkWrapper" key={i} >
-                            <a href={link.link}>{link.name}</a>
-                        </div>;
-                    })}
-                    {/* <a href="#Home">HOME</a>
-                    <a href="#Music">MUSIC</a>
-                    <a href="#Store">STORE</a>
-                    <a href="#Tour">TOUR</a>
-                    <a href="#Contact">CONTACT</a> */}
-                    {/* <a href="javascript:void(0);" className="icon" onClick={this.handleClick}>+</a> */}
+                    <div className="tabs">
+                        {/* <div className="linkRow"> */}
+                            {/* {links.map(this.renderLinks)} */}
+                        {/* </div>
+                        <div className="dripRow"> */}
+                            {links.map(this.renderDrops)}
+                        {/* </div> */}
                     </div>
+                </div>
             </div>
         )
     }

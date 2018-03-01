@@ -1,4 +1,12 @@
 @import 'Colors.scss';
+@import '../css/animate.css';
+
+
+@mixin translateY($e) {
+    -webkit-transform: translateY($e);
+    -moz-transform: translateY($e);
+    transform: translateY($e);
+};
 
 @mixin transition($e) {
     -webkit-transition: $e;
@@ -34,30 +42,137 @@
     }
 
     .topnav {
-        display: flex;
         position: relative;
+        display: flex;
         text-align: center;
-        align-items: flex-end;
-        background-color: $white;
-        justify-content: center;
-        height: 50px;
+        // align-items: center;
+        // background-color: grey;
+        // justify-content: space-around;
+        // justify-content: center;
+        height: 25px;
+        margin: 0px 20px;
 
-        .linkWrapper {
-            bottom: 0px;
-            left: 0px;
-            padding: 0px 30px;
-        }
+        .tabs {
+            margin-bottom: -90px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-content: center;
+            justify-content: space-around;
 
-        a {
-            font-size: 20px;
-            color: $black;
-            vertical-align: text-bottom;
-            text-decoration: none;
-            @include transition(.4s ease-in-out);
+            // .linkRow {
+            //     position:absolute;
+            //     display: flex;
+            //     z-index: 1 !important;
+            //     bottom: 1px;
 
-            &:hover {
-                color: $blue;
+            //     .linkContainer {
+            //         background: url("../../assets/white-pixel.png");
+            //         background-size: 100%;
+
+            .tab:hover > .drips {
+                @include translateY(10%);
                 @include transition(.4s ease-in-out);
+            }
+
+            .tab:hover > .drips > .drip > .bar {
+                filter: hue-rotate(180deg);
+            }
+
+            .tab {
+                width: 100%;
+                display: flex;
+                align-content: center;
+                justify-content: center;
+
+                .linkWrapper {
+                    z-index: 1;
+                    position: relative;
+                    display: flex;
+                    height: 30px;
+                    bottom: 5px;
+                    left: 0px;
+                    padding: 0px 30px;
+                    background: url("../../assets/white-pixel.png");
+                    background-size: 100%;
+                    // height: 200px;
+                    // box-shadow: 1px 1px 1px rgba(83, 83, 83, 0.541);
+                    a {
+                        font-size: 20px;
+                        color: $black;
+                        vertical-align: text-bottom;
+                        text-decoration: none;
+                        @include transition(.4s ease-in-out);
+
+                        &:hover {
+                            color: $blue;
+                            @include transition(.4s ease-in-out);
+                        }
+                    }
+                }
+            //     }
+            // }
+
+            // .dripRow {
+            //     position: absolute;
+            //     display: flex;
+            //     z-index: 0 !important;
+            //     bottom: -90px;
+            //     margin-left: -6px;
+
+                .drips {
+                    position: absolute;
+                    z-index: 0 !important;
+                    display: flex;
+                    padding: 0px 30px;
+                    // justify-content: center;
+                    justify-content: center;
+                    filter: drop-shadow(3px 10px 3px rgba(0,0,0,0.3));
+                    @include translateY(-10%);
+                    transition: .5s ease-in-out;
+                    $small: 35px;
+                    $medium: 55px;
+                    $large: 75px;
+                    @include transition(.4s ease-in-out);
+                    
+                    &:hover {
+                        // @include translateY(10%);
+                        // $small: 55px;
+                        // $medium: 75px;
+                        // $large: 95px;
+                    }
+
+                    .drip {
+                        .bar {
+                            background: url("../../assets/bar.png");
+                            width: 21px;
+                            height: 1px;
+
+                            &.small {
+                                height: $small;
+                                transition: .5s ease-in-out;
+                            }
+
+                            &.medium {
+                                height: $medium;
+                                transition: .5s ease-in-out;
+                            }
+                            &.large {
+                                height: $large;
+                                transition: .5s ease-in-out;
+                            }
+                        }
+                        .drop {
+                            background: url("../../assets/drip.png");
+                            background-size: 100%;
+                            margin-top: -3px;
+                            height: 21px;
+                            width: 21px;
+                        }
+                    }
+                }
+
             }
         }
     }

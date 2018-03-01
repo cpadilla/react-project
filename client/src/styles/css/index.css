@@ -1,7 +1,8 @@
 .header {
   /*
   Vars
-  */ }
+  */
+  @import url(../css/animate.css); }
   .header .header {
     font-family: 'Open Sans', sans-serif;
     background-color: #ffffff; }
@@ -23,30 +24,89 @@
       text-align: center;
       vertical-align: middle; }
     .header .header .topnav {
-      display: flex;
       position: relative;
+      display: flex;
       text-align: center;
-      align-items: flex-end;
-      background-color: #ffffff;
-      justify-content: center;
-      height: 50px; }
-      .header .header .topnav .linkWrapper {
-        bottom: 0px;
-        left: 0px;
-        padding: 0px 30px; }
-      .header .header .topnav a {
-        font-size: 20px;
-        color: #010000;
-        vertical-align: text-bottom;
-        text-decoration: none;
-        -webkit-transition: 0.4s ease-in-out;
-        -moz-transition: 0.4s ease-in-out;
-        transition: 0.4s ease-in-out; }
-        .header .header .topnav a:hover {
-          color: #4cc9e7;
+      height: 25px;
+      margin: 0px 20px; }
+      .header .header .topnav .tabs {
+        margin-bottom: -90px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: space-around; }
+        .header .header .topnav .tabs .tab:hover > .drips {
+          -webkit-transform: translateY(10%);
+          -moz-transform: translateY(10%);
+          transform: translateY(10%);
           -webkit-transition: 0.4s ease-in-out;
           -moz-transition: 0.4s ease-in-out;
           transition: 0.4s ease-in-out; }
+        .header .header .topnav .tabs .tab:hover > .drips > .drip > .bar {
+          filter: hue-rotate(180deg); }
+        .header .header .topnav .tabs .tab {
+          width: 100%;
+          display: flex;
+          align-content: center;
+          justify-content: center; }
+          .header .header .topnav .tabs .tab .linkWrapper {
+            z-index: 1;
+            position: relative;
+            display: flex;
+            height: 30px;
+            bottom: 5px;
+            left: 0px;
+            padding: 0px 30px;
+            background: url("../../assets/white-pixel.png");
+            background-size: 100%; }
+            .header .header .topnav .tabs .tab .linkWrapper a {
+              font-size: 20px;
+              color: #010000;
+              vertical-align: text-bottom;
+              text-decoration: none;
+              -webkit-transition: 0.4s ease-in-out;
+              -moz-transition: 0.4s ease-in-out;
+              transition: 0.4s ease-in-out; }
+              .header .header .topnav .tabs .tab .linkWrapper a:hover {
+                color: #4cc9e7;
+                -webkit-transition: 0.4s ease-in-out;
+                -moz-transition: 0.4s ease-in-out;
+                transition: 0.4s ease-in-out; }
+          .header .header .topnav .tabs .tab .drips {
+            position: absolute;
+            z-index: 0 !important;
+            display: flex;
+            padding: 0px 30px;
+            justify-content: center;
+            filter: drop-shadow(3px 10px 3px rgba(0, 0, 0, 0.3));
+            -webkit-transform: translateY(-10%);
+            -moz-transform: translateY(-10%);
+            transform: translateY(-10%);
+            transition: .5s ease-in-out;
+            -webkit-transition: 0.4s ease-in-out;
+            -moz-transition: 0.4s ease-in-out;
+            transition: 0.4s ease-in-out; }
+            .header .header .topnav .tabs .tab .drips .drip .bar {
+              background: url("../../assets/bar.png");
+              width: 21px;
+              height: 1px; }
+              .header .header .topnav .tabs .tab .drips .drip .bar.small {
+                height: 35px;
+                transition: .5s ease-in-out; }
+              .header .header .topnav .tabs .tab .drips .drip .bar.medium {
+                height: 55px;
+                transition: .5s ease-in-out; }
+              .header .header .topnav .tabs .tab .drips .drip .bar.large {
+                height: 75px;
+                transition: .5s ease-in-out; }
+            .header .header .topnav .tabs .tab .drips .drip .drop {
+              background: url("../../assets/drip.png");
+              background-size: 100%;
+              margin-top: -3px;
+              height: 21px;
+              width: 21px; }
     .header .header .active {
       background-color: #4CAF50;
       color: #ffffff; }
