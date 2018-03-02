@@ -20,7 +20,6 @@
     "sass": "sass --watch src/styles/scss:src/styles/css"
   },
   "devDependencies": {
-    "animate.css": "^3.6.1",
     "css-loader": "^0.28.10",
     "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.7.2",

@@ -1,7 +1,6 @@
 @import 'Colors.scss';
 @import '../css/animate.css';
 
-
 @mixin translateY($e) {
     -webkit-transform: translateY($e);
     -moz-transform: translateY($e);

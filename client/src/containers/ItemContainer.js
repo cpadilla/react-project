@@ -27,7 +27,7 @@ class ItemContainer extends React.Component {
 }
 
 function mapStateToProps(state, ownProps) {
-    console.log("mapStateToProps state: ", state);
+    // console.log("mapStateToProps state: ", state);
 
     return {shoppingCart: state}
 }

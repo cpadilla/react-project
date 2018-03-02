@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import '../styles/css/header.css'
+import {
+//   BrowserRouter as Router,
+//   Route,
+  Link
+} from 'react-router-dom';
 
 class Header extends Component {
 
@@ -64,7 +69,7 @@ class Header extends Component {
         }
 
         var drips = <div className={"drips"} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
-                <a href={link.link}>
+                <Link to={link.link}>
                 <div className="drip">
                     <div className={"bar " + one} />
                     <div className="drop" />
@@ -78,13 +83,13 @@ class Header extends Component {
                     <div className="drop" />
                 </div>
                 {contact}
-                </a>
+                </Link>
             </div>;
 
         return <div className="tab" key={i}>
-            <a className="linkWrapper" href={link.link}>
+            <Link className="linkWrapper" to={link.link}>
                 <div className={link.name} />
-            </a>
+            </Link>
             {drips}
         </div>;
     }
@@ -116,12 +121,7 @@ class Header extends Component {
                     {/* TODO: look into classnames package */}
                     <div className={'topnav ' + className} id="topnav">
                         <div className="tabs">
-                            {/* <div className="linkRow"> */}
-                                {/* {links.map(this.renderLinks)} */}
-                            {/* </div>
-                            <div className="dripRow"> */}
-                                {links.map(this.renderLinks)}
-                            {/* </div> */}
+                            {links.map(this.renderLinks)}
                         </div>
                     </div>
                 </div>

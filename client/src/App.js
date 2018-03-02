@@ -17,17 +17,18 @@ import Contact from './components/contact'
 import ItemContainer from './containers/ItemContainer'
 
 const enhancers = [];
-if (process.env.NODE_EVN === 'development') {
+// if (process.env.NODE_EVN === 'development') {
   const devToolsExtension = (window.devToolsExtension) ? window.devToolsExtension() : f => f;
   enhancers.push(devToolsExtension);
-}
+// }
 
 const middleware = [];
 const composedMiddleware = compose(
   applyMiddleware(...middleware), ...enhancers
 );
 
-let store = createStore(shoppingCart, {}, composedMiddleware);
+let store = createStore(shoppingCart, {},
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 class App extends Component {
 
@@ -44,8 +45,8 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={store}>
-        <Router>
+      <Router>
+        <Provider store={store}>
           <div className="App">
             <Header />
             <Route exact path='/' component={Homepage}/>
@@ -55,8 +56,8 @@ class App extends Component {
             <Route exact path='/contact' component={Contact}/>
             <Route exact path='/item/:id' component={ItemContainer}/>
           </div>
-        </Router>
-      </Provider>
+        </Provider>
+      </Router>
     );
   }
 }

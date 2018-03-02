@@ -5,12 +5,12 @@ const shoppingCart = function cart(state = [], action) {
     switch (action.type) {
         case ADD_ITEM:
 
-            // var product = state.find((item) => {
-            //     return item.productId === action.productId;
-            // });
+            var product = state.find((item) => {
+                return item.productId === action.productId;
+            });
 
             // if they don't have the item in their shopping cart
-            // if (!product) {
+            if (!product) {
                 return [
                     ...state,
                     {
@@ -18,19 +18,19 @@ const shoppingCart = function cart(state = [], action) {
                         quantity: action.quantity
                     }
                 ]
-            // } else {
-            //     var tempState = state;
-            //     tempState.forEach((item, index) => {
-            //         if (item.productId === product.productId) {
-            //             state[index] = {
-            //                 productId: action.productId,
-            //                 quantity: action.quantity + product.quantity
-            //             }
-            //         }
-            //     });
-            //     setState
-            //     return state;
-            // }
+            } else {
+                var tempState = state;
+                tempState.forEach((item, index) => {
+                    if (item.productId === product.productId) {
+                        state[index] = {
+                            productId: action.productId,
+                            quantity: action.quantity + product.quantity
+                        }
+                    }
+                });
+                state = tempState;
+                return state;
+            }
 
         default:
             return state;
