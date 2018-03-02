@@ -27,10 +27,9 @@ Vars
     position: relative;
     display: flex;
     text-align: center;
-    height: 25px;
+    height: 40px;
     margin: 0px 20px; }
     .header .topnav .tabs {
-      margin-bottom: -90px;
       position: relative;
       width: 100%;
       height: 100%;
@@ -46,13 +45,15 @@ Vars
         transition: 0.4s ease-in-out; }
       .header .topnav .tabs .tab:hover > .drips > .drip > .bar {
         filter: hue-rotate(180deg); }
-      .header .topnav .tabs .tab:hover > .linkWrapper > a {
+      .header .topnav .tabs .tab:hover > .linkWrapper > div {
         color: #4cc9e7;
         transform: scale(1.2);
+        transform-origin: bottom;
         -webkit-transition: 0.4s ease-in-out;
         -moz-transition: 0.4s ease-in-out;
         transition: 0.4s ease-in-out; }
       .header .topnav .tabs .tab {
+        height: 100%;
         width: 100%;
         display: flex;
         align-content: center;
@@ -61,13 +62,13 @@ Vars
           z-index: 1;
           position: relative;
           display: flex;
-          height: 30px;
-          bottom: 15px;
+          height: 100%;
+          bottom: 2px;
           left: 0px;
           padding: 0px 30px;
           background: url("../../assets/white-pixel.png");
           background-size: 100%; }
-          .header .topnav .tabs .tab .linkWrapper a {
+          .header .topnav .tabs .tab .linkWrapper div {
             font-size: 20px;
             color: #010000;
             vertical-align: text-bottom;
@@ -78,15 +79,27 @@ Vars
             transition: all 0.4s ease-in-out;
             height: 40px;
             width: 100px; }
-            .header .topnav .tabs .tab .linkWrapper a.HOME {
+            .header .topnav .tabs .tab .linkWrapper div.HOME {
+              background: url("../../assets/home.png");
+              background-size: 100%; }
+            .header .topnav .tabs .tab .linkWrapper div.MUSIC {
+              background: url("../../assets/home.png");
+              background-size: 100%; }
+            .header .topnav .tabs .tab .linkWrapper div.STORE {
+              background: url("../../assets/home.png");
+              background-size: 100%; }
+            .header .topnav .tabs .tab .linkWrapper div.TOUR {
+              background: url("../../assets/home.png");
+              background-size: 100%; }
+            .header .topnav .tabs .tab .linkWrapper div.CONTACT {
               background: url("../../assets/home.png");
               background-size: 100%; }
         .header .topnav .tabs .tab .drips {
           position: absolute;
+          bottom: -70px;
           z-index: 0 !important;
           display: flex;
           padding: 0px 30px;
-          justify-content: center;
           filter: drop-shadow(3px 10px 3px rgba(0, 0, 0, 0.3));
           -webkit-transform: translateY(-10%);
           -moz-transform: translateY(-10%);

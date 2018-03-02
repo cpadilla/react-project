@@ -82,9 +82,9 @@ class Header extends Component {
             </div>;
 
         return <div className="tab" key={i}>
-            <div className="linkWrapper" >
-                <a className={link.name} href={link.link}></a>
-            </div>
+            <a className="linkWrapper" href={link.link}>
+                <div className={link.name} />
+            </a>
             {drips}
         </div>;
     }

@@ -50,11 +50,12 @@
         // background-color: grey;
         // justify-content: space-around;
         // justify-content: center;
-        height: 25px;
+        height: 40px;
         margin: 0px 20px;
 
         .tabs {
-            margin-bottom: -90px;
+            // bottom: -10px;
+            // margin-bottom: -90px;
             position: relative;
             width: 100%;
             height: 100%;
@@ -81,13 +82,15 @@
                 filter: hue-rotate(180deg);
             }
 
-            .tab:hover > .linkWrapper > a {
+            .tab:hover > .linkWrapper > div {
                 color: $blue;
                 transform: scale(1.2);
+                transform-origin: bottom;
                 @include transition(.4s ease-in-out);
             }
 
             .tab {
+                height: 100%;
                 width: 100%;
                 display: flex;
                 align-content: center;
@@ -97,15 +100,16 @@
                     z-index: 1;
                     position: relative;
                     display: flex;
-                    height: 30px;
-                    bottom: 15px;
+                    height: 100%;
+                    // height: 30px;
+                    bottom: 2px;
                     left: 0px;
                     padding: 0px 30px;
                     background: url("../../assets/white-pixel.png");
                     background-size: 100%;
                     // height: 200px;
                     // box-shadow: 1px 1px 1px rgba(83, 83, 83, 0.541);
-                    a {
+                    div {
                         font-size: 20px;
                         color: $black;
                         vertical-align: text-bottom;
@@ -115,34 +119,39 @@
                         height: 40px;
                         width: 100px;
 
-                        &:hover {
-                            // color: $blue;
-                            // @include transition(.4s ease-in-out);
+                        &.HOME {
+                            background: url("../../assets/home.png");
+                            background-size: 100%;
                         }
 
-                        &.HOME {
+                        &.MUSIC {
+                            background: url("../../assets/home.png");
+                            background-size: 100%;
+                        }
+
+                        &.STORE {
+                            background: url("../../assets/home.png");
+                            background-size: 100%;
+                        }
+
+                        &.TOUR {
+                            background: url("../../assets/home.png");
+                            background-size: 100%;
+                        }
+
+                        &.CONTACT {
                             background: url("../../assets/home.png");
                             background-size: 100%;
                         }
                     }
                 }
-            //     }
-            // }
-
-            // .dripRow {
-            //     position: absolute;
-            //     display: flex;
-            //     z-index: 0 !important;
-            //     bottom: -90px;
-            //     margin-left: -6px;
 
                 .drips {
                     position: absolute;
+                    bottom: -70px;
                     z-index: 0 !important;
                     display: flex;
                     padding: 0px 30px;
-                    // justify-content: center;
-                    justify-content: center;
                     filter: drop-shadow(3px 10px 3px rgba(0,0,0,0.3));
                     @include translateY(-10%);
                     transition: .5s ease-in-out;
@@ -150,13 +159,6 @@
                     $medium: 55px;
                     $large: 75px;
                     @include transition(.4s ease-in-out);
-                    
-                    &:hover {
-                        // @include translateY(10%);
-                        // $small: 55px;
-                        // $medium: 75px;
-                        // $large: 95px;
-                    }
 
                     a {
                         display: flex;
