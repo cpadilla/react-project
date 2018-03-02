@@ -86,16 +86,16 @@ Vars
               background: url("../../assets/home.png");
               background-size: 100%; }
             .header .fixed .topnav .tabs .tab .linkWrapper div.MUSIC {
-              background: url("../../assets/home.png");
+              background: url("../../assets/music.png");
               background-size: 100%; }
             .header .fixed .topnav .tabs .tab .linkWrapper div.STORE {
-              background: url("../../assets/home.png");
+              background: url("../../assets/store.png");
               background-size: 100%; }
             .header .fixed .topnav .tabs .tab .linkWrapper div.TOUR {
-              background: url("../../assets/home.png");
+              background: url("../../assets/tour.png");
               background-size: 100%; }
             .header .fixed .topnav .tabs .tab .linkWrapper div.CONTACT {
-              background: url("../../assets/home.png");
+              background: url("../../assets/contact.png");
               background-size: 100%; }
         .header .fixed .topnav .tabs .tab .drips {
           position: absolute;
