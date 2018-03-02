@@ -46,7 +46,7 @@ class Item extends Component {
     }
 
     onClick() {
-        this.props.actions.addItemToCart(this.state.id, this.state.quantity);
+        this.props.actions.addItemToCart(this.state.id, Number(this.state.quantity));
     }
 
     componentDidMount() {

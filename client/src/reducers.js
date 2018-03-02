@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { ADD_ITEM } from './actions'
 
-const shoppingCart = function cart(state = [], action) {
+const shoppingCart = function cart(state = [{productId: 0, quantity:0}], action) {
     switch (action.type) {
         case ADD_ITEM:
 
@@ -9,8 +9,10 @@ const shoppingCart = function cart(state = [], action) {
                 return item.productId === action.productId;
             });
 
-            // if they don't have the item in their shopping cart
+            // // if they don't have the item in their shopping cart
             if (!product) {
+                console.log("state :", state);
+
                 return [
                     ...state,
                     {
@@ -19,12 +21,13 @@ const shoppingCart = function cart(state = [], action) {
                     }
                 ]
             } else {
+
                 var tempState = state;
                 tempState.forEach((item, index) => {
-                    if (item.productId === product.productId) {
+                    if (item.productId === action.productId) {
                         state[index] = {
                             productId: action.productId,
-                            quantity: action.quantity + product.quantity
+                            quantity: action.quantity + item.quantity
                         }
                     }
                 });
@@ -33,7 +36,7 @@ const shoppingCart = function cart(state = [], action) {
             }
 
         default:
-            return state;
+            return [];
     }
 }
 

@@ -11,7 +11,8 @@ class ItemContainer extends React.Component {
 
         this.state = {
             id: props.match.params.id,
-            item: props.location.state.item
+            item: props.location.state.item,
+            shoppingCart: []
         }
     }
 
@@ -29,7 +30,7 @@ class ItemContainer extends React.Component {
 function mapStateToProps(state, ownProps) {
     // console.log("mapStateToProps state: ", state);
 
-    return {shoppingCart: state}
+    return {}
 }
 
 function mapDispatchToProps(dispatch) {
