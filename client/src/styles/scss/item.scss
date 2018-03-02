@@ -20,5 +20,14 @@
             }
         }
 
+        .addToCart {
+            display: flex;
+            justify-content: space-between;
+
+            input {
+                max-width: 50px;
+            }
+        }
+
     }
 }

@@ -15,191 +15,185 @@
 };
 
 .header {
-    font-family: 'Open Sans', sans-serif;
-    // height: 150px;
-    background-color: $white;
-    filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.3));
 
-    .logo-panel {
-        text-align: center;
-        position: relative;
-        height: 150px;
+    .fixed {
+        font-family: 'Open Sans', sans-serif;
+        background-color: $white;
         width: 100%;
-        // line-height: 100px;
-    }
+        z-index: 10;
+        position: fixed;
 
-    .logo {
-        background: url('../../assets/morning-teleportation.jpg');
-        background-size: 100%;
-        background-position-y: 50%;
-        background-repeat: no-repeat;
-        display: inline-block;
-        max-height: 170px;
-        max-width: 1200px;
-        height: 100%;
-        width: 100%;
-        text-align: center;
-        vertical-align: middle;
-    }
+        filter: drop-shadow(0px 3px 3px rgba(0,0,0,0.3));
 
-    .topnav {
-        position: relative;
-        display: flex;
-        text-align: center;
-        // align-items: center;
-        // background-color: grey;
-        // justify-content: space-around;
-        // justify-content: center;
-        height: 40px;
-        margin: 0px 20px;
-
-        .tabs {
-            // bottom: -10px;
-            // margin-bottom: -90px;
+        .logo-panel {
+            text-align: center;
             position: relative;
+            height: 150px;
             width: 100%;
+        }
+
+        .logo {
+            background: url('../../assets/morning-teleportation.jpg');
+            background-size: 100%;
+            background-position-y: 50%;
+            background-repeat: no-repeat;
+            display: inline-block;
+            max-height: 170px;
+            max-width: 1200px;
             height: 100%;
+            width: 100%;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .topnav {
+            position: relative;
             display: flex;
-            align-content: center;
-            justify-content: space-around;
+            text-align: center;
+            height: 40px;
+            margin: 0px 20px;
 
-            // .linkRow {
-            //     position:absolute;
-            //     display: flex;
-            //     z-index: 1 !important;
-            //     bottom: 1px;
-
-            //     .linkContainer {
-            //         background: url("../../assets/white-pixel.png");
-            //         background-size: 100%;
-
-            .tab:hover > .drips {
-                @include translateY(10%);
-                @include transition(.4s ease-in-out);
-            }
-
-            .tab:hover > .drips > .drip > .bar {
-                filter: hue-rotate(180deg);
-            }
-
-            .tab:hover > .linkWrapper > div {
-                color: $blue;
-                transform: scale(1.2);
-                transform-origin: bottom;
-                @include transition(.4s ease-in-out);
-            }
-
-            .tab {
-                height: 100%;
+            .tabs {
+                position: relative;
                 width: 100%;
+                height: 100%;
                 display: flex;
                 align-content: center;
-                justify-content: center;
+                justify-content: space-around;
 
-                .linkWrapper {
-                    z-index: 1;
-                    position: relative;
-                    display: flex;
-                    height: 100%;
-                    // height: 30px;
-                    bottom: 2px;
-                    left: 0px;
-                    padding: 0px 30px;
-                    background: url("../../assets/white-pixel.png");
-                    background-size: 100%;
-                    // height: 200px;
-                    // box-shadow: 1px 1px 1px rgba(83, 83, 83, 0.541);
-                    div {
-                        font-size: 20px;
-                        color: $black;
-                        vertical-align: text-bottom;
-                        align-content: flex-end;
-                        text-decoration: none;
-                        @include transition(all .4s ease-in-out);
-                        height: 40px;
-                        width: 100px;
 
-                        &.HOME {
-                            background: url("../../assets/home.png");
-                            background-size: 100%;
-                        }
-
-                        &.MUSIC {
-                            background: url("../../assets/home.png");
-                            background-size: 100%;
-                        }
-
-                        &.STORE {
-                            background: url("../../assets/home.png");
-                            background-size: 100%;
-                        }
-
-                        &.TOUR {
-                            background: url("../../assets/home.png");
-                            background-size: 100%;
-                        }
-
-                        &.CONTACT {
-                            background: url("../../assets/home.png");
-                            background-size: 100%;
-                        }
-                    }
-                }
-
-                .drips {
-                    position: absolute;
-                    bottom: -70px;
-                    z-index: 0 !important;
-                    display: flex;
-                    padding: 0px 30px;
-                    filter: drop-shadow(3px 10px 3px rgba(0,0,0,0.3));
-                    @include translateY(-10%);
-                    transition: .5s ease-in-out;
-                    $small: 35px;
-                    $medium: 55px;
-                    $large: 75px;
+                .tab:hover > .drips {
+                    @include translateY(10%);
                     @include transition(.4s ease-in-out);
+                }
 
-                    a {
+                .tab:hover > .drips > .drip > .bar {
+                    filter: hue-rotate(180deg);
+                }
+
+                .tab:hover > .linkWrapper > div {
+                    color: $blue;
+                    transform: scale(1.2);
+                    transform-origin: bottom;
+                    @include transition(.4s ease-in-out);
+                }
+
+                .tab {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    align-content: center;
+                    justify-content: center;
+
+                    .linkWrapper {
+                        z-index: 1;
+                        position: relative;
                         display: flex;
+                        height: 100%;
+                        // height: 30px;
+                        bottom: 2px;
+                        left: 0px;
+                        padding: 0px 30px;
+                        background: url("../../assets/white-pixel.png");
+                        background-size: 100%;
+                        // height: 200px;
+                        // box-shadow: 1px 1px 1px rgba(83, 83, 83, 0.541);
+                        div {
+                            font-size: 20px;
+                            color: $black;
+                            vertical-align: text-bottom;
+                            align-content: flex-end;
+                            text-decoration: none;
+                            @include transition(all .4s ease-in-out);
+                            height: 40px;
+                            width: 100px;
 
-                        .drip {
-                            .bar {
-                                background: url("../../assets/bar.png");
-                                width: 21px;
-                                height: 1px;
-
-                                &.small {
-                                    height: $small;
-                                    transition: .5s ease-in-out;
-                                }
-
-                                &.medium {
-                                    height: $medium;
-                                    transition: .5s ease-in-out;
-                                }
-                                &.large {
-                                    height: $large;
-                                    transition: .5s ease-in-out;
-                                }
-                            }
-                            .drop {
-                                background: url("../../assets/drip.png");
+                            &.HOME {
+                                background: url("../../assets/home.png");
                                 background-size: 100%;
-                                margin-top: -3px;
-                                height: 21px;
-                                width: 21px;
+                            }
+
+                            &.MUSIC {
+                                background: url("../../assets/home.png");
+                                background-size: 100%;
+                            }
+
+                            &.STORE {
+                                background: url("../../assets/home.png");
+                                background-size: 100%;
+                            }
+
+                            &.TOUR {
+                                background: url("../../assets/home.png");
+                                background-size: 100%;
+                            }
+
+                            &.CONTACT {
+                                background: url("../../assets/home.png");
+                                background-size: 100%;
                             }
                         }
                     }
-                }
 
+                    .drips {
+                        position: absolute;
+                        bottom: -70px;
+                        z-index: 0 !important;
+                        display: flex;
+                        padding: 0px 30px;
+                        filter: drop-shadow(3px 10px 3px rgba(0,0,0,0.3));
+                        @include translateY(-10%);
+                        transition: .5s ease-in-out;
+                        $small: 35px;
+                        $medium: 55px;
+                        $large: 75px;
+                        @include transition(.4s ease-in-out);
+
+                        a {
+                            display: flex;
+
+                            .drip {
+                                .bar {
+                                    background: url("../../assets/bar.png");
+                                    width: 21px;
+                                    height: 1px;
+
+                                    &.small {
+                                        height: $small;
+                                        transition: .5s ease-in-out;
+                                    }
+
+                                    &.medium {
+                                        height: $medium;
+                                        transition: .5s ease-in-out;
+                                    }
+                                    &.large {
+                                        height: $large;
+                                        transition: .5s ease-in-out;
+                                    }
+                                }
+                                .drop {
+                                    background: url("../../assets/drip.png");
+                                    background-size: 100%;
+                                    margin-top: -3px;
+                                    height: 21px;
+                                    width: 21px;
+                                }
+                            }
+                        }
+                    }
+
+                }
             }
+        }
+
+        .active {
+            background-color: #4CAF50;
+            color: $white;
         }
     }
 
-    .active {
-        background-color: #4CAF50;
-        color: $white;
+    .headerSpace {
+        height: 190px;
     }
 }

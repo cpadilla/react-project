@@ -15,7 +15,7 @@
             "type": "chrome",
             "request": "attach",
             "name": "Attach to Chrome",
-            "url": "9333",
+            "url": "9222",
             "webRoot": "${workspaceFolder}"
         }
     ]

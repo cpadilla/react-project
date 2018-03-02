@@ -2,16 +2,19 @@
 Vars
 */
 @import url(../css/animate.css);
-.header {
+.header .fixed {
   font-family: 'Open Sans', sans-serif;
   background-color: #ffffff;
+  width: 100%;
+  z-index: 10;
+  position: fixed;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3)); }
-  .header .logo-panel {
+  .header .fixed .logo-panel {
     text-align: center;
     position: relative;
     height: 150px;
     width: 100%; }
-  .header .logo {
+  .header .fixed .logo {
     background: url("../../assets/morning-teleportation.jpg");
     background-size: 100%;
     background-position-y: 50%;
@@ -23,42 +26,42 @@ Vars
     width: 100%;
     text-align: center;
     vertical-align: middle; }
-  .header .topnav {
+  .header .fixed .topnav {
     position: relative;
     display: flex;
     text-align: center;
     height: 40px;
     margin: 0px 20px; }
-    .header .topnav .tabs {
+    .header .fixed .topnav .tabs {
       position: relative;
       width: 100%;
       height: 100%;
       display: flex;
       align-content: center;
       justify-content: space-around; }
-      .header .topnav .tabs .tab:hover > .drips {
+      .header .fixed .topnav .tabs .tab:hover > .drips {
         -webkit-transform: translateY(10%);
         -moz-transform: translateY(10%);
         transform: translateY(10%);
         -webkit-transition: 0.4s ease-in-out;
         -moz-transition: 0.4s ease-in-out;
         transition: 0.4s ease-in-out; }
-      .header .topnav .tabs .tab:hover > .drips > .drip > .bar {
+      .header .fixed .topnav .tabs .tab:hover > .drips > .drip > .bar {
         filter: hue-rotate(180deg); }
-      .header .topnav .tabs .tab:hover > .linkWrapper > div {
+      .header .fixed .topnav .tabs .tab:hover > .linkWrapper > div {
         color: #4cc9e7;
         transform: scale(1.2);
         transform-origin: bottom;
         -webkit-transition: 0.4s ease-in-out;
         -moz-transition: 0.4s ease-in-out;
         transition: 0.4s ease-in-out; }
-      .header .topnav .tabs .tab {
+      .header .fixed .topnav .tabs .tab {
         height: 100%;
         width: 100%;
         display: flex;
         align-content: center;
         justify-content: center; }
-        .header .topnav .tabs .tab .linkWrapper {
+        .header .fixed .topnav .tabs .tab .linkWrapper {
           z-index: 1;
           position: relative;
           display: flex;
@@ -68,7 +71,7 @@ Vars
           padding: 0px 30px;
           background: url("../../assets/white-pixel.png");
           background-size: 100%; }
-          .header .topnav .tabs .tab .linkWrapper div {
+          .header .fixed .topnav .tabs .tab .linkWrapper div {
             font-size: 20px;
             color: #010000;
             vertical-align: text-bottom;
@@ -79,22 +82,22 @@ Vars
             transition: all 0.4s ease-in-out;
             height: 40px;
             width: 100px; }
-            .header .topnav .tabs .tab .linkWrapper div.HOME {
+            .header .fixed .topnav .tabs .tab .linkWrapper div.HOME {
               background: url("../../assets/home.png");
               background-size: 100%; }
-            .header .topnav .tabs .tab .linkWrapper div.MUSIC {
+            .header .fixed .topnav .tabs .tab .linkWrapper div.MUSIC {
               background: url("../../assets/home.png");
               background-size: 100%; }
-            .header .topnav .tabs .tab .linkWrapper div.STORE {
+            .header .fixed .topnav .tabs .tab .linkWrapper div.STORE {
               background: url("../../assets/home.png");
               background-size: 100%; }
-            .header .topnav .tabs .tab .linkWrapper div.TOUR {
+            .header .fixed .topnav .tabs .tab .linkWrapper div.TOUR {
               background: url("../../assets/home.png");
               background-size: 100%; }
-            .header .topnav .tabs .tab .linkWrapper div.CONTACT {
+            .header .fixed .topnav .tabs .tab .linkWrapper div.CONTACT {
               background: url("../../assets/home.png");
               background-size: 100%; }
-        .header .topnav .tabs .tab .drips {
+        .header .fixed .topnav .tabs .tab .drips {
           position: absolute;
           bottom: -70px;
           z-index: 0 !important;
@@ -108,29 +111,31 @@ Vars
           -webkit-transition: 0.4s ease-in-out;
           -moz-transition: 0.4s ease-in-out;
           transition: 0.4s ease-in-out; }
-          .header .topnav .tabs .tab .drips a {
+          .header .fixed .topnav .tabs .tab .drips a {
             display: flex; }
-            .header .topnav .tabs .tab .drips a .drip .bar {
+            .header .fixed .topnav .tabs .tab .drips a .drip .bar {
               background: url("../../assets/bar.png");
               width: 21px;
               height: 1px; }
-              .header .topnav .tabs .tab .drips a .drip .bar.small {
+              .header .fixed .topnav .tabs .tab .drips a .drip .bar.small {
                 height: 35px;
                 transition: .5s ease-in-out; }
-              .header .topnav .tabs .tab .drips a .drip .bar.medium {
+              .header .fixed .topnav .tabs .tab .drips a .drip .bar.medium {
                 height: 55px;
                 transition: .5s ease-in-out; }
-              .header .topnav .tabs .tab .drips a .drip .bar.large {
+              .header .fixed .topnav .tabs .tab .drips a .drip .bar.large {
                 height: 75px;
                 transition: .5s ease-in-out; }
-            .header .topnav .tabs .tab .drips a .drip .drop {
+            .header .fixed .topnav .tabs .tab .drips a .drip .drop {
               background: url("../../assets/drip.png");
               background-size: 100%;
               margin-top: -3px;
               height: 21px;
               width: 21px; }
-  .header .active {
+  .header .fixed .active {
     background-color: #4CAF50;
     color: #ffffff; }
+.header .headerSpace {
+  height: 190px; }
 
 /*# sourceMappingURL=header.css.map */

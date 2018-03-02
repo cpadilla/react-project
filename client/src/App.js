@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { applyMiddleware, compose, createStore } from 'redux';
+import shoppingCart from './reducers';
 import {
   BrowserRouter as Router,
   Route,
@@ -10,10 +13,24 @@ import Music from './components/music'
 import Store from './components/store'
 import Tour from './components/tour'
 import Contact from './components/contact'
-import Item from './components/item'
+// import Item from './components/item'
+import ItemContainer from './containers/ItemContainer'
 
+const enhancers = [];
+if (process.env.NODE_EVN === 'development') {
+  const devToolsExtension = (window.devToolsExtension) ? window.devToolsExtension() : f => f;
+  enhancers.push(devToolsExtension);
+}
+
+const middleware = [];
+const composedMiddleware = compose(
+  applyMiddleware(...middleware), ...enhancers
+);
+
+let store = createStore(shoppingCart, {}, composedMiddleware);
 
 class App extends Component {
+
 
   constructor(props) {
     super(props);
@@ -21,21 +38,25 @@ class App extends Component {
     this.state = {
       itemId: 0
     }
+
+
   }
 
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Header />
-          <Route exact path='/' component={Homepage}/>
-          <Route exact path='/music' component={Music} />
-          <Route exact path='/store' component={Store}/>
-          <Route exact path='/tour' component={Tour}/>
-          <Route exact path='/contact' component={Contact}/>
-          <Route exact path='/item/:id' component={Item}/>
-        </div>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Header />
+            <Route exact path='/' component={Homepage}/>
+            <Route exact path='/music' component={Music} />
+            <Route exact path='/store' component={Store}/>
+            <Route exact path='/tour' component={Tour}/>
+            <Route exact path='/contact' component={Contact}/>
+            <Route exact path='/item/:id' component={ItemContainer}/>
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }

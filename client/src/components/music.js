@@ -32,22 +32,13 @@ class Music extends Component {
         return (
             <div className="music">
                 {this.state.music.map((album, i) => {
-                    // console.log("album img: " + album.img);
-
-                    // var divStyle =  {
-                    //     backgroundImage: 'url(../assets/' + album.img + ')',
-                    //     width: '300px',
-                    //     height: '300px'
-                    // }
 
                     return (
                         <div className="album" key={i}>
-                            {/* <a href={'/item/' + album.productId}>  */}
-                                <Link to={{ pathname: '/item/' + album.productId,
-                                            state: { item: album}}}>
-                                    <img alt={album.title} src={require("../assets/" + album.img)} />
-                                </Link>
-                            {/* </a> */}
+                            <Link to={{ pathname: '/item/' + album.productId,
+                                        state: { item: album}}}>
+                                <img alt={album.title} src={require("../assets/" + album.img)} />
+                            </Link>
                             <div>
                                 {album.productId}
                             </div>

@@ -108,21 +108,24 @@ class Header extends Component {
 
         return  (
             <div className="header">
-                <div className="logo-panel">
-                    <div className="logo" />
-                </div>
+                <div className="fixed">
+                    <div className="logo-panel">
+                        <div className="logo" />
+                    </div>
 
-                {/* TODO: look into classnames package */}
-                <div className={'topnav ' + className} id="topnav">
-                    <div className="tabs">
-                        {/* <div className="linkRow"> */}
-                            {/* {links.map(this.renderLinks)} */}
-                        {/* </div>
-                        <div className="dripRow"> */}
-                            {links.map(this.renderLinks)}
-                        {/* </div> */}
+                    {/* TODO: look into classnames package */}
+                    <div className={'topnav ' + className} id="topnav">
+                        <div className="tabs">
+                            {/* <div className="linkRow"> */}
+                                {/* {links.map(this.renderLinks)} */}
+                            {/* </div>
+                            <div className="dripRow"> */}
+                                {links.map(this.renderLinks)}
+                            {/* </div> */}
+                        </div>
                     </div>
                 </div>
+                <div className="headerSpace" />
             </div>
         )
     }

@@ -1,18 +1,33 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup,
+var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer,
+header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
 .header {
   /*
   Vars
   */
   @import url(../css/animate.css); }
-  .header .header {
+  .header .header .fixed {
     font-family: 'Open Sans', sans-serif;
     background-color: #ffffff;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3)); }
-    .header .header .logo-panel {
+    .header .header .fixed .logo-panel {
       text-align: center;
       position: relative;
       height: 150px;
       width: 100%; }
-    .header .header .logo {
+    .header .header .fixed .logo {
       background: url("../../assets/morning-teleportation.jpg");
       background-size: 100%;
       background-position-y: 50%;
@@ -24,42 +39,42 @@
       width: 100%;
       text-align: center;
       vertical-align: middle; }
-    .header .header .topnav {
+    .header .header .fixed .topnav {
       position: relative;
       display: flex;
       text-align: center;
       height: 40px;
       margin: 0px 20px; }
-      .header .header .topnav .tabs {
+      .header .header .fixed .topnav .tabs {
         position: relative;
         width: 100%;
         height: 100%;
         display: flex;
         align-content: center;
         justify-content: space-around; }
-        .header .header .topnav .tabs .tab:hover > .drips {
+        .header .header .fixed .topnav .tabs .tab:hover > .drips {
           -webkit-transform: translateY(10%);
           -moz-transform: translateY(10%);
           transform: translateY(10%);
           -webkit-transition: 0.4s ease-in-out;
           -moz-transition: 0.4s ease-in-out;
           transition: 0.4s ease-in-out; }
-        .header .header .topnav .tabs .tab:hover > .drips > .drip > .bar {
+        .header .header .fixed .topnav .tabs .tab:hover > .drips > .drip > .bar {
           filter: hue-rotate(180deg); }
-        .header .header .topnav .tabs .tab:hover > .linkWrapper > div {
+        .header .header .fixed .topnav .tabs .tab:hover > .linkWrapper > div {
           color: #4cc9e7;
           transform: scale(1.2);
           transform-origin: bottom;
           -webkit-transition: 0.4s ease-in-out;
           -moz-transition: 0.4s ease-in-out;
           transition: 0.4s ease-in-out; }
-        .header .header .topnav .tabs .tab {
+        .header .header .fixed .topnav .tabs .tab {
           height: 100%;
           width: 100%;
           display: flex;
           align-content: center;
           justify-content: center; }
-          .header .header .topnav .tabs .tab .linkWrapper {
+          .header .header .fixed .topnav .tabs .tab .linkWrapper {
             z-index: 1;
             position: relative;
             display: flex;
@@ -69,7 +84,7 @@
             padding: 0px 30px;
             background: url("../../assets/white-pixel.png");
             background-size: 100%; }
-            .header .header .topnav .tabs .tab .linkWrapper div {
+            .header .header .fixed .topnav .tabs .tab .linkWrapper div {
               font-size: 20px;
               color: #010000;
               vertical-align: text-bottom;
@@ -80,22 +95,22 @@
               transition: all 0.4s ease-in-out;
               height: 40px;
               width: 100px; }
-              .header .header .topnav .tabs .tab .linkWrapper div.HOME {
+              .header .header .fixed .topnav .tabs .tab .linkWrapper div.HOME {
                 background: url("../../assets/home.png");
                 background-size: 100%; }
-              .header .header .topnav .tabs .tab .linkWrapper div.MUSIC {
+              .header .header .fixed .topnav .tabs .tab .linkWrapper div.MUSIC {
                 background: url("../../assets/home.png");
                 background-size: 100%; }
-              .header .header .topnav .tabs .tab .linkWrapper div.STORE {
+              .header .header .fixed .topnav .tabs .tab .linkWrapper div.STORE {
                 background: url("../../assets/home.png");
                 background-size: 100%; }
-              .header .header .topnav .tabs .tab .linkWrapper div.TOUR {
+              .header .header .fixed .topnav .tabs .tab .linkWrapper div.TOUR {
                 background: url("../../assets/home.png");
                 background-size: 100%; }
-              .header .header .topnav .tabs .tab .linkWrapper div.CONTACT {
+              .header .header .fixed .topnav .tabs .tab .linkWrapper div.CONTACT {
                 background: url("../../assets/home.png");
                 background-size: 100%; }
-          .header .header .topnav .tabs .tab .drips {
+          .header .header .fixed .topnav .tabs .tab .drips {
             position: absolute;
             bottom: -70px;
             z-index: 0 !important;
@@ -109,30 +124,32 @@
             -webkit-transition: 0.4s ease-in-out;
             -moz-transition: 0.4s ease-in-out;
             transition: 0.4s ease-in-out; }
-            .header .header .topnav .tabs .tab .drips a {
+            .header .header .fixed .topnav .tabs .tab .drips a {
               display: flex; }
-              .header .header .topnav .tabs .tab .drips a .drip .bar {
+              .header .header .fixed .topnav .tabs .tab .drips a .drip .bar {
                 background: url("../../assets/bar.png");
                 width: 21px;
                 height: 1px; }
-                .header .header .topnav .tabs .tab .drips a .drip .bar.small {
+                .header .header .fixed .topnav .tabs .tab .drips a .drip .bar.small {
                   height: 35px;
                   transition: .5s ease-in-out; }
-                .header .header .topnav .tabs .tab .drips a .drip .bar.medium {
+                .header .header .fixed .topnav .tabs .tab .drips a .drip .bar.medium {
                   height: 55px;
                   transition: .5s ease-in-out; }
-                .header .header .topnav .tabs .tab .drips a .drip .bar.large {
+                .header .header .fixed .topnav .tabs .tab .drips a .drip .bar.large {
                   height: 75px;
                   transition: .5s ease-in-out; }
-              .header .header .topnav .tabs .tab .drips a .drip .drop {
+              .header .header .fixed .topnav .tabs .tab .drips a .drip .drop {
                 background: url("../../assets/drip.png");
                 background-size: 100%;
                 margin-top: -3px;
                 height: 21px;
                 width: 21px; }
-    .header .header .active {
+    .header .header .fixed .active {
       background-color: #4CAF50;
       color: #ffffff; }
+  .header .header .headerSpace {
+    height: 190px; }
 
 .homepage {
   /*
@@ -239,5 +256,10 @@
         height: 300px; }
         .item .item .card .imageContainer img {
           width: 100%; }
+      .item .item .card .addToCart {
+        display: flex;
+        justify-content: space-between; }
+        .item .item .card .addToCart input {
+          max-width: 50px; }
 
 /*# sourceMappingURL=index.css.map */
