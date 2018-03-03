@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { applyMiddleware, compose, createStore } from 'redux';
+import {
+  // applyMiddleware,
+  // compose,
+  createStore } from 'redux';
 import shoppingCart from './reducers';
 import {
   BrowserRouter as Router,
@@ -22,10 +25,10 @@ const enhancers = [];
   enhancers.push(devToolsExtension);
 // }
 
-const middleware = [];
-const composedMiddleware = compose(
-  applyMiddleware(...middleware), ...enhancers
-);
+// const middleware = [];
+// const composedMiddleware = compose(
+//   applyMiddleware(...middleware), ...enhancers
+// );
 
 let store = createStore(shoppingCart, {},
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

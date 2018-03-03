@@ -2,33 +2,36 @@
 // @import '../../../node_modules/bulma/bulma';
 
 .item {
-    display: flex;
-    align-items: center;
-    // justify-content: center;
-    flex-direction: column;
 
-    .card {
-        text-align: center;
-        padding-top: 50px;
+    .mainContainer {
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+        flex-direction: column;
 
-        .imageContainer {
-            width: 300px;
-            height: 300px;
+        .card {
+            text-align: center;
+            padding-top: 50px;
 
-            img {
-                width: 100%;
+            .imageContainer {
+                width: 300px;
+                height: 300px;
 
+                img {
+                    width: 100%;
+
+                }
             }
-        }
 
-        .addToCart {
-            display: flex;
-            justify-content: space-between;
+            .addToCart {
+                display: flex;
+                justify-content: space-between;
 
-            input {
-                max-width: 50px;
+                input {
+                    max-width: 50px;
+                }
             }
-        }
 
+        }
     }
 }

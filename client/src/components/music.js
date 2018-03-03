@@ -14,6 +14,7 @@ class Music extends Component {
 
     constructor(props) {
         super(props);
+        console.log("props: ", props);
 
         this.state = {
             music: []

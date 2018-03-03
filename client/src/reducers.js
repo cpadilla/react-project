@@ -1,31 +1,33 @@
-import { combineReducers } from 'redux'
-import { ADD_ITEM } from './actions'
+// import { combineReducers } from 'redux'
+import * as Actions from './actions'
 
-const shoppingCart = function cart(state = [{productId: 0, quantity:0}], action) {
+const store = function cart(state = {shoppingCartSize: 0, shoppingCart: []}, action) {
     switch (action.type) {
-        case ADD_ITEM:
+        case Actions.ADD_ITEM:
 
-            var product = state.find((item) => {
+            var product = state.shoppingCart && state.shoppingCart.find((item) => {
                 return item.productId === action.productId;
             });
 
             // // if they don't have the item in their shopping cart
             if (!product) {
-                console.log("state :", state);
+                state = {
+                    shoppingCart: [
+                        ...state.shoppingCart,
+                        {
+                            productId: action.productId,
+                            quantity: action.quantity
+                        }
+                    ]
+                }
 
-                return [
-                    ...state,
-                    {
-                        productId: action.productId,
-                        quantity: action.quantity
-                    }
-                ]
+                return state;
             } else {
 
                 var tempState = state;
-                tempState.forEach((item, index) => {
+                tempState.shoppingCart.forEach((item, index) => {
                     if (item.productId === action.productId) {
-                        state[index] = {
+                        state.shoppingCart[index] = {
                             productId: action.productId,
                             quantity: action.quantity + item.quantity
                         }
@@ -35,13 +37,12 @@ const shoppingCart = function cart(state = [{productId: 0, quantity:0}], action)
                 return state;
             }
 
+        case Actions.GET_CART:
+            return state.shoppingCart;
+
         default:
-            return [];
+            return state;
     }
 }
 
-// const shoppingCart = combineReducers({
-//     cart
-// });
-
-export default shoppingCart;
+export default store;

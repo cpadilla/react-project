@@ -57,7 +57,7 @@ Vars
         transition: 0.4s ease-in-out; }
       .header .fixed .topnav .tabs .tab {
         height: 100%;
-        width: 100%;
+        width: fit-content;
         display: flex;
         align-content: center;
         justify-content: center; }
@@ -102,7 +102,6 @@ Vars
           bottom: -70px;
           z-index: 0 !important;
           display: flex;
-          padding: 0px 30px;
           filter: drop-shadow(3px 10px 3px rgba(0, 0, 0, 0.3));
           -webkit-transform: translateY(-10%);
           -moz-transform: translateY(-10%);

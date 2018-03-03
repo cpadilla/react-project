@@ -70,7 +70,7 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
           transition: 0.4s ease-in-out; }
         .header .header .fixed .topnav .tabs .tab {
           height: 100%;
-          width: 100%;
+          width: fit-content;
           display: flex;
           align-content: center;
           justify-content: center; }
@@ -115,7 +115,6 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
             bottom: -70px;
             z-index: 0 !important;
             display: flex;
-            padding: 0px 30px;
             filter: drop-shadow(3px 10px 3px rgba(0, 0, 0, 0.3));
             -webkit-transform: translateY(-10%);
             -moz-transform: translateY(-10%);
@@ -244,22 +243,22 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   /*
   Vars
   */ }
-  .item .item {
+  .item .item .mainContainer {
     display: flex;
     align-items: center;
     flex-direction: column; }
-    .item .item .card {
+    .item .item .mainContainer .card {
       text-align: center;
       padding-top: 50px; }
-      .item .item .card .imageContainer {
+      .item .item .mainContainer .card .imageContainer {
         width: 300px;
         height: 300px; }
-        .item .item .card .imageContainer img {
+        .item .item .mainContainer .card .imageContainer img {
           width: 100%; }
-      .item .item .card .addToCart {
+      .item .item .mainContainer .card .addToCart {
         display: flex;
         justify-content: space-between; }
-        .item .item .card .addToCart input {
+        .item .item .mainContainer .card .addToCart input {
           max-width: 50px; }
 
 /*# sourceMappingURL=index.css.map */

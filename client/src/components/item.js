@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import '../styles/css/item.css'
-import { connect } from 'react-redux'
-import { addItemToCart } from '../actions'
+import ShoppingCartContainer from '../containers/shoppingCartContainer'
+// import { connect } from 'react-redux'
+// import { addItemToCart } from '../actions'
 
 class Item extends Component {
 
     constructor(props) {
         super(props);
-        console.log("this: ", this);
-        console.log("props: ", props);
 
         this.onValueChange = this.onValueChange.bind(this);
         this.onClick = this.onClick.bind(this);
@@ -23,10 +22,8 @@ class Item extends Component {
         if (props.item == null) {
             // request item info from server
             var url = "http://localhost:7777/api/item/" + this.state.id;
-            console.log(url)
 
             axios.get(url).then((res) => {
-                console.log(res.data[0]);
                 this.setState({item: res.data[0]});
             }).catch(function(error) {
                 console.log(error);
@@ -67,19 +64,22 @@ class Item extends Component {
 
         return (
             <div className="item">
-                <div className="card">
-                    <h1>
-                        {item.title}
-                    </h1>
-                    <div className="imageContainer">
-                        <img alt={item.title} src={require("../assets/" + item.img)} />
-                    </div>
-                    <div className="price">
-                        ${item.price}.00
-                    </div>
-                    <div className="addToCart">
-                        <input type="number" value={quantity} onChange={this.onValueChange}/>
-                        <button onClick={this.onClick}>Add To Cart</button>
+                <ShoppingCartContainer />
+                <div className="mainContainer">
+                    <div className="card">
+                        <h1>
+                            {item.title}
+                        </h1>
+                        <div className="imageContainer">
+                            <img alt={item.title} src={require("../assets/" + item.img)} />
+                        </div>
+                        <div className="price">
+                            ${item.price}.00
+                        </div>
+                        <div className="addToCart">
+                            <input type="number" value={quantity} onChange={this.onValueChange}/>
+                            <button onClick={this.onClick}>Add To Cart</button>
+                        </div>
                     </div>
                 </div>
             </div>

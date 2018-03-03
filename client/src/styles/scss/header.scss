@@ -79,7 +79,7 @@
 
                 .tab {
                     height: 100%;
-                    width: 100%;
+                    width: fit-content;
                     display: flex;
                     align-content: center;
                     justify-content: center;
@@ -139,7 +139,7 @@
                         bottom: -70px;
                         z-index: 0 !important;
                         display: flex;
-                        padding: 0px 30px;
+                        // padding: 0px 30px;
                         filter: drop-shadow(3px 10px 3px rgba(0,0,0,0.3));
                         @include translateY(-10%);
                         transition: .5s ease-in-out;

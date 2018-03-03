@@ -1,22 +1,22 @@
 /*
 Vars
 */
-.item {
+.item .mainContainer {
   display: flex;
   align-items: center;
   flex-direction: column; }
-  .item .card {
+  .item .mainContainer .card {
     text-align: center;
     padding-top: 50px; }
-    .item .card .imageContainer {
+    .item .mainContainer .card .imageContainer {
       width: 300px;
       height: 300px; }
-      .item .card .imageContainer img {
+      .item .mainContainer .card .imageContainer img {
         width: 100%; }
-    .item .card .addToCart {
+    .item .mainContainer .card .addToCart {
       display: flex;
       justify-content: space-between; }
-      .item .card .addToCart input {
+      .item .mainContainer .card .addToCart input {
         max-width: 50px; }
 
 /*# sourceMappingURL=item.css.map */

@@ -1,39 +1,37 @@
 import React from 'react';
-import Item from '../components/item';
+import ShoppingCart from '../components/shoppingCart';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as shoppingCartActions from '../actions';
 
-class ItemContainer extends React.Component {
+class ShoppingCartContainer extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            id: props.match.params.id,
-            item: props.location.state.item,
             shoppingCart: []
         }
     }
 
     componentDidMount() {
-
+        if (!this.props.shoppingCart) {
+            this.props.actions.getCart();
+        }
     }
 
     render() {
         return (
-            <Item id={this.state.id} item={this.state.item} actions={this.props.actions} />
+            <ShoppingCart shoppingCart={this.props.shoppingCart}/>
         )
     }
 }
 
 function mapStateToProps(state, ownProps) {
-    // console.log("mapStateToProps state: ", state);
-
-    return {}
+    return {shoppingCart: state.shoppingCart}
 }
 
 function mapDispatchToProps(dispatch) {
     return {actions: bindActionCreators(shoppingCartActions, dispatch)}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCartContainer);
