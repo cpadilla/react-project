@@ -1,0 +1,16 @@
+.cart {
+  padding: 100px 20px; }
+  .cart .items .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px; }
+    .cart .items .item div {
+      padding-top: 5%; }
+    .cart .items .item .quantity {
+      justify-content: space-between; }
+      .cart .items .item .quantity input {
+        width: 40px; }
+    .cart .items .item img {
+      height: 100px; }
+
+/*# sourceMappingURL=cart.css.map */

@@ -21,7 +21,7 @@ class ShoppingCart extends Component {
                 <div className="container">
                     Shopping Cart: {this.props.shoppingCartSize || 0}
                 </div>
-                <Link to={{ pathname: '/checkout',
+                <Link to={{ pathname: '/cart',
                             state: {shoppingCart: this.props.shoppingCart,
                                     shoppingCartSize: this.props.shoppingCartSize}}}>
                     <button>Checkout</button>

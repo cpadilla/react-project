@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import '../styles/css/checkout.css'
+import '../styles/css/cart.css'
 
-class Checkout extends Component {
+class Cart extends Component {
     constructor(props) {
         super(props);
 
@@ -46,15 +46,13 @@ class Checkout extends Component {
 
             var url = "http://localhost:7777/api/item/";
 
-
             var itemList = [];
             var itemQuantities = [];
             this.props.shoppingCart.forEach((item, index) => {
                 var getItem;
                 axios.get(url + item.productId).then((res) => {
-                    console.log("res: ", res);
                     getItem =  res.data[0];
-                    itemList.push({item: getItem, quantity: item.quantity});
+                    itemList.push(getItem);
                     itemQuantities.push(item.quantity);
                     this.setState({
                         items: itemList,
@@ -68,27 +66,40 @@ class Checkout extends Component {
     }
 
     render() {
+        var shoppingCartSize = this.props.shoppingCartSize ? this.props.shoppingCartSize : 0;
+
         return (
-            <div className="checkout">
-                Checkout {this.props.shoppingCartSize}
+            <div className="cart">
+                Checkout {shoppingCartSize}
                 <div className="items">
-                    {this.state.items.map((item, i) => {
+                    {this.state.itemQuantities &&
+                    this.state.items &&
+                    this.props.shoppingCart &&
+                    this.props.shoppingCart.map((product, i) => {
+                        var item = this.state.items.find((element) => {
+                            return element.productId === product.productId;
+                        });
+                        if (!item)
+                            return [];
+                        
+                        var quantity = this.state.itemQuantities[i] ? this.state.itemQuantities[i] : 0;
+
                         return (
                             <div className="item" key={i}>
-                                <Link to={{ pathname: '/item/' + item.item.productId,
+                                <Link to={{ pathname: '/item/' + item.productId,
                                             state: { item: item}}}>
-                                    <img alt={item.title} src={require("../assets/" + item.item.img)} />
+                                    <img alt={item.title} src={require("../assets/" + item.img)} />
                                 </Link>
                                 <div>
-                                    {item.item.title}
+                                    {item.title}
                                 </div>
                                 <div>
-                                    {item.item.price}
+                                    {item.price}
                                 </div>
                                 <div className="quantity">
                                     Quantity:
-                                    <input type="number" value={this.state.itemQuantities[i]} onChange={this.onValueChange.bind(this, i)}/>
-                                    <button onClick={this.onClick.bind(this, item.item.productId, this.state.itemQuantities[i])}>Update</button>
+                                    <input type="number" value={quantity} onChange={this.onValueChange.bind(this, i)}/>
+                                    <button onClick={this.onClick.bind(this, item.productId, this.state.itemQuantities[i])}>Update</button>
                                 </div>
                             </div>
                         )
@@ -99,4 +110,4 @@ class Checkout extends Component {
     }
 }
 
-export default Checkout;
+export default Cart;

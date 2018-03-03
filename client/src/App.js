@@ -17,7 +17,7 @@ import Store from './components/store'
 import Tour from './components/tour'
 import Contact from './components/contact'
 import ItemContainer from './containers/ItemContainer'
-import CheckoutContainer from './containers/checkoutContainer'
+import CartContainer from './containers/cartContainer'
 
 const enhancers = [];
 // if (process.env.NODE_EVN === 'development') {
@@ -58,7 +58,7 @@ class App extends Component {
             <Route exact path='/tour' component={Tour}/>
             <Route exact path='/contact' component={Contact}/>
             <Route exact path='/item/:id' component={ItemContainer}/>
-            <Route exact path='/checkout' component={CheckoutContainer}/>
+            <Route exact path='/cart' component={CartContainer}/>
           </div>
         </Provider>
       </Router>
