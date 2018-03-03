@@ -20,7 +20,6 @@ class ShoppingCartContainer extends React.Component {
     }
 
     render() {
-        console.log('render')
         return (
             <ShoppingCart shoppingCart={this.props.shoppingCart} shoppingCartSize={this.props.shoppingCartSize} />
         )

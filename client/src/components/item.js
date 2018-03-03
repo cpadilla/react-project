@@ -13,7 +13,7 @@ class Item extends Component {
         this.onClick = this.onClick.bind(this);
 
         this.state = {
-            id: props.id,
+            id: Number(props.id),
             quantity: 1
         };
 

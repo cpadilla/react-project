@@ -4,6 +4,7 @@
 
  export const ADD_ITEM = 'ADD_ITEM';
  export const GET_CART = 'GET_CART';
+ export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
 
 
  /*
@@ -16,4 +17,8 @@
 
  export function getCart() {
      return { type: GET_CART }
+ }
+
+ export function updateQuantity(productId, quantity) {
+     return { type: UPDATE_QUANTITY, productId, quantity }
  }

@@ -22,9 +22,7 @@ class Music extends Component {
     }
 
     componentDidMount() {
-        console.log("componentMounted");
         axios.get(this.url).then((res) => {
-            console.log('music: ', res.data);
             this.setState({music: res.data});
         }).catch(function(error) {
             console.log(error);
@@ -35,7 +33,6 @@ class Music extends Component {
         return (
             <div className="music">
                 {this.state.music.map((album, i) => {
-
                     return (
                         <div className="album" key={i}>
                             <Link to={{ pathname: '/item/' + album.productId,

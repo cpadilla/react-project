@@ -21,7 +21,6 @@ class ItemContainer extends React.Component {
     }
 
     render() {
-        console.log('render');
         return (
             <div>
                 <ShoppingCartContainer />

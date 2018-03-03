@@ -1,12 +1,13 @@
 .shoppingCart {
   position: absolute;
   display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   margin-top: 100px; }
   .shoppingCart .container {
     position: relative;
-    height: 100px;
+    height: 40px;
     justify-content: center;
     align-content: center;
     text-align: center; }

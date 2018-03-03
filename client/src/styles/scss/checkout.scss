@@ -1,0 +1,25 @@
+.checkout {
+    padding: 100px 20px;
+    .items {
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            div {
+                padding-top: 5%;
+            }
+
+            .quantity {
+                // display: flex;
+                justify-content: space-between;
+                input {
+                    width: 40px;
+                }
+            }
+
+            img {
+                height: 100px;
+            }
+        }
+    }
+}
