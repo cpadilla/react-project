@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../styles/css/checkout.css'
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 class Checkout extends Component {
     constructor(props) {
@@ -11,21 +11,65 @@ class Checkout extends Component {
                 cart: this.props.location.state.cart
             };
         }
-        console.log(this);
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        console.log('clicked');
+        // busy work
+
+        // if card goes through
+
+        // generate id
+        var confirmationId = 1;
+
+        // link to confirmation page with confirmation id
+        this.props.history.push('/confirmation/' + confirmationId);
     }
 
     render () {
         return (
             <div className="checkout">
-                Checkout
-                <div className="billingInfo">
-                    Billing: 
-                </div>
-                <div className="shippingInfo">
-                    Shipping: 
-                </div>
                 <div className="paymentInfo">
-                    Payment: 
+                    Payment Information: 
+                    <form>
+                        <div>
+                            <label>Name: </label>
+                            <input id="Name" />
+                        </div>
+
+                        <div>
+                            <label>Email: </label>
+                            <input id="Email" />
+                        </div>
+
+                        <div>
+                            <label>Phone: </label>
+                            <input id="Phone" />
+                        </div>
+
+                        <div>
+                            <label>Card Number: </label>
+                            <input id="CardNumber" />
+                        </div>
+
+                        <div>
+                            <label>CVC: </label>
+                            <input id="CVC" />
+                        </div>
+
+                        <div>
+                            <label>Expiry Date: </label>
+                            <input id="ExpiryDate" />
+                        </div>
+
+                        <div>
+                            <label>Address: </label>
+                            <input id="Address" />
+                        </div>
+                    </form>
+                    <button onClick={this.handleClick}>Pay</button>
                 </div>
                 <div className="items">
                     {this.state.cart.map((item, i) => {
@@ -39,10 +83,13 @@ class Checkout extends Component {
                                     {item.item.title}
                                 </div>
                                 <div>
-                                    {item.item.price}
+                                    ${item.item.price}
                                 </div>
                                 <div className="quantity">
                                     Quantity: {item.quantity}
+                                </div>
+                                <div className="total">
+                                    ${item.quantity * item.item.price}
                                 </div>
                             </div>
                         );
@@ -53,4 +100,4 @@ class Checkout extends Component {
     }
 }
 
-export default Checkout;
+export default withRouter(Checkout);

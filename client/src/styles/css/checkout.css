@@ -1,5 +1,20 @@
 .checkout {
   padding: 100px 20px; }
+  .checkout .paymentInfo form {
+    display: flex;
+    flex-direction: column; }
+    .checkout .paymentInfo form div {
+      display: flex;
+      padding: 10px 0px; }
+      .checkout .paymentInfo form div label {
+        width: 110px; }
+      .checkout .paymentInfo form div input {
+        align-self: center;
+        height: 15px;
+        width: 100%; }
+  .checkout .paymentInfo button {
+    margin: 10px 10px;
+    width: 100%; }
   .checkout .items .item {
     display: flex;
     justify-content: space-between;

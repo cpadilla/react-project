@@ -74,11 +74,13 @@ class Cart extends Component {
                     Items:  {shoppingCartSize}
                     <Link to={{ pathname: '/checkout',
                                 state: {cart: this.state.items.map((item, i) => {
-                                    var quantity = this.state.itemQuantities[i] ? this.state.itemQuantities[i] : 0;
+                                    var match = this.props.shoppingCart.find((element) => {
+                                        return element.productId === item.productId;
+                                    });
 
                                     return {
                                         item: item,
-                                        quantity: quantity
+                                        quantity: match.quantity
                                     }
                                 })}}}>
                         <button>Checkout</button>
@@ -96,7 +98,7 @@ class Cart extends Component {
                             return [];
                         
                         var quantity = this.state.itemQuantities[i] ? this.state.itemQuantities[i] : 0;
-
+                        var savedQuantity = product.quantity;
                         return (
                             <div className="item" key={i}>
                                 <Link to={{ pathname: '/item/' + item.productId,
@@ -107,12 +109,15 @@ class Cart extends Component {
                                     {item.title}
                                 </div>
                                 <div>
-                                    {item.price}
+                                    ${item.price}
                                 </div>
                                 <div className="quantity">
                                     Quantity:
                                     <input type="number" value={quantity} onChange={this.onValueChange.bind(this, i)}/>
                                     <button onClick={this.onClick.bind(this, item.productId, this.state.itemQuantities[i])}>Update</button>
+                                </div>
+                                <div className="total">
+                                    ${savedQuantity * item.price}
                                 </div>
                             </div>
                         )
