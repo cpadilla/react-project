@@ -1,5 +1,8 @@
 .cart {
   padding: 100px 20px; }
+  .cart .checkoutBar {
+    display: flex;
+    justify-content: space-between; }
   .cart .items .item {
     display: flex;
     justify-content: space-between;

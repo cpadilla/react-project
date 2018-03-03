@@ -16,6 +16,7 @@ import Music from './components/music'
 import Store from './components/store'
 import Tour from './components/tour'
 import Contact from './components/contact'
+import Checkout from './components/checkout'
 import ItemContainer from './containers/ItemContainer'
 import CartContainer from './containers/cartContainer'
 
@@ -59,6 +60,7 @@ class App extends Component {
             <Route exact path='/contact' component={Contact}/>
             <Route exact path='/item/:id' component={ItemContainer}/>
             <Route exact path='/cart' component={CartContainer}/>
+            <Route exact path='/checkout' component={Checkout}/>
           </div>
         </Provider>
       </Router>

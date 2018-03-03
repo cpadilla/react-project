@@ -70,7 +70,20 @@ class Cart extends Component {
 
         return (
             <div className="cart">
-                Checkout {shoppingCartSize}
+                <div className="checkoutBar">
+                    Items:  {shoppingCartSize}
+                    <Link to={{ pathname: '/checkout',
+                                state: {cart: this.state.items.map((item, i) => {
+                                    var quantity = this.state.itemQuantities[i] ? this.state.itemQuantities[i] : 0;
+
+                                    return {
+                                        item: item,
+                                        quantity: quantity
+                                    }
+                                })}}}>
+                        <button>Checkout</button>
+                    </Link>
+                </div>
                 <div className="items">
                     {this.state.itemQuantities &&
                     this.state.items &&
