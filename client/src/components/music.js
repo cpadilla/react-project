@@ -22,7 +22,9 @@ class Music extends Component {
     }
 
     componentDidMount() {
+        console.log("componentMounted");
         axios.get(this.url).then((res) => {
+            console.log('music: ', res.data);
             this.setState({music: res.data});
         }).catch(function(error) {
             console.log(error);

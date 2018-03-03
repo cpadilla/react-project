@@ -7,20 +7,8 @@ class ShoppingCart extends Component {
         super(props);
 
         this.state = {
-            shoppingCart: props.shoppingCart
         };
 
-    }
-
-    getShoppingCartSize(){
-        var shoppingCartSize = 0;
-        if (this.props.shoppingCart && this.props.shoppingCart.length > 0) {
-            this.props.shoppingCart.map((item, index) => {
-                console.log("itemQuantity: ", item.quantity)
-                shoppingCartSize += item.quantity;
-            });
-        }
-        return shoppingCartSize;
     }
 
     componentDidMount() {
@@ -28,18 +16,10 @@ class ShoppingCart extends Component {
 
     render() {
         console.log("render")
-
-        // var shoppingCartSize = 0;
-        // if (this.props.shoppingCart && this.props.shoppingCart.length > 0) {
-        //     this.props.shoppingCart.map((item, index) => {
-        //         console.log("itemQuantity: ", item.quantity)
-        //         shoppingCartSize += item.quantity;
-        //     });
-        // }
         return (
             <div className="shoppingCart">
                 <div className="container">
-                    Shopping Cart: {this.getShoppingCartSize()}
+                    Shopping Cart: {this.props.shoppingCartSize}
                 </div>
             </div>
         );

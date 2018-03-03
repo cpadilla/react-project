@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from '../components/item';
+import ShoppingCartContainer from '../containers/shoppingCartContainer';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as shoppingCartActions from '../actions';
@@ -20,8 +21,12 @@ class ItemContainer extends React.Component {
     }
 
     render() {
+        console.log('render');
         return (
-            <Item id={this.state.id} item={this.state.item} actions={this.props.actions} />
+            <div>
+                <ShoppingCartContainer />
+                <Item id={this.state.id} item={this.state.item} actions={this.props.actions} />
+            </div>
         )
     }
 }

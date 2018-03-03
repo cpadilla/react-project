@@ -5,6 +5,8 @@ const store = function cart(state = {shoppingCartSize: 0, shoppingCart: []}, act
     switch (action.type) {
         case Actions.ADD_ITEM:
 
+            // state.shoppingCartSize += action.quantity;
+
             var product = state.shoppingCart && state.shoppingCart.find((item) => {
                 return item.productId === action.productId;
             });
@@ -12,6 +14,8 @@ const store = function cart(state = {shoppingCartSize: 0, shoppingCart: []}, act
             // // if they don't have the item in their shopping cart
             if (!product) {
                 state = {
+                    ...state,
+                    shoppingCartSize: state.shoppingCartSize += action.quantity,
                     shoppingCart: [
                         ...state.shoppingCart,
                         {
@@ -24,8 +28,8 @@ const store = function cart(state = {shoppingCartSize: 0, shoppingCart: []}, act
                 return state;
             } else {
 
-                var tempState = state;
-                tempState.shoppingCart.forEach((item, index) => {
+                var tempShoppingCart = state.shoppingCart;
+                tempShoppingCart.forEach((item, index) => {
                     if (item.productId === action.productId) {
                         state.shoppingCart[index] = {
                             productId: action.productId,
@@ -33,7 +37,12 @@ const store = function cart(state = {shoppingCartSize: 0, shoppingCart: []}, act
                         }
                     }
                 });
-                state = tempState;
+
+                state = {
+                    ...state,
+                    shoppingCartSize: state.shoppingCartSize += action.quantity,
+                    shoppingCart: tempShoppingCart
+                }
                 return state;
             }
 

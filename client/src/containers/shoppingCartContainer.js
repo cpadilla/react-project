@@ -20,14 +20,18 @@ class ShoppingCartContainer extends React.Component {
     }
 
     render() {
+        console.log('render')
         return (
-            <ShoppingCart shoppingCart={this.props.shoppingCart}/>
+            <ShoppingCart shoppingCart={this.props.shoppingCart} shoppingCartSize={this.props.shoppingCartSize} />
         )
     }
 }
 
 function mapStateToProps(state, ownProps) {
-    return {shoppingCart: state.shoppingCart}
+    return {
+        shoppingCart: state.shoppingCart,
+        shoppingCartSize: state.shoppingCartSize
+    }
 }
 
 function mapDispatchToProps(dispatch) {

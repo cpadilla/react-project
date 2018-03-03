@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import '../styles/css/item.css'
-import ShoppingCartContainer from '../containers/shoppingCartContainer'
 // import { connect } from 'react-redux'
 // import { addItemToCart } from '../actions'
 
@@ -64,7 +63,6 @@ class Item extends Component {
 
         return (
             <div className="item">
-                <ShoppingCartContainer />
                 <div className="mainContainer">
                     <div className="card">
                         <h1>
