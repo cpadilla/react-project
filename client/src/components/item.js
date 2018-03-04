@@ -65,18 +65,20 @@ class Item extends Component {
             <div className="item">
                 <div className="mainContainer">
                     <div className="card">
-                        <h1>
-                            {item.title}
-                        </h1>
                         <div className="imageContainer">
                             <img alt={item.title} src={require("../assets/" + item.img)} />
                         </div>
-                        <div className="price">
-                            ${item.price}.00
+                        <div className="titleRow">
+                            <h1>
+                                {item.title}
+                            </h1>
+                            <div className="price">
+                                ${item.price}.00
+                            </div>
                         </div>
                         <div className="addToCart">
                             <input type="number" value={quantity} onChange={this.onValueChange}/>
-                            <button onClick={this.onClick}>Add To Cart</button>
+                            <button className="greenButton" onClick={this.onClick}>Add To Cart</button>
                         </div>
                     </div>
                 </div>

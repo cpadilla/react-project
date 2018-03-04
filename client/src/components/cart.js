@@ -68,6 +68,8 @@ class Cart extends Component {
     render() {
         var shoppingCartSize = this.props.shoppingCartSize ? this.props.shoppingCartSize : 0;
 
+        console.log('this.state.items: ', this.state.items);
+
         return (
             <div className="cart">
                 <div className="checkoutBar">
@@ -80,12 +82,14 @@ class Cart extends Component {
 
                                     var quantity = (match && match.quantity) || 0;
 
+                                    if (quantity === 0) return {};
+
                                     return {
                                         item: item,
                                         quantity: quantity
                                     }
                                 })}}}>
-                        <button>Checkout</button>
+                        <button className="greenButton">Checkout</button>
                     </Link>
                 </div>
                 <div className="items">
@@ -108,15 +112,23 @@ class Cart extends Component {
                                     <img alt={item.title} src={require("../assets/" + item.img)} />
                                 </Link>
                                 <div>
-                                    {item.title}
+                                    <span>
+                                        {item.title}
+                                    </span>
                                 </div>
                                 <div>
                                     ${item.price}
                                 </div>
                                 <div className="quantity">
-                                    Quantity:
-                                    <input type="number" value={quantity} onChange={this.onValueChange.bind(this, i)}/>
-                                    <button onClick={this.onClick.bind(this, item.productId, this.state.itemQuantities[i])}>Update</button>
+                                    <span>
+                                        Quantity:
+                                    </span>
+                                    <div>
+                                        <input type="number" value={quantity} onChange={this.onValueChange.bind(this, i)}/>
+                                    </div>
+                                    <div>
+                                        <button onClick={this.onClick.bind(this, item.productId, this.state.itemQuantities[i])}>Update</button>
+                                    </div>
                                 </div>
                                 <div className="total">
                                     ${savedQuantity * item.price}

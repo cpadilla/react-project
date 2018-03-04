@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 .checkout {
-  padding: 100px 20px; }
+  padding: 100px 20px;
+  font-family: "Open Sans"; }
   .checkout .paymentInfo form {
     display: flex;
     flex-direction: column; }
@@ -13,18 +15,23 @@
         height: 15px;
         width: 100%; }
   .checkout .paymentInfo button {
+    display: flex;
+    font-family: "Open Sans";
     margin: 10px 10px;
-    width: 100%; }
+    width: 100%;
+    justify-content: center;
+    align-items: center; }
+    .checkout .paymentInfo button div {
+      padding: 0px 2px; }
+      .checkout .paymentInfo button div.price {
+        font-family: "Gloria Hallelujah", cursive; }
   .checkout .items .item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px; }
-    .checkout .items .item div {
-      padding-top: 5%; }
-    .checkout .items .item .quantity {
-      justify-content: space-between; }
-      .checkout .items .item .quantity input {
-        width: 40px; }
+    .checkout .items .item .price, .checkout .items .item .total {
+      font-family: "Gloria Hallelujah", cursive; }
     .checkout .items .item img {
       height: 100px;
       width: 100px; }

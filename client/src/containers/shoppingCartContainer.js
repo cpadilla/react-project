@@ -28,8 +28,8 @@ class ShoppingCartContainer extends React.Component {
 
 function mapStateToProps(state, ownProps) {
     return {
-        shoppingCart: state.shoppingCart,
-        shoppingCartSize: state.shoppingCartSize
+        shoppingCart: (state && state.shoppingCart),
+        shoppingCartSize: (state && state.shoppingCartSize)
     }
 }
 

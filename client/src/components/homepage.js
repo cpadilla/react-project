@@ -52,12 +52,12 @@ class Homepage extends Component {
                 <div className="newAlbumOut">
                     Check out the latest album!
                         <div className="latestAlbum">
-                            <Link to={{ pathname: '/item/' + album.productId,
+                            <Link to={{ pathname: '/item/' + (album && album.productId),
                                         state: {item: album}}}>
-                                {album.img && <img alt={album.title} src={require("../assets/" + album.img)} /> }
+                                {album && album.img && <img alt={album.title} src={require("../assets/" + album.img)} /> }
                             </Link>
                             <div>
-                                {album.title}
+                                {album && album.title}
                             </div>
                         </div>
                 </div>
@@ -65,7 +65,7 @@ class Homepage extends Component {
                 <div className="tour">
                     ON TOUR
                         <div className="tourdates">
-                            <a href={'/item/' + album.productId}> 
+                            <a href={'/item/' + (album && album.productId)}> 
                                 <img alt="Tour Dates" src={require("../assets/morning-teleportation-2010.jpg")} />
                             </a>
                         </div>

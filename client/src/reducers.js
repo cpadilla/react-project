@@ -78,7 +78,9 @@ const store = function cart(state = {shoppingCartSize: 0, shoppingCart: []}, act
                 // if the quantity is 0, remove the element
                 if (action.quantity === 0) {
                     var index = tempShoppingCart.indexOf(product);
-                    tempShoppingCart = tempShoppingCart.splice(index, index);
+                    console.log('product: ', product);
+                    console.log('index: ', index);
+                    tempShoppingCart.splice(index, 1);
                 } else {
                     // add the new quantity to the cartSize
                     cartSize += action.quantity;

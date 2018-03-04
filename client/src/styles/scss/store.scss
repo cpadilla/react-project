@@ -1,11 +1,18 @@
 @import 'Colors.scss';
 
-.music {
+.store {
+    display: flex;
+    width: 100%;
+
     .itemContainer {
+        width: 100%;
         padding-top: 100px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+
+        div {
+        }
 
     }
 }

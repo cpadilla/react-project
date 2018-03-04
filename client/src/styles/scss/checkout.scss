@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 .checkout {
+    $font: "Open Sans";
+    $priceFont: "Gloria Hallelujah", cursive;
     padding: 100px 20px;
+    font-family: $font;
 
     .paymentInfo {
         form {
@@ -22,8 +27,20 @@
         }
 
         button {
+            display: flex;
+            font-family: $font;
             margin: 10px 10px;
             width: 100%;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                padding: 0px 2px;
+
+                &.price {
+                    font-family: $priceFont;
+                }
+            }
         }
     }
 
@@ -31,17 +48,11 @@
         .item {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 10px 20px;
-            div {
-                padding-top: 5%;
-            }
 
-            .quantity {
-                // display: flex;
-                justify-content: space-between;
-                input {
-                    width: 40px;
-                }
+            .price, .total {
+                font-family: $priceFont;
             }
 
             img {

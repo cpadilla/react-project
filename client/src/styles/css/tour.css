@@ -1,0 +1,40 @@
+.tour {
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+  padding-top: 100px;
+  font-family: 'Open Sans';
+  text-align: center; }
+  .tour button {
+    /*
+    Vars
+    */
+    @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
+    @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+    font-family: 'Open Sans';
+    background-color: #ffffff;
+    border: none;
+    color: #010000;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+    .tour button.greenButton {
+      background-color: #11a030;
+      color: #ffffff; }
+    .tour button:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+  .tour h1 {
+    padding-bottom: 30px;
+    font-size: 30px; }
+  .tour .tourdate {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px;
+    padding: 20px 30px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black; }
+
+/*# sourceMappingURL=tour.css.map */

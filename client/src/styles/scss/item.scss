@@ -1,17 +1,25 @@
-@import 'Colors.scss'; 
-// @import '../../../node_modules/bulma/bulma';
-
 .item {
+    @import 'Colors.scss'; 
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+    @import 'Button.scss';
+
+    $font: 'Open Sans';
 
     .mainContainer {
         display: flex;
         align-items: center;
         // justify-content: center;
         flex-direction: column;
+        padding-top: 50px;
 
         .card {
             text-align: center;
-            padding-top: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+            &:hover {
+                box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);  
+            }
 
             .imageContainer {
                 width: 300px;
@@ -23,12 +31,30 @@
                 }
             }
 
+            .titleRow {
+                padding: 5px 10px;
+                display: flex;
+                justify-content: space-between;
+                h1 {
+                    font-family: $font;
+                }
+
+                .price {
+                    font-family: 'Gloria Hallelujah', cursive;
+                }
+            }
+
             .addToCart {
+                padding: 10px 10px;
                 display: flex;
                 justify-content: space-between;
 
                 input {
                     max-width: 50px;
+                }
+
+                button {
+                    font-family: $font;
                 }
             }
 

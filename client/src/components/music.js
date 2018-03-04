@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import ShoppingCartContainer from '../containers/shoppingCartContainer'
-// import {
-//     // BrowserRouter as Router,
-//     // Route,
-//     Link
-// } from 'react-router-dom';
 import ItemCard from '../components/itemCard'
 import '../styles/css/music.css'
 import '../styles/css/shoppingCart.css'
@@ -18,13 +13,13 @@ class Music extends Component {
         super(props);
 
         this.state = {
-            music: []
+            items: []
         }
     }
 
     componentDidMount() {
         axios.get(this.url).then((res) => {
-            this.setState({music: res.data});
+            this.setState({items: res.data});
         }).catch(function(error) {
             console.log(error);
         })
@@ -35,7 +30,7 @@ class Music extends Component {
             <div className="music">
                 <ShoppingCartContainer />
                 <div className="itemContainer">
-                    {this.state.music.map((album, i) => {
+                    {this.state.items.map((album, i) => {
                         return (
                             <div key={i}>
                                 <ItemCard item={album} key={i} />

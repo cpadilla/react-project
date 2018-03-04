@@ -19,11 +19,13 @@ class ItemCard extends Component {
                                 state: { item: item}}}>
                         <img alt={item.title} src={require("../assets/" + item.img)} />
                     </Link>
-                    <div>
-                        {item.title}
-                    </div>
-                    <div>
-                        ${item.price}
+                    <div className="titleRow">
+                        <div className="title">
+                            {item.title}
+                        </div>
+                        <div className="price">
+                            ${item.price}
+                        </div>
                     </div>
                 </div>
             </div>

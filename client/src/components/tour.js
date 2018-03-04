@@ -1,10 +1,44 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import Moment from 'moment'
+import '../styles/css/tour.css'
 
 class Tour extends Component {
+    constructor(props) {
+        super(props);
+
+        var url = "http://localhost:7777/api/tourdates"
+
+        axios.get(url).then((res) => {
+            this.setState({tourdates: res.data});
+            console.log('this.state, ', this.state);
+        }).catch(function(error) {
+            console.log(error);
+        })
+    }
+
     render() {
+        Moment.locale('en');
         return (
-            <div>
-                Tour
+            <div className="tour">
+                <h1>
+                    Tour
+                </h1>
+                {this.state && this.state.tourdates.map((date, i) => {
+                    return (
+                        <div className="tourdate" key={i}>
+                            <div className="date">
+                                {Moment(date.date).format('M/D')}
+                            </div>
+                            <div className="location"> 
+                                {date.city}, {date.state}
+                            </div>
+                            <div className="tickets">
+                                <button className="greenButton">Tickets</button>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         );
     }

@@ -29,6 +29,12 @@ class Checkout extends Component {
     }
 
     render () {
+
+        var total = 0;
+        this.state.cart.forEach(element => {
+            total += element.quantity * element.item.price;
+        });
+
         return (
             <div className="checkout">
                 <div className="paymentInfo">
@@ -69,20 +75,22 @@ class Checkout extends Component {
                             <input id="Address" />
                         </div>
                     </form>
-                    <button onClick={this.handleClick}>Pay</button>
+                    <button className="greenButton" onClick={this.handleClick}><div>Pay </div><div className="price">${total}</div></button>
                 </div>
                 <div className="items">
                     {this.state.cart.map((item, i) => {
+                        if (!item.item) return [];
+
                         return (
                             <div className="item" key={i}>
                                 <Link to={{ pathname: '/item/' + item.item.productId,
                                             state: { item: item.item}}}>
-                                    <img alt={item.title} src={require("../assets/" + item.item.img)} />
+                                    <img alt={item.item.title} src={require("../assets/" + item.item.img)} />
                                 </Link>
-                                <div>
+                                <div className="title">
                                     {item.item.title}
                                 </div>
-                                <div>
+                                <div className="price">
                                     ${item.item.price}
                                 </div>
                                 <div className="quantity">

@@ -21,6 +21,7 @@ db.once('open', function() {
     console.log("we're connected!");
 }).then((res) => {
     console.log("start");
+    // Make item schema
     var item = new Schema({
         productId: Number,
         tilte: String,
@@ -34,6 +35,22 @@ db.once('open', function() {
 
     // Return all products
     Item.find({}, function(error,result) {
+        if (error) return console.error(error);
+        console.log(result);
+    });
+
+    // Make item schema
+    var tourdate = new Schema({
+        id: Number,
+        date: Date,
+        city: String,
+        state: String
+    }, {collection: "tour-dates"});
+
+    TourDate = mongoose.model('tour-date', tourdate);
+
+    // Return all products
+    TourDate.find({}, function(error,result) {
         if (error) return console.error(error);
         console.log(result);
     });
@@ -83,7 +100,7 @@ app.get('/api/latestAlbum', function(req, res) {
     console.log("Getting latestAlbum");
     // res.json(latestAlbum);
 
-    Item.find({tag: "latestAlbum"}, function(error, result) {
+    Item.find({tag: "latestAlbum Album"}, function(error, result) {
         if (error) {
             console.log(error);
             res.json();
@@ -95,7 +112,24 @@ app.get('/api/latestAlbum', function(req, res) {
 
 app.get('/api/products', function(req, res) {
     console.log("Getting products");
-    // res.json(products);
+
+    Item.find({type: /product|music/}, function(error, result) {
+        if (error) {
+            console.log(error);
+            res.json();
+        }
+        console.log(result)
+        res.json(result);
+    });
+});
+
+app.get('/api/tourdates', function(req, res) {
+    console.log("Getting Tour Dates");
+
+    TourDate.find({}, function(error,result) {
+        if (error) return console.error(error);
+        res.json(result);
+    });
 });
 
 app.listen(7777);
