@@ -33,7 +33,18 @@ class Homepage extends Component {
 
         return (
             <div className="homepage">
-                <div className="parallax"></div>
+                <div className="border">
+                    <div className="videoContainer">
+                        <div className="innerContainer">
+                            <div className="fitToContainer">
+                                <div className="iframeContainer">
+                                    <iframe title="ExpandingAnywayVideo" src="https://www.youtube.com/embed/TKTbbf4z1PQ"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* <div className="parallax"></div>
                 <div className="videoContainer">
                     <span>Morning Teleportation - "Expanding Anyway" (Official Music Video)</span>
                     <div className="iframeContainer">
@@ -70,7 +81,7 @@ class Homepage extends Component {
                             </a>
                         </div>
                 </div>
-                <div className="parallax3"></div>
+                <div className="parallax3"></div> */}
             </div>
         )
     }

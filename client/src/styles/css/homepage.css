@@ -27,26 +27,48 @@ Vars
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
-  .homepage .videoContainer {
-    background-color: #4cc9e7;
-    padding-bottom: 10px; }
-    .homepage .videoContainer span {
-      display: flex;
-      padding: 10px 10px;
-      vertical-align: middle; }
-    .homepage .videoContainer .iframeContainer {
-      padding-bottom: 56.25%;
+  .homepage .border {
+    display: flex;
+    width: 100%;
+    height: 100%; }
+    .homepage .border .videoContainer {
       position: relative;
-      height: 0;
-      overflow: hidden;
-      background-color: #4cc9e7; }
-      .homepage .videoContainer .iframeContainer iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
+      display: flex;
+      background-image: url("../../assets/morning-teleportation-border.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      justify-content: center;
+      width: 100%;
+      height: 75%; }
+      .homepage .border .videoContainer .innerContainer {
+        display: flex;
+        position: relative;
         width: 100%;
-        height: 100%; }
+        padding-top: 275px;
+        margin: 0px 140px;
+        justify-content: center;
+        align-items: flex-start;
+        min-width: 300px; }
+        .homepage .border .videoContainer .innerContainer .fitToContainer {
+          justify-self: center;
+          position: absolute;
+          max-width: 600px;
+          width: 100%;
+          height: 100%;
+          padding-top: 100px; }
+          .homepage .border .videoContainer .innerContainer .fitToContainer .iframeContainer {
+            position: relative;
+            background-color: #4cc9e7;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; }
+            .homepage .border .videoContainer .innerContainer .fitToContainer .iframeContainer iframe {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%; }
   .homepage .bio {
     background-color: #f28230;
     padding: 30px 40px; }

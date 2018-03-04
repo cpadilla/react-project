@@ -44,31 +44,57 @@
         background-size: cover;
     }
 
-    .videoContainer {
-        background-color: $blue;
-        padding-bottom: 10px;
+    .border {
+        display: flex;
+        width: 100%;
+        height: 100%;
 
-        span {
-            display: flex;
-            padding: 10px 10px;
-            vertical-align: middle;
-        }
-
-        .iframeContainer {
-            padding-bottom:56.25%;
+        .videoContainer {
             position: relative;
-            height: 0;
-            overflow: hidden;
-            background-color: $blue;
+            display: flex;
+            background-image: url('../../assets/morning-teleportation-border.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            justify-content: center;
+            width: 100%;
+            height: 75%;
 
-            iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: block;
-                // width: 1008px;
+            .innerContainer {
+                display: flex;
+                position: relative;
                 width: 100%;
-                height: 100%;
+                padding-top: 275px;
+                margin: 0px 140px;
+                justify-content: center;
+                align-items: flex-start;
+                min-width: 300px;
+
+                .fitToContainer {
+                    justify-self: center;
+                    position: absolute;
+                    max-width: 600px;
+                    width: 100%;
+                    height: 100%;
+                    padding-top: 100px;
+
+                    .iframeContainer {
+                        position: relative;
+                        background-color: $blue;
+                        width: 100%;
+                        height: 0;
+                        padding-bottom:56.25%;
+
+                        iframe {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                }
             }
         }
     }
