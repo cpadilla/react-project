@@ -62,7 +62,7 @@
 
                 .tab:hover > .drips {
                     @include translateY(10%);
-                    @include transition(.4s ease-in-out);
+                    @include transition(.3s ease-in-out);
                 }
 
                 // .tab:hover > .drips > a > .drip > .bar {
@@ -73,7 +73,7 @@
                     color: $blue;
                     transform: scale(1.2);
                     transform-origin: bottom;
-                    @include transition(.4s ease-in-out);
+                    @include transition(.3s ease-in-out);
                 }
 
                 .tab {

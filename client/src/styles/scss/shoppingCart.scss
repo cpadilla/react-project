@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
-@import '../css/animate.css';
-
-@mixin transition($e) {
-    -webkit-transition: $e;
-    -moz-transition: $e;
-    transition: $e;
-};
-
 .shoppingCart {
+    @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+    @mixin transition($e) {
+        -webkit-transition: $e;
+        -moz-transition: $e;
+        transition: $e;
+    };
+
     padding-top: 100px;
     font-family: 'Gloria Hallelujah', cursive;
     position: fixed;

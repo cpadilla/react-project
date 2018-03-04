@@ -42,16 +42,16 @@ Vars
         -webkit-transform: translateY(10%);
         -moz-transform: translateY(10%);
         transform: translateY(10%);
-        -webkit-transition: 0.4s ease-in-out;
-        -moz-transition: 0.4s ease-in-out;
-        transition: 0.4s ease-in-out; }
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out; }
       .header .fixed .topnav .tabs .tab:hover > .linkWrapper > div {
         color: #4cc9e7;
         transform: scale(1.2);
         transform-origin: bottom;
-        -webkit-transition: 0.4s ease-in-out;
-        -moz-transition: 0.4s ease-in-out;
-        transition: 0.4s ease-in-out; }
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out; }
       .header .fixed .topnav .tabs .tab {
         height: 100%;
         width: fit-content;

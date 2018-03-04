@@ -40,7 +40,9 @@ class Homepage extends Component {
                 <div className="videoOverlay">
                     <div className="bio">
                         <b>Morning Teleportation</b> is a psychadelic rock band from Bowling Green, Kentucky ft. Tiger Merritt, Travis Goodwin, Joseph Jones, and Alex Lindsey.
-                        <button>On Tour Now</button>
+                        <Link to='/tour'>
+                            <button>On Tour Now</button>
+                        </Link>
                     </div>
                 </div>
                 <div className="parallax"></div>

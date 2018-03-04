@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
-@import url(../css/animate.css);
 .shoppingCart {
+  @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
   padding-top: 100px;
   font-family: 'Gloria Hallelujah', cursive;
   position: fixed;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/css/shoppingCart.css';
+import '../styles/css/animate.css';
 
 class ShoppingCart extends Component {
 

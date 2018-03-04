@@ -4,6 +4,7 @@ import ShoppingCartContainer from '../containers/shoppingCartContainer';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as shoppingCartActions from '../actions';
+import '../styles/css/shoppingCart.css'
 
 class ItemContainer extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class ItemContainer extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="itemContainer">
                 <ShoppingCartContainer />
                 <Item id={this.state.id} item={this.state.item} actions={this.props.actions} />
             </div>
