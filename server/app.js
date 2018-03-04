@@ -10,7 +10,12 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json())
 
-mongoose.connect(process.env.MONGO_DB);
+mongoose.connect(process.env.MONGO_DB,
+{auth: {
+    user: process.env.MONGO_DB_USER,
+    password: process.env.MONGO_DB_PASS
+}}).then(() => console.log('connection successful!'))
+.catch((err) => console.error(err));
 
 var db = mongoose.connection;
 
