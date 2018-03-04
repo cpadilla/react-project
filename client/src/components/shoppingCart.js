@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/css/shoppingCart.css'
+import '../styles/css/shoppingCart.css';
 
 class ShoppingCart extends Component {
 
@@ -19,12 +19,15 @@ class ShoppingCart extends Component {
         return (
             <div className="shoppingCart">
                 <div className="container">
-                    Shopping Cart: {this.props.shoppingCartSize || 0}
+                    <div className="cartIcon"/>
+                    <div className="itemCount">
+                        : {this.props.shoppingCartSize || 0}
+                    </div>
                 </div>
                 <Link to={{ pathname: '/cart',
                             state: {shoppingCart: this.props.shoppingCart,
                                     shoppingCartSize: this.props.shoppingCartSize}}}>
-                    <button>Checkout</button>
+                    <button >Checkout</button>
                 </Link>
             </div>
         );

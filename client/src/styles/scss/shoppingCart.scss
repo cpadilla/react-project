@@ -1,17 +1,26 @@
 
 .shoppingCart {
-    position: absolute;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    margin-top: 100px;
 
     .container {
-        position: relative;
-        height: 40px;
-        justify-content: center;
-        align-content: center;
-        text-align: center;
+        display: flex;
+        // position: absolute;
+        // height: 40px;
+        // width: 100px;
+
+        .cartIcon {
+            background: url('../../assets/cart.png');
+            background-size: 100%;
+            height: 70px;
+            width: 70px;
+        }
+
+        .itemCount {
+            align-self: center;
+        }
     }
 }

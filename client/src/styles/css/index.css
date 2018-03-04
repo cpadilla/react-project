@@ -230,14 +230,10 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   /*
   Vars
   */ }
-  .music .music {
+  .music .music .itemContainer {
+    padding-top: 100px;
     display: flex;
     justify-content: center; }
-    .music .music .album {
-      padding: 10px 30px; }
-      .music .music .album img {
-        height: 300px;
-        width: 300px; }
 
 .item {
   /*

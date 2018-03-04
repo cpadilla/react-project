@@ -14,6 +14,7 @@
       .cart .items .item .quantity input {
         width: 40px; }
     .cart .items .item img {
-      height: 100px; }
+      height: 100px;
+      width: 100px; }
 
 /*# sourceMappingURL=cart.css.map */

@@ -26,6 +26,7 @@
       .checkout .items .item .quantity input {
         width: 40px; }
     .checkout .items .item img {
-      height: 100px; }
+      height: 100px;
+      width: 100px; }
 
 /*# sourceMappingURL=checkout.css.map */

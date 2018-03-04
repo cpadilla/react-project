@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import ShoppingCartContainer from '../containers/shoppingCartContainer'
-import {
-    // BrowserRouter as Router,
-    // Route,
-    Link
-} from 'react-router-dom';
+// import {
+//     // BrowserRouter as Router,
+//     // Route,
+//     Link
+// } from 'react-router-dom';
+import ItemCard from '../components/itemCard'
 import '../styles/css/music.css'
 import '../styles/css/shoppingCart.css'
 
@@ -31,25 +32,13 @@ class Music extends Component {
 
     render() {
         return (
-            <div>
+            <div className="music">
                 <ShoppingCartContainer />
-                <div className="music">
+                <div className="itemContainer">
                     {this.state.music.map((album, i) => {
                         return (
-                            <div className="album" key={i}>
-                                <Link to={{ pathname: '/item/' + album.productId,
-                                            state: { item: album}}}>
-                                    <img alt={album.title} src={require("../assets/" + album.img)} />
-                                </Link>
-                                <div>
-                                    {album.productId}
-                                </div>
-                                <div>
-                                    {album.title}
-                                </div>
-                                <div>
-                                    {album.price}
-                                </div>
+                            <div key={i}>
+                                <ItemCard item={album} key={i} />
                             </div>
                         )
                     })}

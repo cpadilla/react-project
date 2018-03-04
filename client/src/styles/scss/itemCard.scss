@@ -1,0 +1,20 @@
+@import 'Colors.scss';
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+
+.item {
+    padding: 30px 30px;
+    font-family: 'Gloria Hallelujah', cursive;
+
+    .cardContainer {
+        display: flex;
+        flex-direction: column;
+        // margin: 50px 10px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+        img {
+            height: 300px;
+            width: 300px;
+        }
+
+    }
+}
