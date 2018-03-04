@@ -1,18 +1,73 @@
-@import 'Colors.scss';
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 .homepage {
+    @import 'Colors.scss';
+    @import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+    @import 'Button.scss';
 
     font-family: 'Open Sans';
     height: 1200px;
 
+    .frontPageVideoContainer {
+        background: $black;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        iframe {
+            width: 1920px;
+            height: 100%;
+        }
+    }
+
+    .videoOverlay {
+        position: absolute;
+        background: rgba(0,0,0,0.3);
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+
+        .bio {
+            b {
+                font-weight: bold;
+                font-size: 30px;
+            }
+            display:flex;
+            padding-top: 200px;
+            margin: 0 auto;
+            display: flex;
+            color: $white;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            flex-direction: column;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            max-width: 500px;
+            max-height: 150px;
+        }
+    }
+
     .parallax {
         // background image
-        background-image: url('../../assets/mt_ea_large.jpg');
+        background-image: url('../../assets/mt_sfs_large.jpg');
         // background: $white;
 
-        height: 25%;
+        height: 90%;
 
         background-attachment: fixed;
         background-position: center;
@@ -99,28 +154,28 @@
         }
     }
 
-    .bio {
-        background-color: $peach;
-        padding: 30px 40px;
+    // .bio {
+    //     background-color: $peach;
+    //     padding: 30px 40px;
 
-        .bioImage {
-            text-align: center;
+    //     .bioImage {
+    //         text-align: center;
 
-            img {
-                padding: 10px 0px;
-                width: 100%;
-                max-width: 1100px;
-            }
-        }
+    //         img {
+    //             padding: 10px 0px;
+    //             width: 100%;
+    //             max-width: 1100px;
+    //         }
+    //     }
 
-    }
+    // }
 
     .newAlbumOut {
         font-size: 30px;
         font-weight: bold;
         text-align: center;
         background-color: $blue;
-        padding: 30px 40px;
+        // padding: 30px 40px;
 
         img {
             width: 300px;

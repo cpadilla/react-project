@@ -45,8 +45,6 @@ Vars
         -webkit-transition: 0.4s ease-in-out;
         -moz-transition: 0.4s ease-in-out;
         transition: 0.4s ease-in-out; }
-      .header .fixed .topnav .tabs .tab:hover > .drips > .drip > .bar {
-        filter: hue-rotate(180deg); }
       .header .fixed .topnav .tabs .tab:hover > .linkWrapper > div {
         color: #4cc9e7;
         transform: scale(1.2);
@@ -112,9 +110,19 @@ Vars
           .header .fixed .topnav .tabs .tab .drips a {
             display: flex; }
             .header .fixed .topnav .tabs .tab .drips a .drip .bar {
-              background: url("../../assets/bar.png");
+              position: relative;
+              background: rgba(0, 0, 0, 0) url("../../assets/bar.png");
+              transition: background-color 1s;
               width: 21px;
               height: 1px; }
+              .header .fixed .topnav .tabs .tab .drips a .drip .bar:before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: inherit;
+                content: ' '; }
               .header .fixed .topnav .tabs .tab .drips a .drip .bar.small {
                 height: 35px;
                 transition: .5s ease-in-out; }

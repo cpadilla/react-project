@@ -1,8 +1,8 @@
 Website Todo:
-  ☐ Redo Homepage @started(18-03-04 04:58)
+  ✔ Redo Homepage @started(18-03-04 04:58) @done(18-03-04 11:52) @lasted(6 hours 54 minutes 43 seconds)
     ✔ Create youtube video main display @started(18-03-04 06:41) @done(18-03-04 06:41) @lasted(24 seconds)
-    ☐ Add latest album
-    ☐ Add bio
+    ✔ Add latest album @done(18-03-04 10:27)
+    ✔ Add bio @done(18-03-04 11:52)
   ☐ Make page responsive
   ☐ Fill out Contact page
   ☐ Add something to Tickets button
@@ -10,3 +10,6 @@ Website Todo:
   ☐ Finish confirmation page
   ☐ Add an effect when a Add To Cart button is clicked
   ☐ Flesh out Music tab
+  ☐ Add Contact page
+  ☐ Store page should have filters
+  ☐ Add footer

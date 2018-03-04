@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import '../styles/css/item.css'
+import '../styles/css/animate.css'
 // import { connect } from 'react-redux'
 // import { addItemToCart } from '../actions'
 
@@ -62,7 +63,7 @@ class Item extends Component {
         var quantity = this.state.quantity;
 
         return (
-            <div className="item">
+            <div className="item animated fadeIn">
                 <div className="mainContainer">
                     <div className="card">
                         <div className="imageContainer">

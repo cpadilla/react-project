@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Moment from 'moment'
 import '../styles/css/tour.css'
+import '../styles/css/animate.css'
 
 class Tour extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class Tour extends Component {
                 </h1>
                 {this.state && this.state.tourdates.map((date, i) => {
                     return (
-                        <div className="tourdate" key={i}>
+                        <div className="tourdate animated fadeIn" key={i}>
                             <div className="date">
                                 {Moment(date.date).format('M/D')}
                             </div>

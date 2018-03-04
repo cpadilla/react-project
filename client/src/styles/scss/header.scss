@@ -65,9 +65,9 @@
                     @include transition(.4s ease-in-out);
                 }
 
-                .tab:hover > .drips > .drip > .bar {
-                    filter: hue-rotate(180deg);
-                }
+                // .tab:hover > .drips > a > .drip > .bar {
+                //     background-color: rgba(0,0,0,0.4);
+                // }
 
                 .tab:hover > .linkWrapper > div {
                     color: $blue;
@@ -152,9 +152,25 @@
 
                             .drip {
                                 .bar {
-                                    background: url("../../assets/bar.png");
+                                    position: relative;
+                                    background: rgba(0,0,0,0) url("../../assets/bar.png");
+                                    transition: background-color 1s;
                                     width: 21px;
                                     height: 1px;
+
+                                    &:before {
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        background-color: inherit;
+                                        content: ' ';
+                                    }
+
+                                    // &:hover {
+                                    //     background-color: rgba(0,0,0,.5);
+                                    // }
 
                                     &.small {
                                         height: $small;

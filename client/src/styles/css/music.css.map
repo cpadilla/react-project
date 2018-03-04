@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA;;EAEE;ACCE,qBAAe;EACX,WAAW,EAAE,KAAK;EAClB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,MAAM",
+"mappings": "AAAA;;EAEE;ACEE,qBAAe;EACX,WAAW,EAAE,KAAK;EAClB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;EACf,eAAe,EAAE,MAAM",
 "sources": ["../scss/Colors.scss","../scss/music.scss"],
 "names": [],
 "file": "music.css"

@@ -26,6 +26,7 @@ class Homepage extends Component {
     }
 
     componentDidMount() {
+        //this.frontPageVideoIFrame.mute();
     }
 
     render() {
@@ -33,6 +34,29 @@ class Homepage extends Component {
 
         return (
             <div className="homepage">
+                <div className="frontPageVideoContainer">
+                    <iframe className="frontPageVideo" src="https://www.youtube.com/embed/nXf1vf08-Sc?t=8&autoplay=1&iv_load_policy=3&start=8&end=526&mute=1&controls=0&disablekb=1&loop=1&playlist=nXf1vf08-Sc" align="middle"/>
+                </div>
+                <div className="videoOverlay">
+                    <div className="bio">
+                        <b>Morning Teleportation</b> is a psychadelic rock band from Bowling Green, Kentucky ft. Tiger Merritt, Travis Goodwin, Joseph Jones, and Alex Lindsey.
+                        <button>On Tour Now</button>
+                    </div>
+                </div>
+                <div className="parallax"></div>
+                <div className="newAlbumOut">
+                    Check out the latest album!
+                        <div className="latestAlbum">
+                            <Link to={{ pathname: '/item/' + (album && album.productId),
+                                        state: {item: album}}}>
+                                {album && album.img && <img alt={album.title} src={require("../assets/" + album.img)} /> }
+                            </Link>
+                            <div>
+                                {album && album.title}
+                            </div>
+                        </div>
+                </div>
+                <div className="parallax2"></div>
                 <div className="border">
                     <div className="videoContainer">
                         <div className="innerContainer">
