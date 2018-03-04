@@ -8,27 +8,50 @@ class ShoppingCart extends Component {
         super(props);
 
         this.state = {
+            hovering: false
         };
 
+        this.onMouseEnter = this.onMouseEnter.bind(this);
+        this.onMouseLeave = this.onMouseLeave.bind(this);
+
+    }
+
+    onMouseEnter() {
+        this.setState({
+            hovering: true
+        })
+    }
+
+    onMouseLeave() {
+        this.setState({
+            hovering: false
+        })
     }
 
     componentDidMount() {
     }
 
     render() {
+        console.log('shoppingcartSize: ', this.props.shoppingCartSize);
         return (
-            <div className="shoppingCart">
+            <div className="shoppingCart" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
                 <div className="container">
-                    <div className="cartIcon"/>
-                    <div className="itemCount">
-                        : {this.props.shoppingCartSize || 0}
+                    {(this.props.shoppingCartSize || 0) === 0 ? 
+                        <div className="cartIcon"/>
+                        :
+                        <Link to={{ pathname: '/cart',
+                                    state: {shoppingCart: this.props.shoppingCart,
+                                            shoppingCartSize: this.props.shoppingCartSize}}}>
+                            <div className="cartIcon"/>
+                        </Link>
+                    }
+                    <div className="colon">
+                        :  
+                    </div>
+                    <div className={"itemCount animated " + (this.state.hovering ? ((this.props.shoppingCartSize || 0) === 0 ? "wobble" : "bounce") : "")}>
+                        {this.props.shoppingCartSize || 0}
                     </div>
                 </div>
-                <Link to={{ pathname: '/cart',
-                            state: {shoppingCart: this.props.shoppingCart,
-                                    shoppingCartSize: this.props.shoppingCartSize}}}>
-                    <button >Checkout</button>
-                </Link>
             </div>
         );
     }

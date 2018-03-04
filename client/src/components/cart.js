@@ -78,9 +78,11 @@ class Cart extends Component {
                                         return element.productId === item.productId;
                                     });
 
+                                    var quantity = (match && match.quantity) || 0;
+
                                     return {
                                         item: item,
-                                        quantity: match.quantity
+                                        quantity: quantity
                                     }
                                 })}}}>
                         <button>Checkout</button>

@@ -3,7 +3,6 @@ Vars
 */
 @import url(../css/animate.css);
 .header .fixed {
-  font-family: 'Open Sans', sans-serif;
   background-color: #ffffff;
   width: 100%;
   z-index: 10;

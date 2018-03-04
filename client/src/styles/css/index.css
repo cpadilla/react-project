@@ -16,7 +16,6 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   */
   @import url(../css/animate.css); }
   .header .header .fixed {
-    font-family: 'Open Sans', sans-serif;
     background-color: #ffffff;
     width: 100%;
     z-index: 10;
@@ -153,10 +152,10 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
 .homepage {
   /*
   Vars
-  */ }
+  */
+  @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah"); }
   .homepage .homepage {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-family: 'Gloria Hallelujah', cursive;
     height: 1200px; }
     .homepage .homepage .parallax {
       background-image: url("../../assets/mt_ea_large.jpg");
