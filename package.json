@@ -11,10 +11,13 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongodb": "^3.0.3",
+    "mongoose": "^5.0.7"
   },
   "scripts": {
-    "start": "cd client && react-scripts start",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "client": "cd client && react-scripts start",
     "build": "cd client && react-scripts build",
     "test": "cd client && react-scripts test --env=jsdom",
     "eject": "cd client && react-scripts eject",
@@ -23,11 +26,12 @@
   },
   "devDependencies": {
     "animatewithsass": "^3.2.1",
-    "bowser": "^1.9.2",
     "body-parser": "^1.18.2",
-    "cors": "^2.8.4",
+    "bowser": "^1.9.2",
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
+    "concurrently": "^3.5.1",
+    "cors": "^2.8.4",
     "css-loader": "^0.28.10",
     "html-webpack-plugin": "^2.30.1",
     "material-ui": "^0.20.0",
