@@ -7,7 +7,8 @@ import '../styles/css/shoppingCart.css'
 
 class Music extends Component {
 
-    url = "http://localhost:7777/api/music"
+    // url = "http://localhost:7777/api/music"
+    url = process.env.MT_API + "/music"
 
     constructor(props) {
         super(props);

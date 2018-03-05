@@ -7,7 +7,8 @@ import '../styles/css/shoppingCart.css'
 
 class Store extends Component {
 
-    url = "http://localhost:7777/api/products"
+    // url = "http://localhost:7777/api/products"
+    url = process.env.MT_API + "/products"
 
     constructor(props) {
         super(props);

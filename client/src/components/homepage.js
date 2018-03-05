@@ -9,7 +9,8 @@ import '../styles/css/homepage.css'
 
 class Homepage extends Component {
 
-    url = "http://localhost:7777/api/latestAlbum"
+    // url = "http://localhost:7777/api/latestAlbum"
+    url = process.env.MT_API + "/latestAlbum"
 
     constructor(props) {
         super(props);

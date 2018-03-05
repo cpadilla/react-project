@@ -44,7 +44,8 @@ class Cart extends Component {
     componentDidMount() {
         if (this.props && this.props.shoppingCart) {
 
-            var url = "http://localhost:7777/api/item/";
+            // var url = "http://localhost:7777/api/item/";
+            var url = process.env.MT_API + "/item/";
 
             var itemList = [];
             var itemQuantities = [];

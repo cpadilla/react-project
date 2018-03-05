@@ -18,7 +18,8 @@ class Item extends Component {
         // initalize state from props.location
         if (props.item == null) {
             // request item info from server
-            var url = "http://localhost:7777/api/item/" + this.state.id;
+            // var url = "http://localhost:7777/api/item/" + this.state.id;
+            var url = process.env.MT_API + "/item/" + this.state.id;
 
             axios.get(url).then((res) => {
                 this.setState({item: res.data[0]});

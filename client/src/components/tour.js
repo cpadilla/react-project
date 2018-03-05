@@ -8,7 +8,8 @@ class Tour extends Component {
     constructor(props) {
         super(props);
 
-        var url = "http://localhost:7777/api/tourdates"
+        // var url = "http://localhost:7777/api/tourdates"
+        var url = process.env.MT_API + "/tourdates"
 
         axios.get(url).then((res) => {
             this.setState({tourdates: res.data});
