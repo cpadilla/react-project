@@ -19,6 +19,7 @@ class Music extends Component {
     }
 
     componentDidMount() {
+        console.log(process.env);
         console.log(process.env.MT_API);
         this.url = process.env.MT_API + "/music";
         axios.get(this.url).then((res) => {
