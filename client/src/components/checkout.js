@@ -29,10 +29,11 @@ class Checkout extends Component {
     }
 
     render () {
+        
 
         var total = 0;
         this.state.cart.forEach(element => {
-            total += element.quantity * element.item.price;
+            total += element.quantity * (element.item ? element.item.price : 0);
         });
 
         return (
