@@ -6,11 +6,13 @@ import {
     Link
 } from 'react-router-dom';
 import '../styles/css/homepage.css'
+import config from 'react-global-configuration'
 
 class Homepage extends Component {
 
     // url = "http://localhost:7777/api/latestAlbum"
-    url = process.env.MT_API + "/latestAlbum"
+    // url = process.env.MT_API + "/latestAlbum"
+    url = config.get('api') + "/latestAlbum"
 
     constructor(props) {
         super(props);

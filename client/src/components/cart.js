@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import '../styles/css/cart.css'
+import config from 'react-global-configuration'
 
 class Cart extends Component {
     constructor(props) {
@@ -45,7 +46,8 @@ class Cart extends Component {
         if (this.props && this.props.shoppingCart) {
 
             // var url = "http://localhost:7777/api/item/";
-            var url = process.env.MT_API + "/item/";
+            // var url = process.env.MT_API + "/item/";
+            var url = config.get('api') + "/api/item/";
 
             var itemList = [];
             var itemQuantities = [];

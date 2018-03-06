@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import '../styles/css/item.css'
+import config from 'react-global-configuration'
 
 class Item extends Component {
 
@@ -19,7 +20,8 @@ class Item extends Component {
         if (props.item == null) {
             // request item info from server
             // var url = "http://localhost:7777/api/item/" + this.state.id;
-            var url = process.env.MT_API + "/item/" + this.state.id;
+            // var url = process.env.MT_API + "/item/" + this.state.id;
+            var url = config.get('api') + "/item/" + this.state.id;
 
             axios.get(url).then((res) => {
                 this.setState({item: res.data[0]});

@@ -4,11 +4,9 @@ import ShoppingCartContainer from '../containers/shoppingCartContainer'
 import ItemCard from '../components/itemCard'
 import '../styles/css/store.css'
 import '../styles/css/shoppingCart.css'
+import config from 'react-global-configuration'
 
 class Store extends Component {
-
-    // url = "http://localhost:7777/api/products"
-    url = process.env.MT_API + "/products"
 
     constructor(props) {
         super(props);
@@ -20,7 +18,9 @@ class Store extends Component {
 
     componentDidMount() {
         console.log('componentDidMount');
-        axios.get(this.url).then((res) => {
+        var url = config.get('api') + "/products"
+        console.log('config.api: ', config.get('api'));
+        axios.get(url).then((res) => {
             this.setState({items: res.data});
             console.log('products: ', res.data)
         }).catch(function(error) {

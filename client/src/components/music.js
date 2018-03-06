@@ -4,11 +4,9 @@ import ShoppingCartContainer from '../containers/shoppingCartContainer'
 import ItemCard from '../components/itemCard'
 import '../styles/css/music.css'
 import '../styles/css/shoppingCart.css'
+import config from 'react-global-configuration'
 
 class Music extends Component {
-
-    // url = "http://localhost:7777/api/music"
-    url = process.env.MT_API + "/music";
 
     constructor(props) {
         super(props);
@@ -19,10 +17,9 @@ class Music extends Component {
     }
 
     componentDidMount() {
-        console.log(process.env);
-        console.log(process.env.MT_API);
-        this.url = process.env.MT_API + "/music";
-        axios.get(this.url).then((res) => {
+        var url = config.get('api') + "/music";
+        console.log('config.api: ', config.get('api'));
+        axios.get(url).then((res) => {
             this.setState({items: res.data});
         }).catch(function(error) {
             console.log(error);
