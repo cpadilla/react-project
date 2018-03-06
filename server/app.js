@@ -1,9 +1,9 @@
+var dotenv = require('dotenv').config();;
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
-var dotenv = require('dotenv').config();;
 // var mongo = require('mongodb').MongoClient;
 var app = express();
 
