@@ -22,11 +22,11 @@ import ItemContainer from './containers/ItemContainer'
 import CartContainer from './containers/cartContainer'
 import config from 'react-global-configuration'
 
-if (process.env.ENV === 'production') {
+// if (process.env.ENV === 'production') {
   config.set({api: 'https://morning-teleportation-api.azurewebsites.net/api'})
-} else {
-  config.set({api: 'http://localhost:7777/api'})
-}
+// } else {
+//   config.set({api: 'http://localhost:7777/api'})
+// }
 console.log('config.api: ', config.get('api'));
 
 const enhancers = [];
