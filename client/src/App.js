@@ -23,7 +23,8 @@ import CartContainer from './containers/cartContainer'
 import config from 'react-global-configuration'
 
 // if (process.env.ENV === 'production') {
-  config.set({api: 'https://morning-teleportation-api.azurewebsites.net/api'})
+  // config.set({api: 'https://morning-teleportation-api.azurewebsites.net/api'})
+  config.set({api: '/api'})
 // } else {
 //   config.set({api: 'http://localhost:7777/api'})
 // }
