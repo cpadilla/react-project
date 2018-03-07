@@ -5,7 +5,6 @@
   "dependencies": {
     "autoprefixer": "^8.1.0",
     "axios": "^0.18.0",
-    "concurrently": "^3.5.1",
     "chokidar-cli": "^1.2.0",
     "npm-run-all": "^4.1.2",
     "postcss-cli": "^5.0.0",
@@ -18,12 +17,12 @@
   },
   "scripts": {
     "start": "concurrently \"npm run client\" \"npm run server\"",
-    "client": "cd client && react-scripts start",
-    "build": "cd client && react-scripts build",
-    "test": "cd client && react-scripts test --env=jsdom",
-    "eject": "cd client && react-scripts eject",
-    "sass": "cd client && sass --watch src/styles/scss:src/styles/css",
-    "server": "cd server && node app.js"
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "test": "cd client && npm run test",
+    "eject": "cd client && npm run eject",
+    "sass": "cd client && npm run start",
+    "server": "cd server && npm start"
   },
   "devDependencies": {
     "animatewithsass": "^3.2.1",
@@ -31,6 +30,7 @@
     "bowser": "^1.9.2",
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
+    "concurrently": "^3.5.1",
     "cors": "^2.8.4",
     "css-loader": "^0.28.10",
     "html-webpack-plugin": "^2.30.1",
