@@ -2,6 +2,10 @@
   "name": "main",
   "version": "0.1.0",
   "private": true,
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
   "dependencies": {
     "autoprefixer": "^8.1.0",
     "axios": "^0.18.0",

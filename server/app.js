@@ -71,8 +71,9 @@ db.once('open', function() {
 // })
 
 
-app.get('/', function(req, res) {
-    res.send('Hello world!');
+// ALl remaining requests return the React app, so it can handle routing
+app.get('*', function(req, res) {
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
 // API
