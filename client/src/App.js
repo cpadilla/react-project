@@ -28,7 +28,6 @@ import config from 'react-global-configuration'
 // } else {
 //   config.set({api: 'http://localhost:7777/api'})
 // }
-console.log('config.api: ', config.get('api'));
 
 const enhancers = [];
 // if (process.env.NODE_EVN === 'development') {
