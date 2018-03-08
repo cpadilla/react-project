@@ -71,6 +71,10 @@ db.once('open', function() {
 // })
 
 
+app.get('/', function(req, res) {
+    res.send('Hello world!');
+});
+
 // API
 
 app.get('/api/item/:itemId', function(req, res) {

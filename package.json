@@ -16,8 +16,7 @@
     "mongoose": "^5.0.7"
   },
   "scripts": {
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
-    "start": "node server",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
     "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap",
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
