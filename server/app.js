@@ -10,6 +10,9 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json())
 
+// Priority serve any static files
+app.use(express.static(path.resolve(__dirname, '../client/build')))
+
 mongoose.connect(process.env.MONGO_DB,
 {auth: {
     user: process.env.MONGO_DB_USER,
