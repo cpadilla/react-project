@@ -17,7 +17,6 @@
   },
   "scripts": {
     "start": "concurrently \"npm run client\" \"npm run server\"",
-    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap",
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "test": "cd client && npm run test",
