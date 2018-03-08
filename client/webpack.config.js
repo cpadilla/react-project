@@ -17,6 +17,9 @@ module.exports = {
             }]
         }]
     },
-    devServer: {historyApiFallback: true},
+    devServer: {
+        historyApiFallback: true,
+        disableHostCheck: true
+    },
     plugins: [new HtmlWebpackPlugin({template: 'client/public/index.html'})]
 }
