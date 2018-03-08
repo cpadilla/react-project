@@ -19,8 +19,7 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        disableHostCheck: true,
-        public: 'agile-sierra-39866.herokuapp.com'
+        disableHostCheck: true
     },
     plugins: [new HtmlWebpackPlugin({template: 'client/public/index.html'})]
 }
