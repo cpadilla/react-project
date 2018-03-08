@@ -137,5 +137,5 @@ app.get('/api/tourdates', function(req, res) {
     });
 });
 
-app.listen(7777);
-console.log("App booted and listening on port 7777");
+app.listen(process.env.PORT || 7777);
+console.log("App booted and listening on port ", (process.env.PORT || 7777));
