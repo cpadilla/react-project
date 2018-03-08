@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
+var path = require('path');
 // var mongo = require('mongodb').MongoClient;
 var app = express();
 
