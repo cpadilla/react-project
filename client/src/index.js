@@ -5,7 +5,5 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 var dotenv = require('dotenv').config();;
 
-console.log("ENV: ", process.env);
-
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
