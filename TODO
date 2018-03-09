@@ -3,15 +3,15 @@ Website Todo:
     ✔ Create youtube video main display @started(18-03-04 06:41) @done(18-03-04 06:41) @lasted(24 seconds)
     ✔ Add latest album @done(18-03-04 10:27)
     ✔ Add bio @done(18-03-04 11:52)
-  ☐ Add Monogo to Azure
-  ☐ Host app on Azure
-  ☐ Make page responsive
+  ✔ Add Monogo to Azure @done(18-03-08 19:55)
+  ✔ Host app on Heroku @done(18-03-08 19:55)
   ☐ Fill out Contact page
   ☐ Add something to Tickets button
+  ☐ Make page responsive
   ☐ Add data to mongo db
   ☐ Finish confirmation page
   ☐ Add an effect when a Add To Cart button is clicked
-  ☐ Flesh out Music tab
+  ✔ Music tab: point to bandcamp @done(18-03-08 20:33)
   ☐ Add Contact page
   ☐ Store page should have filters
   ☐ Add footer

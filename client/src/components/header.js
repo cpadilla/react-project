@@ -38,6 +38,11 @@ class Header extends Component {
     renderLinks(link, i) {
         var one, two, three; var contact;
 
+        // Declare html for link
+        var headerLink = <Link className="linkWrapper" to={link.link}>
+                <div className={link.name} />
+            </Link>;
+
         if (link.name === "HOME") {
             one = "small";
             two = "large";
@@ -47,6 +52,9 @@ class Header extends Component {
             one = "large";
             two = "small";
             three = "medium";
+            headerLink = <a className="linkWrapper" href="https://morningteleportation.bandcamp.com/">
+                <div className={link.name} />
+            </a>;
         }
         if (link.name === "STORE") {
             one = "medium";
@@ -68,6 +76,8 @@ class Header extends Component {
                 </div>
         }
 
+
+
         var drips = <div className={"drips"} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
                 <Link to={link.link}>
                 <div className="drip">
@@ -87,9 +97,7 @@ class Header extends Component {
             </div>;
 
         return <div className="tab" key={i}>
-            <Link className="linkWrapper" to={link.link}>
-                <div className={link.name} />
-            </Link>
+            {headerLink}
             {drips}
         </div>;
     }

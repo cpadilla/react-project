@@ -20,14 +20,14 @@
     "mongoose": "^5.0.7"
   },
   "scripts": {
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "dev": "concurrently \"npm run client\" \"npm run server\" \"npm run sass\"",
     "start": "node server",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "client": "cd client && npm start",
     "build": "cd client && npm run build",
     "test": "cd client && npm run test",
     "eject": "cd client && npm run eject",
-    "sass": "cd client && npm run start",
+    "sass": "cd client && npm run sass",
     "server": "cd server && npm start"
   },
   "devDependencies": {

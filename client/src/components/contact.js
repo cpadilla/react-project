@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import '../styles/css/contact.css'
 
 class Contact extends Component {
     render() {
         return (
-            <div>
+            <div className="contact">
                 Contact
             </div>
         );
