@@ -115,9 +115,9 @@ class Header extends Component {
             {name: 'STORE',
                 link: '/store'},
             {name: 'TOUR',
-                link: '/tour'},
-            {name: 'CONTACT',
-                link: '/contact'}];
+                link: '/tour'}];
+            // {name: 'CONTACT',
+            //     link: '/contact'}];
 
         return  (
             <div className="header">
