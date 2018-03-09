@@ -74,12 +74,6 @@ db.once('open', function() {
 //     client.close();
 // })
 
-
-// ALl remaining requests return the React app, so it can handle routing
-app.get('*', function(req, res) {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
-
 // API
 
 app.get('/api/item/:itemId', function(req, res) {
@@ -144,6 +138,11 @@ app.get('/api/tourdates', function(req, res) {
         if (error) return console.error(error);
         res.json(result);
     });
+});
+
+// ALl remaining requests return the React app, so it can handle routing
+app.get('*', function(req, res) {
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
 app.listen(process.env.PORT || 7777);
