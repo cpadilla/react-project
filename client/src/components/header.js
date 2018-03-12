@@ -118,17 +118,17 @@ class Header extends Component {
             //     link: '/contact'}];
 
         return  (
-            <div className="header row">
-                <div className="fixed twelve columns">
-                    <div className="logo-panel">
-                        <div className="logo" />
+            <div className="header">
+                <div className="fixed">
+                    <div className="row">
+                        <div className="logo-panel twelve columns">
+                            <div className="logo" />
+                        </div>
                     </div>
 
                     {/* TODO: look into classnames package */}
-                    <div className={'topnav ' + className + " twelve cloumns"} id="topnav">
-                        <div className="tabs row">
-                            {links.map(this.renderLinks)}
-                        </div>
+                    <div className="tabs row">
+                        {links.map(this.renderLinks)}
                     </div>
                 </div>
                 <div className="headerSpace" />
