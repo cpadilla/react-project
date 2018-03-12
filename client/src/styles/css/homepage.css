@@ -4,8 +4,7 @@
   */
   @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
   @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-  font-family: 'Open Sans';
-  height: 1200px; }
+  font-family: 'Open Sans'; }
   .homepage button {
     /*
     Vars
@@ -29,130 +28,136 @@
       color: #ffffff; }
     .homepage button:hover {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-  .homepage .frontPageVideoContainer {
+  .homepage .fillPage {
     background: #010000;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed;
     top: 0;
-    left: 0;
-    bottom: 0;
     right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    .homepage .frontPageVideoContainer iframe {
-      width: 1920px;
-      height: 100%; }
-  .homepage .videoOverlay {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.3);
-    top: 0;
+    bottom: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center; }
-    .homepage .videoOverlay .bio {
-      display: flex;
-      padding-top: 200px;
-      margin: 0 auto;
-      display: flex;
-      color: #ffffff;
-      align-items: center;
-      justify-content: space-between;
-      text-align: center;
-      flex-direction: column;
+    z-index: -99; }
+    .homepage .fillPage .frontPageVideoContainer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; }
+      .homepage .fillPage .frontPageVideoContainer iframe {
+        position: absolute;
+        top: -15%;
+        left: -25%;
+        width: 150%;
+        height: 150%;
+        pointer-events: none; }
+    .homepage .fillPage .videoOverlay {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.3);
       top: 0;
       left: 0;
       height: 100%;
       width: 100%;
-      max-width: 500px;
-      max-height: 150px; }
-      .homepage .videoOverlay .bio b {
-        font-weight: bold;
-        font-size: 30px; }
-  .homepage .parallax {
-    background-image: url("../../assets/mt_sfs_large.jpg");
-    height: 90%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; }
-  .homepage .parallax2 {
-    background-image: url("../../assets/mt_sfs_large.jpg");
-    height: 25%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; }
-  .homepage .parallax3 {
-    background-image: url("../../assets/morning-teleportation-2010.jpg");
-    height: 25%;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; }
-  .homepage .border {
-    display: flex;
-    width: 100%;
-    height: 100%; }
-    .homepage .border .videoContainer {
-      position: relative;
       display: flex;
-      background-image: url("../../assets/morning-teleportation-border.png");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      justify-content: center;
-      width: 100%;
-      height: 75%; }
-      .homepage .border .videoContainer .innerContainer {
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center; }
+      .homepage .fillPage .videoOverlay .bio {
         display: flex;
-        position: relative;
+        padding-top: 200px;
+        margin: 0 auto;
+        display: flex;
+        color: #ffffff;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        height: 100%;
         width: 100%;
-        padding-top: 275px;
-        margin: 0px 140px;
+        max-width: 500px;
+        max-height: 150px; }
+        .homepage .fillPage .videoOverlay .bio b {
+          font-weight: bold;
+          font-size: 30px; }
+    .homepage .fillPage .parallax {
+      background-image: url("../../assets/mt_sfs_large.jpg");
+      height: 90%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+    .homepage .fillPage .parallax2 {
+      background-image: url("../../assets/mt_sfs_large.jpg");
+      height: 25%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+    .homepage .fillPage .parallax3 {
+      background-image: url("../../assets/morning-teleportation-2010.jpg");
+      height: 25%;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+    .homepage .fillPage .border {
+      display: flex;
+      width: 100%;
+      height: 100%; }
+      .homepage .fillPage .border .videoContainer {
+        position: relative;
+        display: flex;
+        background-image: url("../../assets/morning-teleportation-border.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
         justify-content: center;
-        align-items: flex-start;
-        min-width: 300px; }
-        .homepage .border .videoContainer .innerContainer .fitToContainer {
-          justify-self: center;
-          position: absolute;
-          max-width: 600px;
+        width: 100%;
+        height: 75%; }
+        .homepage .fillPage .border .videoContainer .innerContainer {
+          display: flex;
+          position: relative;
           width: 100%;
-          height: 100%;
-          padding-top: 100px; }
-          .homepage .border .videoContainer .innerContainer .fitToContainer .iframeContainer {
-            position: relative;
-            background-color: #4cc9e7;
+          padding-top: 275px;
+          margin: 0px 140px;
+          justify-content: center;
+          align-items: flex-start;
+          min-width: 300px; }
+          .homepage .fillPage .border .videoContainer .innerContainer .fitToContainer {
+            justify-self: center;
+            position: absolute;
+            max-width: 600px;
             width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; }
-            .homepage .border .videoContainer .innerContainer .fitToContainer .iframeContainer iframe {
-              position: absolute;
-              top: 0;
-              left: 0;
+            height: 100%;
+            padding-top: 100px; }
+            .homepage .fillPage .border .videoContainer .innerContainer .fitToContainer .iframeContainer {
+              position: relative;
+              background-color: #4cc9e7;
               width: 100%;
-              height: 100%; }
-  .homepage .newAlbumOut {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    background-color: #4cc9e7; }
-    .homepage .newAlbumOut img {
-      width: 300px; }
-  .homepage .tour {
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    padding: 30px 40px;
-    background-color: #d12e4b; }
-    .homepage .tour .tourdates img {
-      padding: 20px 0px;
-      width: 100%; }
+              height: 0;
+              padding-bottom: 56.25%; }
+              .homepage .fillPage .border .videoContainer .innerContainer .fitToContainer .iframeContainer iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%; }
+    .homepage .fillPage .newAlbumOut {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      background-color: #4cc9e7; }
+      .homepage .fillPage .newAlbumOut img {
+        width: 300px; }
+    .homepage .fillPage .tour {
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      padding: 30px 40px;
+      background-color: #d12e4b; }
+      .homepage .fillPage .tour .tourdates img {
+        padding: 20px 0px;
+        width: 100%; }
 
 /*# sourceMappingURL=homepage.css.map */

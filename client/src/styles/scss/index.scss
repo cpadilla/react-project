@@ -6,27 +6,6 @@ tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, f
 header, hgroup, menu, nav, section, summary, time, mark, audio, video
  { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
-
-// .header {
-//     @import 'header';
-// }
-
-// .homepage {
-//     @import 'homepage';
-// }
-
-// .music {
-//     @import 'music';
-// }
-
-// .item {
-//     @import 'item';
-// }
-
-// .itemCard {
-//     @import 'itemCard';
-// }
-
-// .checkout {
-//     @import 'checkout';
-// }
+html, body, #root {
+    height: 100%;
+}

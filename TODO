@@ -6,12 +6,20 @@ Website Todo:
   ✔ Add Monogo to Azure @done(18-03-08 19:55)
   ✔ Host app on Heroku @done(18-03-08 19:55)
   ✘ Fill out Contact page @cancelled(18-03-08 20:53)
+  ☐ Store page should have filters
+  ☐ Make page responsivee
+    ☐ Homepage
+      ☐ Get video to play on start mobile/ show image
+      ☐ Fix video width
+      ☐ fix header width
+      ☐ fix height
+    ☐ Store
+      ☐ Item
+      ☐ Checkout
+    ☐ Tour
   ☐ Add footer
-  ☐ Make page responsive
   ☐ Add something to Tickets button
   ☐ Add data to mongo db
   ☐ Finish confirmation page
   ☐ Add an effect when a Add To Cart button is clicked
   ✔ Music tab: point to bandcamp @done(18-03-08 20:33)
-  ☐ Add Contact page
-  ☐ Store page should have filters

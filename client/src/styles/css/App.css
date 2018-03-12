@@ -3,5 +3,12 @@
 body {
   font-size: 18px;
   font-family: 'Open Sans'; }
+  body .App {
+    height: 100%; }
+  body .maxWidth {
+    width: 100%;
+    margin: 0 0;
+    max-width: none;
+    padding: 0 0; }
 
 /*# sourceMappingURL=App.css.map */

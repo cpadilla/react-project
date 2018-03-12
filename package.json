@@ -10,14 +10,14 @@
     "autoprefixer": "^8.1.0",
     "axios": "^0.18.0",
     "chokidar-cli": "^1.2.0",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.3",
+    "mongoose": "^5.0.7",
     "npm-run-all": "^4.1.2",
     "postcss-cli": "^5.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1",
-    "express": "^4.16.2",
-    "mongodb": "^3.0.3",
-    "mongoose": "^5.0.7"
+    "react-scripts": "1.1.1"
   },
   "scripts": {
     "dev": "concurrently \"npm run client\" \"npm run server\" \"npm run sass\"",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "animatewithsass": "^3.2.1",
     "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
     "bowser": "^1.9.2",
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",

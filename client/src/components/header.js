@@ -76,8 +76,6 @@ class Header extends Component {
                 </div>
         }
 
-
-
         var drips = <div className={"drips"} onMouseEnter={this.handleHover} onMouseLeave={this.handleHover}>
                 <Link to={link.link}>
                 <div className="drip">
@@ -96,7 +94,7 @@ class Header extends Component {
                 </Link>
             </div>;
 
-        return <div className="tab" key={i}>
+        return <div className="tab three columns" key={i}>
             {headerLink}
             {drips}
         </div>;
@@ -120,15 +118,15 @@ class Header extends Component {
             //     link: '/contact'}];
 
         return  (
-            <div className="header">
-                <div className="fixed">
+            <div className="header row">
+                <div className="fixed twelve columns">
                     <div className="logo-panel">
                         <div className="logo" />
                     </div>
 
                     {/* TODO: look into classnames package */}
-                    <div className={'topnav ' + className} id="topnav">
-                        <div className="tabs">
+                    <div className={'topnav ' + className + " twelve cloumns"} id="topnav">
+                        <div className="tabs row">
                             {links.map(this.renderLinks)}
                         </div>
                     </div>

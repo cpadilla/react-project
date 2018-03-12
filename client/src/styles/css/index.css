@@ -10,4 +10,7 @@ header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   font: inherit;
   vertical-align: baseline; }
 
+html, body, #root {
+  height: 100%; }
+
 /*# sourceMappingURL=index.css.map */

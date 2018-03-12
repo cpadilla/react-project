@@ -21,6 +21,8 @@ import Confirmation from './components/confirmation'
 import ItemContainer from './containers/ItemContainer'
 import CartContainer from './containers/cartContainer'
 import config from 'react-global-configuration'
+import './styles/css/App.css'
+import './styles/css/skeleton.css'
 
 // if (process.env.ENV === 'production') {
   // config.set({api: 'https://morning-teleportation-api.azurewebsites.net/api'})
@@ -60,7 +62,7 @@ class App extends Component {
     return (
       <Router>
         <Provider store={store}>
-          <div className="App">
+          <div className="App maxWidth container">
             <Header />
             <Route exact path='/' component={Homepage}/>
             {/* <route exact path='/music' component={music} />*/}
