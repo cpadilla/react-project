@@ -8,16 +8,17 @@ Website Todo:
   ✘ Fill out Contact page @cancelled(18-03-08 20:53)
   ☐ Store page should have filters
   ☐ Make page responsivee
-    ☐ Homepage
-      ☐ Get video to play on start mobile/ show image
-      ☐ Fix video width
-      ☐ fix header width
-      ☐ fix height
-    ☐ Store
-      ☐ Item
-      ☐ Checkout
-    ☐ Tour
-  ☐ Add footer
+☐ Homepage
+    ✔ Get video to play on start mobile/ show image @done(18-03-17 17:04)
+    ✔ Fix video width @done(18-03-17 17:49)
+    ✔ fix header width @done(18-03-17 17:49)
+    ✔ fix height @done(18-03-17 17:49)
+☐ Store
+    ☐ Item
+    ☐ Checkout
+    ☐ Fix header space
+☐ Tour
+☐ Add footer
   ☐ Add something to Tickets button
   ☐ Add data to mongo db
   ☐ Finish confirmation page

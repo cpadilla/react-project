@@ -10,6 +10,8 @@ import config from 'react-global-configuration'
 
 class Homepage extends Component {
 
+    // url = "http://localhost:7777/api/latestAlbum"
+    // url = process.env.MT_API + "/latestAlbum"
     url = config.get('api') + "/latestAlbum"
 
     constructor(props) {
@@ -28,10 +30,12 @@ class Homepage extends Component {
         })
 
         this.onResize = this.onResize.bind(this);
+        this.onResize();
     }
 
 
     onResize() {
+        console.log('resize(): ', this.container)
         var aspectRatio = 16 / 9;
 
         if (this.container) {
@@ -65,13 +69,19 @@ class Homepage extends Component {
     componentDidMount() {
         window.addEventListener("load", this.onResize)
         window.addEventListener("resize", this.onResize)
+        this.onResize()
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("load", this.onResize)
+        window.removeEventListener("resize", this.onResize)
     }
 
     render() {
         var album = this.state.album;
+        console.log('render()')
 
-        return (
-            <div className="homepage row">
+        var homepage = <div className="homepage row">
                 <div className="fillPage twelve columns">
                     <div className="frontPageVideoContainer" ref={ (container) => { this.container = container; }}>
                         <iframe className="frontPageVideo" src="https://www.youtube.com/embed/TKTbbf4z1PQ?t=8&autoplay=1&iv_load_policy=3&start=8&end=526&mute=1&controls=0&disablekb=1&loop=1&rel=0&showinfo=0&playlist=TKTbbf4z1PQ"
@@ -79,6 +89,11 @@ class Homepage extends Component {
                     </div>
                 </div>
             </div>
+
+        // this.onResize();
+
+        return (
+            homepage
         )
     }
 }
