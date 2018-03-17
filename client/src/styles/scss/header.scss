@@ -54,7 +54,9 @@
 
             .tabs {
                 max-width: 1200px;
-
+                @media only screen and (max-width: 550px) {
+                    display: none;
+                }
 
                 .tab:hover > .drips {
                     @include translateY(10%);

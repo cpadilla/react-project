@@ -38,7 +38,9 @@ class ShoppingCart extends Component {
             <div className="shoppingCart" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
                 <div className="container">
                     {(this.props.shoppingCartSize || 0) === 0 ? 
-                        <div className="cartIcon"/>
+                        <div>
+                            <div className="cartIcon"/>
+                        </div>
                         :
                         <Link to={{ pathname: '/cart',
                                     state: {shoppingCart: this.props.shoppingCart,

@@ -26,6 +26,9 @@ Vars
     vertical-align: middle; }
   .header .fixed .tabs {
     max-width: 1200px; }
+    @media only screen and (max-width: 550px) {
+      .header .fixed .tabs {
+        display: none; } }
     .header .fixed .tabs .tab:hover > .drips {
       -webkit-transform: translateY(10%);
       -moz-transform: translateY(10%);

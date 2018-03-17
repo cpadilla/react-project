@@ -70,9 +70,9 @@ class Item extends Component {
                             <img alt={item.title} src={require("../assets/" + item.img)} />
                         </div>
                         <div className="titleRow">
-                            <h1>
+                            <div className="title">
                                 {item.title}
-                            </h1>
+                            </div>
                             <div className="price">
                                 ${item.price}.00
                             </div>

@@ -34,8 +34,13 @@
                 padding: 5px 10px;
                 display: flex;
                 justify-content: space-between;
-                h1 {
+                // h1 {
+                //     font-family: $font;
+                // }
+
+                .title {
                     font-family: $font;
+                    max-width: 225px;
                 }
 
                 .price {
