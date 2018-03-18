@@ -54,9 +54,6 @@
 
             .tabs {
                 max-width: 1200px;
-                @media only screen and (max-width: 550px) {
-                    display: none;
-                }
 
                 .tab:hover > .drips {
                     @include translateY(10%);
@@ -74,7 +71,24 @@
                     @include transition(.3s ease-in-out);
                 }
 
+                .hamburger {
+                    position: relative;
+                    height: 40px;
+                    width: 40px;
+                    top: -10px;
+                    left: 30px;
+                    background: url("../../assets/hamburger.png");
+                    background-size: 100%;
+                    display: none;
+                    @media only screen and (max-width: 550px) {
+                        display: block;
+                    }
+                }
+
                 .tab {
+                    @media only screen and (max-width: 550px) {
+                        display: none;
+                    }
                     height: 100%;
                     // width: fit-content;
                     display: flex;

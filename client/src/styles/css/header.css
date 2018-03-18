@@ -26,9 +26,6 @@ Vars
     vertical-align: middle; }
   .header .fixed .tabs {
     max-width: 1200px; }
-    @media only screen and (max-width: 550px) {
-      .header .fixed .tabs {
-        display: none; } }
     .header .fixed .tabs .tab:hover > .drips {
       -webkit-transform: translateY(10%);
       -moz-transform: translateY(10%);
@@ -43,11 +40,26 @@ Vars
       -webkit-transition: 0.3s ease-in-out;
       -moz-transition: 0.3s ease-in-out;
       transition: 0.3s ease-in-out; }
+    .header .fixed .tabs .hamburger {
+      position: relative;
+      height: 40px;
+      width: 40px;
+      top: -10px;
+      left: 30px;
+      background: url("../../assets/hamburger.png");
+      background-size: 100%;
+      display: none; }
+      @media only screen and (max-width: 550px) {
+        .header .fixed .tabs .hamburger {
+          display: block; } }
     .header .fixed .tabs .tab {
       height: 100%;
       display: flex;
       align-content: center;
       justify-content: center; }
+      @media only screen and (max-width: 550px) {
+        .header .fixed .tabs .tab {
+          display: none; } }
       .header .fixed .tabs .tab .linkWrapper {
         z-index: 1;
         position: relative;

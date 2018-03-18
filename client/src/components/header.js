@@ -129,9 +129,9 @@ class Header extends Component {
                     {/* TODO: look into classnames package */}
                     <div className="tabs row">
                         {links.map(this.renderLinks)}
+                        <div className="hamburger three columns" />
                     </div>
                 </div>
-                <div className="headerSpace" />
             </div>
         )
     }
