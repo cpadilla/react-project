@@ -41,11 +41,6 @@ Vars
       -moz-transition: 0.3s ease-in-out;
       transition: 0.3s ease-in-out; }
     .header .fixed .tabs .hamburger {
-      position: relative;
-      height: 40px;
-      width: 40px;
-      top: -10px;
-      left: 30px;
       background: url("../../assets/hamburger.png");
       background-size: 100%;
       display: none; }
@@ -59,7 +54,8 @@ Vars
       justify-content: center; }
       @media only screen and (max-width: 550px) {
         .header .fixed .tabs .tab {
-          display: none; } }
+          display: none;
+          padding: 4px 0px; } }
       .header .fixed .tabs .tab .linkWrapper {
         z-index: 1;
         position: relative;
@@ -109,6 +105,9 @@ Vars
         -webkit-transition: 0.4s ease-in-out;
         -moz-transition: 0.4s ease-in-out;
         transition: 0.4s ease-in-out; }
+        @media only screen and (max-width: 550px) {
+          .header .fixed .tabs .tab .drips {
+            display: none; } }
         .header .fixed .tabs .tab .drips a {
           display: flex; }
           .header .fixed .tabs .tab .drips a .drip .bar {

@@ -7,16 +7,19 @@ Website Todo:
   ✔ Host app on Heroku @done(18-03-08 19:55)
   ✘ Fill out Contact page @cancelled(18-03-08 20:53)
   ☐ Store page should have filters
-  ☐ Make page responsivee
+☐ Make page responsive
 ☐ Homepage
     ✔ Get video to play on start mobile/ show image @done(18-03-17 17:04)
     ✔ Fix video width @done(18-03-17 17:49)
     ✔ fix header width @done(18-03-17 17:49)
     ✔ fix height @done(18-03-17 17:49)
+    ☐ fix bug with responsive: scrollable width
+    ☐ Auto-play video on mobile: https://stackoverflow.com/questions/15090782/youtube-autoplay-not-working-on-mobile-devices-with-embedded-html5-player
 ☐ Store
     ☐ Item
     ☐ Checkout
     ☐ Fix header space
+    ☐ Move shopping cart up when responsive
 ☐ Tour
 ☐ Add footer
   ☐ Add something to Tickets button

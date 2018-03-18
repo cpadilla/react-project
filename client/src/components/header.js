@@ -12,8 +12,9 @@ class Header extends Component {
         super(props);
 
         this.state = {
-            responsive: false,
-            isHovered: false
+            menuClicked: false,
+            isHovered: false,
+            linkStyle: {}
         };
 
         this.handleClick = this.handleMenuClick.bind(this);
@@ -30,8 +31,27 @@ class Header extends Component {
     handleMenuClick() {
 
         this.setState((prevState) => ({
-            responsive: !prevState.responsive
+            menuClicked: !prevState.menuClicked
         }));
+
+        if (this.state.menuClicked) {
+            // rotate hamburger menu
+            // display menu items
+            // for (var i=0; i<this.state.linkRef.length; i++) {
+            //     this.state.linkRef[i].style = {
+            //         display: "block"
+            //     }
+            // }
+            this.setState({
+                ...this.state,
+                linkStyle: {
+                    display: "block"
+                }
+            })
+        } else {
+            // rotate hamburger menu
+            // hide menu items
+        }
 
     }
 
@@ -94,7 +114,7 @@ class Header extends Component {
                 </Link>
             </div>;
 
-        return <div className="tab three columns" key={i}>
+        return <div className="tab three columns" key={i} >
             {headerLink}
             {drips}
         </div>;
@@ -128,8 +148,9 @@ class Header extends Component {
 
                     {/* TODO: look into classnames package */}
                     <div className="tabs row">
+                        <div className="hamburger three columns"
+                            onClick={this.handleClick}/>
                         {links.map(this.renderLinks)}
-                        <div className="hamburger three columns" />
                     </div>
                 </div>
             </div>

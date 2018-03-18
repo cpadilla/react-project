@@ -35,13 +35,11 @@ class Homepage extends Component {
 
 
     onResize() {
-        console.log('resize(): ', this.container)
         var aspectRatio = 16 / 9;
 
         if (this.container) {
             var containerWidth = this.container.offsetWidth;
             var containerHeight = this.container.offsetHeight;
-            console.log("containerWidth: ", containerWidth, " containerHeight: ", containerHeight)
             var containerAspectRatio = containerWidth / containerHeight;
             var newWidth = containerWidth;
             var newHeight = containerHeight;
@@ -62,7 +60,6 @@ class Homepage extends Component {
                 }
             });
 
-            console.log("state: ", this.state);
         }
     }
 
@@ -79,7 +76,6 @@ class Homepage extends Component {
 
     render() {
         var album = this.state.album;
-        console.log('render()')
 
         var homepage = <div className="homepage row">
                 <div className="fillPage twelve columns">

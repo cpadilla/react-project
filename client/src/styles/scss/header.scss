@@ -72,11 +72,11 @@
                 }
 
                 .hamburger {
-                    position: relative;
-                    height: 40px;
-                    width: 40px;
-                    top: -10px;
-                    left: 30px;
+                    // position: relative;
+                    // height: 40px;
+                    // width: 40px;
+                    // top: -10px;
+                    // left: 30px;
                     background: url("../../assets/hamburger.png");
                     background-size: 100%;
                     display: none;
@@ -88,6 +88,7 @@
                 .tab {
                     @media only screen and (max-width: 550px) {
                         display: none;
+                        padding: 4px 0px;
                     }
                     height: 100%;
                     // width: fit-content;
@@ -146,6 +147,9 @@
                     }
 
                     .drips {
+                        @media only screen and (max-width: 550px) {
+                            display: none;
+                        }
                         position: absolute;
                         top: $headerHeight - 15px;
                         z-index: 0 !important;
