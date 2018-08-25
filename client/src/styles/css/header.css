@@ -40,7 +40,7 @@ Vars
   .header .fixed .tabs {
     position: absolute;
     z-index: 1 !important;
-    margin-top: -48px;
+    margin-top: -50px;
     -webkit-transform: translateY(100px);
     -moz-transform: translateY(100px);
     transform: translateY(100px);
@@ -76,9 +76,8 @@ Vars
   position: relative;
   display: flex;
   height: 100%;
-  bottom: 2px;
   left: 0px;
-  padding: 0px 30px;
+  padding: 4px 30px;
   background: url("../../assets/white-pixel.png");
   background-size: 100%;
   width: 100%;
