@@ -1,42 +1,52 @@
 .shoppingCart {
   @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
   padding-top: 100px;
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: "Gloria Hallelujah", cursive;
   position: fixed;
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: center; }
-  .shoppingCart div {
-    margin: 5px 0px; }
-  .shoppingCart .container {
-    display: flex; }
-    .shoppingCart .container:hover .cartIcon {
-      z-index: -1;
-      transform: scale(1.2);
-      transform-origin: center;
-      -webkit-transition: 0.4s ease-in-out;
-      -moz-transition: 0.4s ease-in-out;
-      transition: 0.4s ease-in-out; }
-    .shoppingCart .container div {
-      align-self: center; }
-    .shoppingCart .container .cartIcon {
-      z-index: -1;
-      background: url("../../assets/cart.png");
-      background-size: 100%;
-      height: 70px;
-      width: 70px;
-      -webkit-transition: 0.4s ease-in-out;
-      -moz-transition: 0.4s ease-in-out;
-      transition: 0.4s ease-in-out; }
-    .shoppingCart .container .colon {
-      z-index: 1;
-      padding-right: 5px; }
-    .shoppingCart .container .itemCount {
-      align-self: center; }
-  .shoppingCart button {
-    font-family: inherit;
-    font-size: 1em;
-    width: 100%; }
+  justify-content: center;
+  z-index: 5;
+}
+.shoppingCart div {
+  margin: 5px 0px;
+}
+.shoppingCart .container {
+  display: flex;
+}
+.shoppingCart .container:hover .cartIcon {
+  z-index: -1;
+  transform: scale(1.2);
+  transform-origin: center;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.shoppingCart .container div {
+  align-self: center;
+}
+.shoppingCart .container .cartIcon {
+  z-index: -1;
+  background: url("../../assets/cart.png");
+  background-size: 100%;
+  height: 70px;
+  width: 70px;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.shoppingCart .container .colon {
+  z-index: 1;
+  padding-right: 5px;
+}
+.shoppingCart .container .itemCount {
+  align-self: center;
+}
+.shoppingCart button {
+  font-family: inherit;
+  font-size: 1em;
+  width: 100%;
+}
 
-/*# sourceMappingURL=shoppingCart.css.map */
+/*# sourceMappingURL=src/styles/css/shoppingCart.css.map */

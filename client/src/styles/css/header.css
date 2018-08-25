@@ -2,6 +2,10 @@
 Vars
 */
 @import '../css/animate.css';
+.header {
+  position: relative;
+  z-index: 10;
+}
 .header .fixed {
   background-color: #ffffff;
   width: 100%;
@@ -13,7 +17,7 @@ Vars
   position: relative;
   height: 150px;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 .header .fixed .logo {
   background: url("../../assets/morning-teleportation.jpg");
@@ -35,7 +39,7 @@ Vars
 @media only screen and (max-width: 550px) {
   .header .fixed .tabs {
     position: absolute;
-    z-index: 0 !important;
+    z-index: 1 !important;
     margin-top: -48px;
     -webkit-transform: translateY(100px);
     -moz-transform: translateY(100px);
@@ -68,7 +72,7 @@ Vars
   justify-content: center;
 }
 .header .fixed .tabs .tab .linkWrapper {
-  z-index: 1;
+  z-index: 2;
   position: relative;
   display: flex;
   height: 100%;
@@ -116,7 +120,7 @@ Vars
 .header .fixed .tabs .tab .drips {
   position: absolute;
   top: 175px;
-  z-index: 0 !important;
+  z-index: 1 !important;
   display: flex;
   filter: drop-shadow(3px 10px 3px rgba(0, 0, 0, 0.3));
   -webkit-transform: translateY(-10%);
@@ -199,7 +203,7 @@ Vars
     width: 100%;
     height: 50px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
   }
 }
 .header .fixed .hamburgerBar .hamburger {
