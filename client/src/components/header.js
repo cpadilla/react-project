@@ -18,8 +18,10 @@ class Header extends Component {
         };
 
         this.handleClick = this.handleMenuClick.bind(this);
+        this.linkClicked = this.linkClicked.bind(this);
         this.handleHover = this.handleHover.bind(this);
         this.renderLinks = this.renderLinks.bind(this);
+        this.renderNavBar = this.renderNavBar.bind(this);
     }
 
     handleHover() {
@@ -29,30 +31,44 @@ class Header extends Component {
     }
 
     handleMenuClick() {
+        console.log("hamburger clicked! "+this.state.menuClicked);
 
-        this.setState((prevState) => ({
-            menuClicked: !prevState.menuClicked
-        }));
+        this.setState({
+            menuClicked: !this.state.menuClicked
+        });
+    }
 
-        if (this.state.menuClicked) {
-            // rotate hamburger menu
-            // display menu items
-            // for (var i=0; i<this.state.linkRef.length; i++) {
-            //     this.state.linkRef[i].style = {
-            //         display: "block"
-            //     }
-            // }
-            this.setState({
-                ...this.state,
-                linkStyle: {
-                    display: "block"
-                }
-            })
-        } else {
-            // rotate hamburger menu
-            // hide menu items
+    linkClicked() {
+        console.log("link Clicked");
+        this.setState({
+            menuClicked: false
+        });
+    }
+
+    renderNavBar() {
+        console.log("render Navbar: " + this.state.menuClicked);
+
+        var links = [
+            {name: 'HOME',
+                link: '/'},
+            {name: 'MUSIC',
+                link: '/music'},
+            {name: 'STORE',
+                link: '/store'},
+            {name: 'TOUR',
+                link: '/tour'}];
+            // {name: 'CONTACT',
+            //     link: '/contact'}];
+
+        let style = "tabs row";
+
+        if (!this.state.menuClicked) {
+            style = "tabs row closed";
         }
 
+        return <div className={style}>
+            {links.map(this.renderLinks)}
+        </div>;
     }
 
     renderLinks(link, i) {
@@ -114,7 +130,7 @@ class Header extends Component {
                 </Link>
             </div>;
 
-        return <div className="tab three columns" key={i} >
+        return <div className="tab three columns" key={i} onClick={this.linkClicked}>
             {headerLink}
             {drips}
         </div>;
@@ -125,18 +141,6 @@ class Header extends Component {
         const { responsive } = this.state;
         const className = responsive ? 'responsive' : 'not-responsive';
 
-        var links = [
-            {name: 'HOME',
-                link: '/'},
-            {name: 'MUSIC',
-                link: '/music'},
-            {name: 'STORE',
-                link: '/store'},
-            {name: 'TOUR',
-                link: '/tour'}];
-            // {name: 'CONTACT',
-            //     link: '/contact'}];
-
         return  (
             <div className="header">
                 <div className="fixed">
@@ -145,13 +149,19 @@ class Header extends Component {
                             <div className="logo" />
                         </div>
                     </div>
+                    <div className="hamburgerBar">
+                        <input type="checkbox" checked={this.state.menuClicked ? 'checked' : ''} id="btnControl"/>
+                        <label>
+                            <div className="hamburger three columns"
+                                onClick={this.handleClick}/>
+                        </label>
+                    </div>
 
                     {/* TODO: look into classnames package */}
-                    <div className="tabs row">
-                        <div className="hamburger three columns"
-                            onClick={this.handleClick}/>
+                    {this.renderNavBar()}
+                    {/* <div className="tabs row">
                         {links.map(this.renderLinks)}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )

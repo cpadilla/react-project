@@ -1,148 +1,230 @@
 /*
 Vars
 */
-@import url(../css/animate.css);
+@import '../css/animate.css';
 .header .fixed {
   background-color: #ffffff;
   width: 100%;
   z-index: 10;
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3)); }
-  .header .fixed .logo-panel {
-    text-align: center;
-    position: relative;
-    height: 150px;
-    width: 100%; }
-  .header .fixed .logo {
-    background: url("../../assets/morning-teleportation.jpg");
-    background-size: 100%;
-    background-position-y: 50%;
-    background-repeat: no-repeat;
-    display: inline-block;
-    max-height: 170px;
-    max-width: 1200px;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    vertical-align: middle; }
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3));
+}
+.header .fixed .logo-panel {
+  text-align: center;
+  position: relative;
+  height: 150px;
+  width: 100%;
+  z-index: 1;
+}
+.header .fixed .logo {
+  background: url("../../assets/morning-teleportation.jpg");
+  background-color: white;
+  background-size: 100%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  max-height: 170px;
+  max-width: 1200px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+.header .fixed .tabs {
+  max-width: 1200px;
+}
+@media only screen and (max-width: 550px) {
   .header .fixed .tabs {
-    max-width: 1200px; }
-    .header .fixed .tabs .tab:hover > .drips {
-      -webkit-transform: translateY(10%);
-      -moz-transform: translateY(10%);
-      transform: translateY(10%);
-      -webkit-transition: 0.3s ease-in-out;
-      -moz-transition: 0.3s ease-in-out;
-      transition: 0.3s ease-in-out; }
-    .header .fixed .tabs .tab:hover > .linkWrapper > div {
-      color: #4cc9e7;
-      transform: scale(1.2);
-      transform-origin: bottom;
-      -webkit-transition: 0.3s ease-in-out;
-      -moz-transition: 0.3s ease-in-out;
-      transition: 0.3s ease-in-out; }
-    .header .fixed .tabs .hamburger {
-      background: url("../../assets/hamburger.png");
-      background-size: 100%;
-      display: none; }
-      @media only screen and (max-width: 550px) {
-        .header .fixed .tabs .hamburger {
-          display: block; } }
-    .header .fixed .tabs .tab {
-      height: 100%;
-      display: flex;
-      align-content: center;
-      justify-content: center; }
-      @media only screen and (max-width: 550px) {
-        .header .fixed .tabs .tab {
-          display: none;
-          padding: 4px 0px; } }
-      .header .fixed .tabs .tab .linkWrapper {
-        z-index: 1;
-        position: relative;
-        display: flex;
-        height: 100%;
-        bottom: 2px;
-        left: 0px;
-        padding: 0px 30px;
-        background: url("../../assets/white-pixel.png");
-        background-size: 100%; }
-        .header .fixed .tabs .tab .linkWrapper div {
-          font-size: 20px;
-          color: #010000;
-          vertical-align: text-bottom;
-          align-content: flex-end;
-          text-decoration: none;
-          -webkit-transition: all 0.4s ease-in-out;
-          -moz-transition: all 0.4s ease-in-out;
-          transition: all 0.4s ease-in-out;
-          height: 40px;
-          width: 100px; }
-          .header .fixed .tabs .tab .linkWrapper div.HOME {
-            background: url("../../assets/home.png");
-            background-size: 100%; }
-          .header .fixed .tabs .tab .linkWrapper div.MUSIC {
-            background: url("../../assets/music.png");
-            background-size: 100%; }
-          .header .fixed .tabs .tab .linkWrapper div.STORE {
-            background: url("../../assets/store.png");
-            background-size: 100%; }
-          .header .fixed .tabs .tab .linkWrapper div.TOUR {
-            background: url("../../assets/tour.png");
-            background-size: 100%; }
-          .header .fixed .tabs .tab .linkWrapper div.CONTACT {
-            background: url("../../assets/contact.png");
-            background-size: 100%; }
-      .header .fixed .tabs .tab .drips {
-        position: absolute;
-        top: 175px;
-        z-index: 0 !important;
-        display: flex;
-        filter: drop-shadow(3px 10px 3px rgba(0, 0, 0, 0.3));
-        -webkit-transform: translateY(-10%);
-        -moz-transform: translateY(-10%);
-        transform: translateY(-10%);
-        transition: .5s ease-in-out;
-        -webkit-transition: 0.4s ease-in-out;
-        -moz-transition: 0.4s ease-in-out;
-        transition: 0.4s ease-in-out; }
-        @media only screen and (max-width: 550px) {
-          .header .fixed .tabs .tab .drips {
-            display: none; } }
-        .header .fixed .tabs .tab .drips a {
-          display: flex; }
-          .header .fixed .tabs .tab .drips a .drip .bar {
-            position: relative;
-            background: rgba(0, 0, 0, 0) url("../../assets/bar.png");
-            transition: background-color 1s;
-            width: 21px;
-            height: 1px; }
-            .header .fixed .tabs .tab .drips a .drip .bar:before {
-              position: absolute;
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              background-color: inherit;
-              content: ' '; }
-            .header .fixed .tabs .tab .drips a .drip .bar.small {
-              height: 35px;
-              transition: .5s ease-in-out; }
-            .header .fixed .tabs .tab .drips a .drip .bar.medium {
-              height: 55px;
-              transition: .5s ease-in-out; }
-            .header .fixed .tabs .tab .drips a .drip .bar.large {
-              height: 75px;
-              transition: .5s ease-in-out; }
-          .header .fixed .tabs .tab .drips a .drip .drop {
-            background: url("../../assets/drip.png");
-            background-size: 100%;
-            margin-top: -3px;
-            height: 21px;
-            width: 21px; }
-  .header .fixed .active {
-    background-color: #4CAF50;
-    color: #ffffff; }
+    position: absolute;
+    z-index: 0 !important;
+    margin-top: -48px;
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    transform: translateY(100px);
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+}
+.header .fixed .tabs .tab:hover > .drips {
+  -webkit-transform: translateY(10%);
+  -moz-transform: translateY(10%);
+  transform: translateY(10%);
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.header .fixed .tabs .tab:hover > .linkWrapper > div {
+  color: #4cc9e7;
+  transform: scale(1.2);
+  transform-origin: bottom;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.header .fixed .tabs .tab {
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.header .fixed .tabs .tab .linkWrapper {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  height: 100%;
+  bottom: 2px;
+  left: 0px;
+  padding: 0px 30px;
+  background: url("../../assets/white-pixel.png");
+  background-size: 100%;
+  width: 100%;
+  float: inherit;
+  justify-content: center;
+}
+.header .fixed .tabs .tab .linkWrapper div {
+  font-size: 20px;
+  color: #010000;
+  vertical-align: text-bottom;
+  align-content: flex-end;
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  height: 40px;
+  width: 100px;
+}
+.header .fixed .tabs .tab .linkWrapper div.HOME {
+  background: url("../../assets/home.png");
+  background-size: 100%;
+}
+.header .fixed .tabs .tab .linkWrapper div.MUSIC {
+  background: url("../../assets/music.png");
+  background-size: 100%;
+}
+.header .fixed .tabs .tab .linkWrapper div.STORE {
+  background: url("../../assets/store.png");
+  background-size: 100%;
+}
+.header .fixed .tabs .tab .linkWrapper div.TOUR {
+  background: url("../../assets/tour.png");
+  background-size: 100%;
+}
+.header .fixed .tabs .tab .linkWrapper div.CONTACT {
+  background: url("../../assets/contact.png");
+  background-size: 100%;
+}
+.header .fixed .tabs .tab .drips {
+  position: absolute;
+  top: 175px;
+  z-index: 0 !important;
+  display: flex;
+  filter: drop-shadow(3px 10px 3px rgba(0, 0, 0, 0.3));
+  -webkit-transform: translateY(-10%);
+  -moz-transform: translateY(-10%);
+  transform: translateY(-10%);
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+@media only screen and (max-width: 550px) {
+  .header .fixed .tabs .tab .drips {
+    display: none;
+  }
+}
+.header .fixed .tabs .tab .drips a {
+  display: flex;
+}
+.header .fixed .tabs .tab .drips a .drip .bar {
+  position: relative;
+  background: rgba(0, 0, 0, 0) url("../../assets/bar.png");
+  transition: background-color 1s;
+  width: 21px;
+  height: 1px;
+}
+.header .fixed .tabs .tab .drips a .drip .bar:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: inherit;
+  content: " ";
+}
+.header .fixed .tabs .tab .drips a .drip .bar.small {
+  height: 35px;
+  transition: 0.5s ease-in-out;
+}
+.header .fixed .tabs .tab .drips a .drip .bar.medium {
+  height: 55px;
+  transition: 0.5s ease-in-out;
+}
+.header .fixed .tabs .tab .drips a .drip .bar.large {
+  height: 75px;
+  transition: 0.5s ease-in-out;
+}
+.header .fixed .tabs .tab .drips a .drip .drop {
+  background: url("../../assets/drip.png");
+  background-size: 100%;
+  margin-top: -3px;
+  height: 21px;
+  width: 21px;
+}
+@media only screen and (max-width: 550px) {
+  .header .fixed .closed {
+    -webkit-transform: translateY(-100px);
+    -moz-transform: translateY(-100px);
+    transform: translateY(-100px);
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+}
+.header .fixed .hamburgerBar #btnControl {
+  display: none;
+}
+.header .fixed .hamburgerBar #btnControl:checked + label > .hamburger {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+@media only screen and (max-width: 550px) {
+  .header .fixed .hamburgerBar {
+    background-color: white;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+  }
+}
+.header .fixed .hamburgerBar .hamburger {
+  float: right;
+  background: url("../../assets/hamburger.png");
+  background-size: 100%;
+  margin-right: 20px;
+  margin-top: -10px;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+@media only screen and (max-width: 550px) {
+  .header .fixed .hamburgerBar .hamburger {
+    display: block;
+    height: 50px;
+    width: 50px;
+  }
+}
+.header .fixed .active {
+  background-color: #4CAF50;
+  color: #ffffff;
+}
 .header .headerSpace {
-  height: 190px; }
+  height: 190px;
+}
 
-/*# sourceMappingURL=header.css.map */
+/*# sourceMappingURL=src/styles/css/header.css.map */

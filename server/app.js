@@ -7,6 +7,7 @@ Schema = mongoose.Schema;
 var path = require('path');
 // var mongo = require('mongodb').MongoClient;
 var app = express();
+const util = require('util');
 
 app.use(cors());
 app.use(bodyParser.json())
@@ -14,18 +15,20 @@ app.use(bodyParser.json())
 // Priority serve any static files
 app.use(express.static(path.resolve(__dirname, '../client/build')))
 
-mongoose.connect(process.env.MONGO_DB,
-{auth: {
-    user: process.env.MONGO_DB_USER,
-    password: process.env.MONGO_DB_PASS
-}}).then(() => console.log('connection successful!'))
-.catch((err) => console.error(err));
+mongoose.connect(process.env.MONGO_DB)
+.then(() => console.log('connection successful!'))
+.catch((err) => {
+    console.error(err)
+});
 
 var db = mongoose.connection;
 
 var Product;
 
-db.on('error', console.error.bind(console, 'connection error'));
+//db.on('error', console.error.bind(console, 'connection error: '));
+db.on('error', function (error) {
+    console.error("connection error: " + error);
+});
 db.once('open', function() {
     console.log("we're connected!");
 }).then((res) => {
@@ -33,7 +36,7 @@ db.once('open', function() {
     // Make item schema
     var item = new Schema({
         productId: Number,
-        tilte: String,
+        title: String,
         price: Number,
         img: String,
         type: String,

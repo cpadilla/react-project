@@ -14,6 +14,14 @@
     transition: $e;
 };
 
+@mixin rotate($e) {
+    -webkit-transform: rotate($e);
+    -moz-transform: rotate($e);
+    -o-transform: rotate($e);
+    -ms-transform: rotate($e);
+    transform: rotate($e);
+}
+
 .header {
 
     .fixed {
@@ -29,10 +37,12 @@
             position: relative;
             height: 150px;
             width: 100%;
+            z-index: 1;
         }
 
         .logo {
             background: url('../../assets/morning-teleportation.jpg');
+            background-color: white;
             background-size: 100%;
             background-position-y: 50%;
             background-repeat: no-repeat;
@@ -52,169 +62,215 @@
             // height: 40px;
             // margin: 0px 20px;
 
-            .tabs {
-                max-width: 1200px;
+        .tabs {
+            @media only screen and (max-width: 550px) {
+                // display: none;
+                position: absolute;
+                z-index: 0 !important;
+                margin-top: -48px;;
+                @include translateY(100px);
+                @include transition(.3s ease-in-out);
+            }
+            max-width: 1200px;
 
-                .tab:hover > .drips {
-                    @include translateY(10%);
-                    @include transition(.3s ease-in-out);
-                }
+            .tab:hover > .drips {
+                @include translateY(10%);
+                @include transition(.3s ease-in-out);
+            }
 
-                // .tab:hover > .drips > a > .drip > .bar {
-                //     background-color: rgba(0,0,0,0.4);
+            // .tab:hover > .drips > a > .drip > .bar {
+            //     background-color: rgba(0,0,0,0.4);
+            // }
+
+            .tab:hover > .linkWrapper > div {
+                color: $blue;
+                transform: scale(1.2);
+                transform-origin: bottom;
+                @include transition(.3s ease-in-out);
+            }
+
+            .tab {
+                // @media only screen and (max-width: 550px) {
+                //     display: none;
+                //     padding: 4px 0px;
                 // }
+                height: 100%;
+                // width: fit-content;
+                display: flex;
+                align-content: center;
+                justify-content: center;
 
-                .tab:hover > .linkWrapper > div {
-                    color: $blue;
-                    transform: scale(1.2);
-                    transform-origin: bottom;
-                    @include transition(.3s ease-in-out);
-                }
-
-                .hamburger {
-                    // position: relative;
-                    // height: 40px;
-                    // width: 40px;
-                    // top: -10px;
-                    // left: 30px;
-                    background: url("../../assets/hamburger.png");
+                .linkWrapper {
+                    z-index: 1;
+                    position: relative;
+                    display: flex;
+                    height: 100%;
+                    // height: 30px;
+                    bottom: 2px;
+                    left: 0px;
+                    padding: 0px 30px;
+                    background: url("../../assets/white-pixel.png");
                     background-size: 100%;
-                    display: none;
-                    @media only screen and (max-width: 550px) {
-                        display: block;
+                    width: 100%;
+                    float: inherit;
+                    justify-content: center;
+                    // height: 200px;
+                    // box-shadow: 1px 1px 1px rgba(83, 83, 83, 0.541);
+                    div {
+                        font-size: 20px;
+                        color: $black;
+                        vertical-align: text-bottom;
+                        align-content: flex-end;
+                        text-decoration: none;
+                        @include transition(all .4s ease-in-out);
+                        height: 40px;
+                        width: 100px;
+
+                        &.HOME {
+                            background: url("../../assets/home.png");
+                            background-size: 100%;
+                        }
+
+                        &.MUSIC {
+                            background: url("../../assets/music.png");
+                            background-size: 100%;
+                        }
+
+                        &.STORE {
+                            background: url("../../assets/store.png");
+                            background-size: 100%;
+                        }
+
+                        &.TOUR {
+                            background: url("../../assets/tour.png");
+                            background-size: 100%;
+                        }
+
+                        &.CONTACT {
+                            background: url("../../assets/contact.png");
+                            background-size: 100%;
+                        }
                     }
                 }
 
-                .tab {
+                .drips {
                     @media only screen and (max-width: 550px) {
                         display: none;
-                        padding: 4px 0px;
                     }
-                    height: 100%;
-                    // width: fit-content;
+                    position: absolute;
+                    top: $headerHeight - 15px;
+                    z-index: 0 !important;
                     display: flex;
-                    align-content: center;
-                    justify-content: center;
+                    // padding: 0px 30px;
+                    filter: drop-shadow(3px 10px 3px rgba(0,0,0,0.3));
+                    @include translateY(-10%);
+                    transition: .5s ease-in-out;
+                    $small: 35px;
+                    $medium: 55px;
+                    $large: 75px;
+                    @include transition(.4s ease-in-out);
 
-                    .linkWrapper {
-                        z-index: 1;
-                        position: relative;
+                    a {
                         display: flex;
-                        height: 100%;
-                        // height: 30px;
-                        bottom: 2px;
-                        left: 0px;
-                        padding: 0px 30px;
-                        background: url("../../assets/white-pixel.png");
-                        background-size: 100%;
-                        // height: 200px;
-                        // box-shadow: 1px 1px 1px rgba(83, 83, 83, 0.541);
-                        div {
-                            font-size: 20px;
-                            color: $black;
-                            vertical-align: text-bottom;
-                            align-content: flex-end;
-                            text-decoration: none;
-                            @include transition(all .4s ease-in-out);
-                            height: 40px;
-                            width: 100px;
 
-                            &.HOME {
-                                background: url("../../assets/home.png");
-                                background-size: 100%;
+                        .drip {
+                            .bar {
+                                position: relative;
+                                background: rgba(0,0,0,0) url("../../assets/bar.png");
+                                transition: background-color 1s;
+                                width: 21px;
+                                height: 1px;
+
+                                &:before {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    left: 0;
+                                    background-color: inherit;
+                                    content: ' ';
+                                }
+
+                                // &:hover {
+                                //     background-color: rgba(0,0,0,.5);
+                                // }
+
+                                &.small {
+                                    height: $small;
+                                    transition: .5s ease-in-out;
+                                }
+
+                                &.medium {
+                                    height: $medium;
+                                    transition: .5s ease-in-out;
+                                }
+                                &.large {
+                                    height: $large;
+                                    transition: .5s ease-in-out;
+                                }
                             }
-
-                            &.MUSIC {
-                                background: url("../../assets/music.png");
+                            .drop {
+                                background: url("../../assets/drip.png");
                                 background-size: 100%;
-                            }
-
-                            &.STORE {
-                                background: url("../../assets/store.png");
-                                background-size: 100%;
-                            }
-
-                            &.TOUR {
-                                background: url("../../assets/tour.png");
-                                background-size: 100%;
-                            }
-
-                            &.CONTACT {
-                                background: url("../../assets/contact.png");
-                                background-size: 100%;
+                                margin-top: -3px;
+                                height: 21px;
+                                width: 21px;
                             }
                         }
                     }
+                }
 
-                    .drips {
-                        @media only screen and (max-width: 550px) {
-                            display: none;
-                        }
-                        position: absolute;
-                        top: $headerHeight - 15px;
-                        z-index: 0 !important;
-                        display: flex;
-                        // padding: 0px 30px;
-                        filter: drop-shadow(3px 10px 3px rgba(0,0,0,0.3));
-                        @include translateY(-10%);
-                        transition: .5s ease-in-out;
-                        $small: 35px;
-                        $medium: 55px;
-                        $large: 75px;
-                        @include transition(.4s ease-in-out);
+            }
+        }
 
-                        a {
-                            display: flex;
+        .closed {
+            @media only screen and (max-width: 550px) {
+                //display: none;
+                @include translateY(-100px);
+                @include transition(.3s ease-in-out);
+            }
+        }
 
-                            .drip {
-                                .bar {
-                                    position: relative;
-                                    background: rgba(0,0,0,0) url("../../assets/bar.png");
-                                    transition: background-color 1s;
-                                    width: 21px;
-                                    height: 1px;
 
-                                    &:before {
-                                        position: absolute;
-                                        top: 0;
-                                        right: 0;
-                                        bottom: 0;
-                                        left: 0;
-                                        background-color: inherit;
-                                        content: ' ';
-                                    }
+        .hamburgerBar {
 
-                                    // &:hover {
-                                    //     background-color: rgba(0,0,0,.5);
-                                    // }
+            #btnControl {
+                display: none;
+            }
 
-                                    &.small {
-                                        height: $small;
-                                        transition: .5s ease-in-out;
-                                    }
+            #btnControl:checked + label > .hamburger {
+                @include rotate(-90deg);
+                @include transition(.2s ease-in-out);
+            }
 
-                                    &.medium {
-                                        height: $medium;
-                                        transition: .5s ease-in-out;
-                                    }
-                                    &.large {
-                                        height: $large;
-                                        transition: .5s ease-in-out;
-                                    }
-                                }
-                                .drop {
-                                    background: url("../../assets/drip.png");
-                                    background-size: 100%;
-                                    margin-top: -3px;
-                                    height: 21px;
-                                    width: 21px;
-                                }
-                            }
-                        }
-                    }
+            @media only screen and (max-width: 550px) {
+                background-color: white;
+                width: 100%;
+                height: 50px;
+                position: absolute;
+                z-index: 1;
+            }
 
+            .hamburger {
+                // position: relative;
+                // height: 40px;
+                // width: 40px;
+                // top: -10px;
+                // left: 30px;
+                float: right;
+                background: url("../../assets/hamburger.png");
+                background-size: 100%;
+                margin-right: 20px;
+                margin-top: -10px;
+                @include transition(.2s ease-in-out);
+                //display: none;
+                @media only screen and (max-width: 550px) {
+                    display: block;
+                    height: 50px;
+                    width: 50px;
                 }
             }
+        }
         // }
 
         .active {

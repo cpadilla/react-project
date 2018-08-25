@@ -8,6 +8,10 @@ Website Todo:
   ✘ Fill out Contact page @cancelled(18-03-08 20:53)
   ☐ Store page should have filters
 ☐ Make page responsive
+  ✔ Show hamburger menu when in mobile size @done(18-08-25 00:19)
+  ✔ Hide nav bar when link is clicked @done(18-08-25 01:07)
+  ✔ Spin the hamburger menu when clicked @done(18-08-25 01:07)
+  ☐ animate nav bar expanding when hamburger menu clicked
 ☐ Homepage
     ✔ Get video to play on start mobile/ show image @done(18-03-17 17:04)
     ✔ Fix video width @done(18-03-17 17:49)
@@ -20,6 +24,8 @@ Website Todo:
     ☐ Checkout
     ☐ Fix header space
     ☐ Move shopping cart up when responsive
+☐ Checkout
+  ☐ Fix Pay button to be green
 ☐ Tour
 ☐ Add footer
   ☐ Add something to Tickets button
@@ -27,3 +33,5 @@ Website Todo:
   ☐ Finish confirmation page
   ☐ Add an effect when a Add To Cart button is clicked
   ✔ Music tab: point to bandcamp @done(18-03-08 20:33)
+☐ FUNSIES
+  ☐ Add color gradient effect to text (gradient(92deg,#f35626,#feab3a);)
