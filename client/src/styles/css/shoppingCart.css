@@ -14,6 +14,11 @@
 }
 .shoppingCart .container {
   display: flex;
+  background-color: white;
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 3em;
+  width: 110px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
 }
 .shoppingCart .container:hover .cartIcon {
   z-index: -1;
