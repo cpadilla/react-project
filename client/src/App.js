@@ -10,6 +10,7 @@ import {
   Route,
   // Link
 } from 'react-router-dom';
+import { withNavigation } from 'react-navigate';
 import Homepage from './components/homepage';
 import Header from './components/header';
 import Music from './components/music'
@@ -54,6 +55,9 @@ class App extends Component {
     this.state = {
       itemId: 0
     }
+
+    console.log("App props:");
+    console.log(this.props);
 
 
   }

@@ -1,39 +1,53 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 .checkout {
   padding: 100px 20px;
-  font-family: "Open Sans"; }
-  .checkout .paymentInfo form {
-    display: flex;
-    flex-direction: column; }
-    .checkout .paymentInfo form div {
-      display: flex;
-      padding: 10px 0px; }
-      .checkout .paymentInfo form div label {
-        width: 110px; }
-      .checkout .paymentInfo form div input {
-        align-self: center;
-        height: 15px;
-        width: 100%; }
-  .checkout .paymentInfo button {
-    display: flex;
-    font-family: "Open Sans";
-    margin: 10px 10px;
-    width: 100%;
-    justify-content: center;
-    align-items: center; }
-    .checkout .paymentInfo button div {
-      padding: 0px 2px; }
-      .checkout .paymentInfo button div.price {
-        font-family: "Gloria Hallelujah", cursive; }
-  .checkout .items .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px; }
-    .checkout .items .item .price, .checkout .items .item .total {
-      font-family: "Gloria Hallelujah", cursive; }
-    .checkout .items .item img {
-      height: 100px;
-      width: 100px; }
+  font-family: "Open Sans";
+}
+.checkout .paymentInfo form {
+  display: flex;
+  flex-direction: column;
+}
+.checkout .paymentInfo form div {
+  display: flex;
+  padding: 10px 0px;
+}
+.checkout .paymentInfo form div label {
+  width: 110px;
+}
+.checkout .paymentInfo form div input {
+  align-self: center;
+  height: 15px;
+  width: 100%;
+}
+.checkout .paymentInfo button {
+  display: flex;
+  font-family: "Open Sans";
+  margin: 10px 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.checkout .paymentInfo button div {
+  padding: 0px 2px;
+}
+.checkout .paymentInfo button div.price {
+  font-family: "Gloria Hallelujah", cursive;
+}
+.checkout .items .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.checkout .items .item .price, .checkout .items .item .total {
+  font-family: "Gloria Hallelujah", cursive;
+}
+.checkout .items .item .quantity {
+  display: block;
+}
+.checkout .items .item img {
+  height: 100px;
+  width: 100px;
+}
 
-/*# sourceMappingURL=checkout.css.map */
+/*# sourceMappingURL=src/styles/css/checkout.css.map */

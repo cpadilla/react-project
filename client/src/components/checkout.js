@@ -29,7 +29,7 @@ class Checkout extends Component {
     }
 
     render () {
-        
+        console.log("rendering checkout");
 
         var total = 0;
         this.state.cart.forEach(element => {
@@ -83,21 +83,23 @@ class Checkout extends Component {
                         if (!item.item) return [];
 
                         return (
-                            <div className="item" key={i}>
-                                <Link to={{ pathname: '/item/' + item.item.productId,
-                                            state: { item: item.item}}}>
-                                    <img alt={item.item.title} src={require("../assets/" + item.item.img)} />
-                                </Link>
-                                <div className="title">
+                            <div className="item row" key={i}>
+                                <div className="two columns">
+                                    <Link to={{ pathname: '/item/' + item.item.productId,
+                                                state: { item: item.item}}}>
+                                        <img alt={item.item.title} src={require("../assets/" + item.item.img)} />
+                                    </Link>
+                                </div>
+                                <div className="title five columns">
                                     {item.item.title}
                                 </div>
-                                <div className="price">
+                                <div className="price one columns">
                                     ${item.item.price}
                                 </div>
-                                <div className="quantity">
+                                <div className="quantity two columns">
                                     Quantity: {item.quantity}
                                 </div>
-                                <div className="total">
+                                <div className="total two columns">
                                     ${item.quantity * item.item.price}
                                 </div>
                             </div>

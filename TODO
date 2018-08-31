@@ -21,15 +21,17 @@ Website Todo:
     ☐ Auto-play video on mobile: https://stackoverflow.com/questions/15090782/youtube-autoplay-not-working-on-mobile-devices-with-embedded-html5-player
 ☐ Store
     ✔ Fix header space @done(18-08-25 10:26)
-    ☐ Move shopping cart up when responsive
+    ✘ Move shopping cart up when responsive @cancelled(18-08-25 10:59)
 ☐ Checkout
   ☐ Fix Pay button to be green
+  ☐ Fix item spacing for mobile
+☐ Cart
   ☐ Fix item spacing for mobile
   ☐ Fix increase/decrease button in Quantity text field
 ☐ Tour
 ☐ Add footer
   ☐ Add something to Tickets button
-  ☐ Add data to mongo db
+☐ Add data to mongo db
   ☐ Finish confirmation page
   ☐ Add an effect when a Add To Cart button is clicked
   ✔ Music tab: point to bandcamp @done(18-03-08 20:33)

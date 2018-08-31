@@ -1,58 +1,87 @@
 .cart {
   @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
   @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-  font-family: 'Gloria Hallelujah', cursive;
-  padding: 100px 20px; }
-  .cart button {
-    /*
-    Vars
-    */
-    @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
-    @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-    font-family: 'Open Sans';
-    background-color: #ffffff;
-    border: none;
-    color: #010000;
-    padding: 0px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-    .cart button.greenButton {
-      background-color: #11a030;
-      color: #ffffff; }
-    .cart button:hover {
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
-  .cart button {
-    font-family: 'Open Sans'; }
-  .cart .checkoutBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-  .cart .items .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px; }
-    .cart .items .item span {
-      font-family: 'Open Sans'; }
-    .cart .items .item .quantity {
-      display: flex;
-      align-items: center;
-      display: flex; }
-      .cart .items .item .quantity div {
-        padding: 0px 2px; }
-      .cart .items .item .quantity input {
-        width: 40px; }
-    .cart .items .item img {
-      height: 100px;
-      width: 100px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-      .cart .items .item img:hover {
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+  font-family: "Gloria Hallelujah", cursive;
+  padding: 100px 20px;
+}
+.cart button {
+  /*
+  Vars
+  */
+  @import url("https://fonts.googleapis.com/css?family=Gloria+Hallelujah");
+  @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+  font-family: "Open Sans";
+  background-color: #ffffff;
+  border: none;
+  color: #010000;
+  padding: 0px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.cart button.greenButton {
+  background-color: #11a030;
+  color: #ffffff;
+}
+.cart button:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.cart button {
+  font-family: "Open Sans";
+}
+.cart .backButton {
+  visibility: hidden;
+}
+.cart .checkoutBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart .items .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+.cart .items .item span {
+  font-family: "Open Sans";
+}
+.cart .items .item img {
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.cart .items .item img:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.cart .items .item .title {
+  padding: 0px 10px;
+}
+.cart .items .item .price {
+  text-align: center;
+}
+.cart .items .item .quantity {
+  display: block;
+  align-items: center;
+}
+.cart .items .item .quantity span {
+  display: flex;
+  justify-content: center;
+}
+.cart .items .item .quantity div {
+  display: flex;
+  justify-content: center;
+}
+.cart .items .item .quantity input {
+  width: 100%;
+  max-width: 65px;
+}
+.cart .items .item .total {
+  text-align: right;
+}
 
-/*# sourceMappingURL=cart.css.map */
+/*# sourceMappingURL=src/styles/css/cart.css.map */
