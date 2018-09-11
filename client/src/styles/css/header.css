@@ -33,9 +33,6 @@ Vars
   text-align: center;
   vertical-align: middle;
 }
-.header .fixed .tabs {
-  max-width: 1200px;
-}
 @media only screen and (max-width: 550px) {
   .header .fixed .tabs {
     position: absolute;
@@ -230,4 +227,4 @@ Vars
   height: 190px;
 }
 
-/*# sourceMappingURL=src/styles/css/header.css.map */
+/*# sourceMappingURL=client/src/styles/css/header.css.map */

@@ -73,7 +73,7 @@
                 @include translateY(100px);
                 @include transition(.3s ease-in-out);
             }
-            max-width: 1200px;
+            // max-width: 1200px;
 
             .tab:hover > .drips {
                 @include translateY(10%);

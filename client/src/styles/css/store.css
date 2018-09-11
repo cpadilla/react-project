@@ -3,16 +3,12 @@ Vars
 */
 .store {
   display: flex;
-  width: 100%;
-}
-.store .itemContainer {
-  width: 100%;
-  padding-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
-  z-index: 0;
-}
+  width: 100%; }
+  .store .itemContainer {
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
 
-/*# sourceMappingURL=src/styles/css/store.css.map */
+/*# sourceMappingURL=store.css.map */
