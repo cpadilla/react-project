@@ -24,7 +24,7 @@
     "start": "node server",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "client": "cd client && npm start",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm install && npm run build",
     "test": "cd client && npm run test",
     "eject": "cd client && npm run eject",
     "sass": "cd client && npm run sass",
